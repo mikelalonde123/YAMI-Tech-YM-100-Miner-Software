@@ -279,11 +279,11 @@ namespace MinerInfoApp
                         var minerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(response);
                         var selfResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_selfcheck_progress");
                         var selfMinerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(selfResponse);
-                        
+                        //Determine hashboard status
                         try
                         {
                             string hash1, hash1a, hash2, hash2a, hash3, hash3a;
-                            if (minerInfo.data.minerinfo[0].hash_rate > 0)
+                            if (minerInfo.data.minerinfo[0].hash_rate > 10)
                             {
                                 hash1 = "O";
                                 hash1a = "Working";
@@ -293,7 +293,7 @@ namespace MinerInfoApp
                                 hash1 = "X";
                                 hash1a = "Not Working";
                             }
-                            if (minerInfo.data.minerinfo[1].hash_rate > 0)
+                            if (minerInfo.data.minerinfo[1].hash_rate > 10)
                             {
                                 hash2 = "O";
                                 hash2a = "Working";
@@ -303,7 +303,7 @@ namespace MinerInfoApp
                                 hash2 = "X";
                                 hash2a = "Not Working";
                             }
-                            if (minerInfo.data.minerinfo[2].hash_rate > 0)
+                            if (minerInfo.data.minerinfo[2].hash_rate > 10)
                             {
                                 hash3 = "O";
                                 hash3a = "Working";
@@ -319,7 +319,7 @@ namespace MinerInfoApp
                                 
                                 HashRate = minerInfo.data.uptime.hash_rate.ToString(),
                                 Uptime = minerInfo.data.uptime.up_time.ToString(),
-                                HashboardStatus = ($"1:{hash1} 2:{hash2} 3:{hash3}"),
+                                HashboardStatus = ($"{hash1} , {hash2} , {hash3}"),
                                 FanSpeed = minerInfo.data.uptime.fan_speed.ToString(),
                                 Temperature = ((minerInfo.data.minerinfo[0].temperature) + (minerInfo.data.minerinfo[1].temperature) + (minerInfo.data.minerinfo[2].temperature)) / 3.ToString(),
                                 DagProgress = minerInfo.data.uptime.dag.progress.ToString(),
@@ -775,7 +775,7 @@ namespace MinerInfoApp
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new MainForm());
         }
     }
@@ -808,22 +808,58 @@ public class ListViewItemComparer : IComparer
         // Handle different data types in different columns
         switch (columnToSort)
         {
-            //Strings
+            //IP Address
             case 0: // IP Address
-            case 2: // Uptime
-            case 9: //Pool URL
-            case 10: //Pool Username
+                //Get IP Bytes like in the ip iteration
+                IPAddress IpX;
+                IPAddress IpY;
+
+                if (System.Net.IPAddress.TryParse(itemX.SubItems[columnToSort].Text, out IpX) && System.Net.IPAddress.TryParse(itemY.SubItems[columnToSort].Text, out IpY))
+                {
+                    byte[] ipBytesX = IpX.GetAddressBytes();
+                    byte[] ipBytesY = IpY.GetAddressBytes();
+
+                    for (int i = 0; i < ipBytesX.Length; i++)
+                    {
+                        if (ipBytesX[i] != ipBytesY[i])
+                        {
+                            compareResult = ipBytesX[i].CompareTo(ipBytesY[i]);
+                            break;
+                        }
+                    }
+                }
+                else 
+                {
+                    //Sort by string if something happens
+                    compareResult = string.Compare(itemX.SubItems[columnToSort].Text, itemY.SubItems[columnToSort].Text);
+                }
+                
+                break;
+            //Strings
+            case 2: //Hashboard Status
+            case 3: //Uptime
+            case 10: //Pool URL
+            case 11: //Pool Username
+            case 13: //Board 1 sataus
+            case 16: //Board 2 sataus
+            case 19: //Board 3 sataus
                 compareResult = string.Compare(itemX.SubItems[columnToSort].Text, itemY.SubItems[columnToSort].Text);
                 break;
             //Doubles
-            case 1: // HashRate
-            case 3: //Fan Speed
-            case 4: //Temperature
-            case 5: //DAG rogress
-            case 6: //Accepted Shares
-            case 7: //Rejected Shares
-            case 8: //Acceptance Rate
-            case 11: // Self Check Progress
+            case 1: //HashRate
+            case 4: //Fan Speed
+            case 5: //Temperature
+            case 6: //DAG rogress
+            case 7: //Accepted Shares
+            case 8: //Rejected Shares
+            case 9: //Acceptance Rate
+            case 12: // Self Check Progress
+            case 14: //Board 1 Hashrate
+            case 15: //Board 1 Temp
+            case 17: //Board 2 Hashrate
+            case 18: //Board 2 Temp
+            case 20: //Board 3 Hashrate
+            case 21: //Board 3 Temp
                 double hashRateX = double.Parse(itemX.SubItems[columnToSort].Text);
                 double hashRateY = double.Parse(itemY.SubItems[columnToSort].Text);
                 compareResult = hashRateX.CompareTo(hashRateY);
