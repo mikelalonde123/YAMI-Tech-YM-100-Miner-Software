@@ -17,6 +17,7 @@ using System.Collections.Specialized;
 using System.Windows.Documents;
 using System.IO;
 using Microsoft.Win32;
+using System.Reflection;
 
 namespace MinerInfoApp
 {
@@ -36,7 +37,7 @@ namespace MinerInfoApp
         private const string SavedRangesKey = "SavedIPRanges";
 
         //Variables for sorting by column
-        private int lastColumnClicked = -1;
+        private int lastColumnClicked = 0;
         private SortOrder lastSortOrder = SortOrder.Ascending;
 
         //Variable to track miners found in a search
@@ -55,6 +56,8 @@ namespace MinerInfoApp
             this.FormClosing += MainForm_FormClosing;
 
             minerListView.ColumnClick += minerListView_ColumnClick;
+
+            minerListView.DoubleBuffered(true);
 
             LoadSavedIPRanges();
         }
@@ -881,5 +884,14 @@ public class ListViewItemComparer : IComparer
         }
 
         return compareResult;
+    }
+}
+//Add a class to change the doubleBuffered property of the list view to true, reducing flickering
+public static class ControlExtensions
+{
+    public static void DoubleBuffered(this Control control, bool enable)
+    {
+        var doubleBufferPropertyInfo = control.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+        doubleBufferPropertyInfo?.SetValue(control, enable, null);
     }
 }
