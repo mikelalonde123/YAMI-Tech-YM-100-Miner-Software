@@ -30,12 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.searchButton = new MaterialSkin.Controls.MaterialButton();
             this.rebootButton = new MaterialSkin.Controls.MaterialButton();
-            this.startIPTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.endIPTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
@@ -50,11 +45,33 @@
             this.deleteIPRanges = new MaterialSkin.Controls.MaterialButton();
             this.saveRangesButton = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.startIPTextBoxD = new MaterialSkin.Controls.MaterialTextBox();
+            this.startIPTextBoxC = new MaterialSkin.Controls.MaterialTextBox();
+            this.startIPTextBoxB = new MaterialSkin.Controls.MaterialTextBox();
+            this.startIPTextBoxA = new MaterialSkin.Controls.MaterialTextBox();
+            this.startIPLabel = new MaterialSkin.Controls.MaterialLabel();
             this.stopScanButton = new MaterialSkin.Controls.MaterialButton();
+            this.translate = new MaterialSkin.Controls.MaterialButton();
             this.ScanningIPLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.nameLabel = new MaterialSkin.Controls.MaterialLabel();
             this.addIPButton = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchButton = new MaterialSkin.Controls.MaterialButton();
             this.nameTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.endIPLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.endIPTextBoxA = new MaterialSkin.Controls.MaterialTextBox();
+            this.endIPTextBoxB = new MaterialSkin.Controls.MaterialTextBox();
+            this.endIPTextBoxC = new MaterialSkin.Controls.MaterialTextBox();
+            this.endIPTextBoxD = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.minerListView = new System.Windows.Forms.ListView();
             this.IPAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,36 +106,6 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialLabel1
-            // 
-            resources.ApplyResources(this.materialLabel1, "materialLabel1");
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            // 
-            // materialLabel2
-            // 
-            resources.ApplyResources(this.materialLabel2, "materialLabel2");
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            // 
-            // searchButton
-            // 
-            resources.ApplyResources(this.searchButton, "searchButton");
-            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.searchButton.Depth = 0;
-            this.searchButton.HighEmphasis = true;
-            this.searchButton.Icon = null;
-            this.searchButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.searchButton.Name = "searchButton";
-            this.searchButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.searchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.searchButton.UseAccentColor = false;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
             // rebootButton
             // 
             resources.ApplyResources(this.rebootButton, "rebootButton");
@@ -134,28 +121,6 @@
             this.rebootButton.UseAccentColor = false;
             this.rebootButton.UseVisualStyleBackColor = true;
             this.rebootButton.Click += new System.EventHandler(this.rebootButton_Click);
-            // 
-            // startIPTextBox
-            // 
-            this.startIPTextBox.AnimateReadOnly = false;
-            this.startIPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.startIPTextBox.Depth = 0;
-            resources.ApplyResources(this.startIPTextBox, "startIPTextBox");
-            this.startIPTextBox.LeadingIcon = null;
-            this.startIPTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.startIPTextBox.Name = "startIPTextBox";
-            this.startIPTextBox.TrailingIcon = null;
-            // 
-            // endIPTextBox
-            // 
-            this.endIPTextBox.AnimateReadOnly = false;
-            this.endIPTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.endIPTextBox.Depth = 0;
-            resources.ApplyResources(this.endIPTextBox, "endIPTextBox");
-            this.endIPTextBox.LeadingIcon = null;
-            this.endIPTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.endIPTextBox.Name = "endIPTextBox";
-            this.endIPTextBox.TrailingIcon = null;
             // 
             // materialCheckbox1
             // 
@@ -219,6 +184,7 @@
             this.ipRangeListView.HideSelection = false;
             this.ipRangeListView.Name = "ipRangeListView";
             this.tableLayoutPanel3.SetRowSpan(this.ipRangeListView, 2);
+            this.ipRangeListView.TabStop = false;
             this.ipRangeListView.UseCompatibleStateImageBehavior = false;
             this.ipRangeListView.View = System.Windows.Forms.View.Details;
             // 
@@ -299,18 +265,154 @@
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.startIPTextBox, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.materialLabel1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.endIPTextBox, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.stopScanButton, 5, 1);
-            this.tableLayoutPanel2.Controls.Add(this.materialLabel2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.ScanningIPLabel, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.addIPButton, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.searchButton, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.materialLabel3, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.nameTextBox, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel6, 15, 0);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel5, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel13, 15, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel12, 13, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel11, 11, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel10, 9, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel8, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel7, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel9, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.startIPTextBoxD, 6, 1);
+            this.tableLayoutPanel2.Controls.Add(this.startIPTextBoxC, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.startIPTextBoxB, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.startIPTextBoxA, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.startIPLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.stopScanButton, 19, 1);
+            this.tableLayoutPanel2.Controls.Add(this.translate, 17, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ScanningIPLabel, 18, 0);
+            this.tableLayoutPanel2.Controls.Add(this.nameLabel, 16, 0);
+            this.tableLayoutPanel2.Controls.Add(this.addIPButton, 18, 1);
+            this.tableLayoutPanel2.Controls.Add(this.searchButton, 17, 1);
+            this.tableLayoutPanel2.Controls.Add(this.nameTextBox, 16, 1);
+            this.tableLayoutPanel2.Controls.Add(this.endIPLabel, 8, 0);
+            this.tableLayoutPanel2.Controls.Add(this.endIPTextBoxA, 8, 1);
+            this.tableLayoutPanel2.Controls.Add(this.endIPTextBoxB, 10, 1);
+            this.tableLayoutPanel2.Controls.Add(this.endIPTextBoxC, 12, 1);
+            this.tableLayoutPanel2.Controls.Add(this.endIPTextBoxD, 14, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialLabel4, 7, 1);
             this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // materialLabel6
+            // 
+            resources.ApplyResources(this.materialLabel6, "materialLabel6");
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            // 
+            // materialLabel5
+            // 
+            resources.ApplyResources(this.materialLabel5, "materialLabel5");
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            // 
+            // materialLabel13
+            // 
+            resources.ApplyResources(this.materialLabel13, "materialLabel13");
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            // 
+            // materialLabel12
+            // 
+            resources.ApplyResources(this.materialLabel12, "materialLabel12");
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            // 
+            // materialLabel11
+            // 
+            resources.ApplyResources(this.materialLabel11, "materialLabel11");
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            // 
+            // materialLabel10
+            // 
+            resources.ApplyResources(this.materialLabel10, "materialLabel10");
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            // 
+            // materialLabel8
+            // 
+            resources.ApplyResources(this.materialLabel8, "materialLabel8");
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            // 
+            // materialLabel7
+            // 
+            resources.ApplyResources(this.materialLabel7, "materialLabel7");
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            // 
+            // materialLabel9
+            // 
+            resources.ApplyResources(this.materialLabel9, "materialLabel9");
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            // 
+            // startIPTextBoxD
+            // 
+            this.startIPTextBoxD.AnimateReadOnly = false;
+            this.startIPTextBoxD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startIPTextBoxD.Depth = 0;
+            resources.ApplyResources(this.startIPTextBoxD, "startIPTextBoxD");
+            this.startIPTextBoxD.LeadingIcon = null;
+            this.startIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
+            this.startIPTextBoxD.Name = "startIPTextBoxD";
+            this.startIPTextBoxD.TrailingIcon = null;
+            // 
+            // startIPTextBoxC
+            // 
+            this.startIPTextBoxC.AnimateReadOnly = false;
+            this.startIPTextBoxC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startIPTextBoxC.Depth = 0;
+            resources.ApplyResources(this.startIPTextBoxC, "startIPTextBoxC");
+            this.startIPTextBoxC.LeadingIcon = null;
+            this.startIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
+            this.startIPTextBoxC.Name = "startIPTextBoxC";
+            this.startIPTextBoxC.TrailingIcon = null;
+            this.startIPTextBoxC.TextChanged += new System.EventHandler(this.startIPTextBoxC_TextChanged);
+            // 
+            // startIPTextBoxB
+            // 
+            this.startIPTextBoxB.AnimateReadOnly = false;
+            this.startIPTextBoxB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startIPTextBoxB.Depth = 0;
+            resources.ApplyResources(this.startIPTextBoxB, "startIPTextBoxB");
+            this.startIPTextBoxB.LeadingIcon = null;
+            this.startIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
+            this.startIPTextBoxB.Name = "startIPTextBoxB";
+            this.startIPTextBoxB.TrailingIcon = null;
+            this.startIPTextBoxB.TextChanged += new System.EventHandler(this.startIPTextBoxB_TextChanged);
+            // 
+            // startIPTextBoxA
+            // 
+            this.startIPTextBoxA.AnimateReadOnly = false;
+            this.startIPTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.startIPTextBoxA.Depth = 0;
+            resources.ApplyResources(this.startIPTextBoxA, "startIPTextBoxA");
+            this.startIPTextBoxA.LeadingIcon = null;
+            this.startIPTextBoxA.LeaveOnEnterKey = true;
+            this.startIPTextBoxA.MouseState = MaterialSkin.MouseState.OUT;
+            this.startIPTextBoxA.Name = "startIPTextBoxA";
+            this.startIPTextBoxA.TrailingIcon = null;
+            this.startIPTextBoxA.TextChanged += new System.EventHandler(this.startIPTextBoxA_TextChanged);
+            // 
+            // startIPLabel
+            // 
+            resources.ApplyResources(this.startIPLabel, "startIPLabel");
+            this.tableLayoutPanel2.SetColumnSpan(this.startIPLabel, 7);
+            this.startIPLabel.Depth = 0;
+            this.startIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.startIPLabel.Name = "startIPLabel";
             // 
             // stopScanButton
             // 
@@ -327,6 +429,22 @@
             this.stopScanButton.UseVisualStyleBackColor = true;
             this.stopScanButton.Click += new System.EventHandler(this.stopScanButton_Click);
             // 
+            // translate
+            // 
+            resources.ApplyResources(this.translate, "translate");
+            this.translate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.translate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.translate.Depth = 0;
+            this.translate.HighEmphasis = true;
+            this.translate.Icon = null;
+            this.translate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.translate.Name = "translate";
+            this.translate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.translate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.translate.UseAccentColor = false;
+            this.translate.UseVisualStyleBackColor = true;
+            this.translate.Click += new System.EventHandler(this.translate_Click);
+            // 
             // ScanningIPLabel
             // 
             resources.ApplyResources(this.ScanningIPLabel, "ScanningIPLabel");
@@ -334,6 +452,13 @@
             this.ScanningIPLabel.Depth = 0;
             this.ScanningIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.ScanningIPLabel.Name = "ScanningIPLabel";
+            // 
+            // nameLabel
+            // 
+            resources.ApplyResources(this.nameLabel, "nameLabel");
+            this.nameLabel.Depth = 0;
+            this.nameLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nameLabel.Name = "nameLabel";
             // 
             // addIPButton
             // 
@@ -351,12 +476,21 @@
             this.addIPButton.UseVisualStyleBackColor = true;
             this.addIPButton.Click += new System.EventHandler(this.addIPButton_Click);
             // 
-            // materialLabel3
+            // searchButton
             // 
-            resources.ApplyResources(this.materialLabel3, "materialLabel3");
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
+            resources.ApplyResources(this.searchButton, "searchButton");
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.searchButton.Depth = 0;
+            this.searchButton.HighEmphasis = true;
+            this.searchButton.Icon = null;
+            this.searchButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchButton.Name = "searchButton";
+            this.searchButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.searchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.searchButton.UseAccentColor = false;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // nameTextBox
             // 
@@ -368,6 +502,65 @@
             this.nameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.TrailingIcon = null;
+            // 
+            // endIPLabel
+            // 
+            resources.ApplyResources(this.endIPLabel, "endIPLabel");
+            this.tableLayoutPanel2.SetColumnSpan(this.endIPLabel, 7);
+            this.endIPLabel.Depth = 0;
+            this.endIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.endIPLabel.Name = "endIPLabel";
+            // 
+            // endIPTextBoxA
+            // 
+            this.endIPTextBoxA.AnimateReadOnly = false;
+            this.endIPTextBoxA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.endIPTextBoxA.Depth = 0;
+            resources.ApplyResources(this.endIPTextBoxA, "endIPTextBoxA");
+            this.endIPTextBoxA.LeadingIcon = null;
+            this.endIPTextBoxA.MouseState = MaterialSkin.MouseState.OUT;
+            this.endIPTextBoxA.Name = "endIPTextBoxA";
+            this.endIPTextBoxA.TrailingIcon = null;
+            // 
+            // endIPTextBoxB
+            // 
+            this.endIPTextBoxB.AnimateReadOnly = false;
+            this.endIPTextBoxB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.endIPTextBoxB.Depth = 0;
+            resources.ApplyResources(this.endIPTextBoxB, "endIPTextBoxB");
+            this.endIPTextBoxB.LeadingIcon = null;
+            this.endIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
+            this.endIPTextBoxB.Name = "endIPTextBoxB";
+            this.endIPTextBoxB.TrailingIcon = null;
+            // 
+            // endIPTextBoxC
+            // 
+            this.endIPTextBoxC.AnimateReadOnly = false;
+            this.endIPTextBoxC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.endIPTextBoxC.Depth = 0;
+            resources.ApplyResources(this.endIPTextBoxC, "endIPTextBoxC");
+            this.endIPTextBoxC.LeadingIcon = null;
+            this.endIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
+            this.endIPTextBoxC.Name = "endIPTextBoxC";
+            this.endIPTextBoxC.TrailingIcon = null;
+            // 
+            // endIPTextBoxD
+            // 
+            this.endIPTextBoxD.AnimateReadOnly = false;
+            this.endIPTextBoxD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.endIPTextBoxD.Depth = 0;
+            resources.ApplyResources(this.endIPTextBoxD, "endIPTextBoxD");
+            this.endIPTextBoxD.LeadingIcon = null;
+            this.endIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
+            this.endIPTextBoxD.Name = "endIPTextBoxD";
+            this.endIPTextBoxD.TrailingIcon = null;
+            // 
+            // materialLabel4
+            // 
+            resources.ApplyResources(this.materialLabel4, "materialLabel4");
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
             // 
             // tableLayoutPanel4
             // 
@@ -408,8 +601,10 @@
             resources.ApplyResources(this.minerListView, "minerListView");
             this.minerListView.HideSelection = false;
             this.minerListView.Name = "minerListView";
+            this.minerListView.TabStop = false;
             this.minerListView.UseCompatibleStateImageBehavior = false;
             this.minerListView.View = System.Windows.Forms.View.Details;
+            this.minerListView.DoubleClick += new System.EventHandler(this.minerListView_DoubleClick);
             // 
             // IPAddress
             // 
@@ -552,12 +747,7 @@
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialButton searchButton;
         private MaterialSkin.Controls.MaterialButton rebootButton;
-        private MaterialSkin.Controls.MaterialTextBox startIPTextBox;
-        private MaterialSkin.Controls.MaterialTextBox endIPTextBox;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
@@ -574,9 +764,6 @@
         private System.Windows.Forms.ColumnHeader Rejected;
         private System.Windows.Forms.ColumnHeader AcceptanceRate;
         private System.Windows.Forms.ColumnHeader Pool;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private MaterialSkin.Controls.MaterialLabel ScanningIPLabel;
-        private MaterialSkin.Controls.MaterialButton addIPButton;
         private System.Windows.Forms.ListView ipRangeListView;
         private System.Windows.Forms.ColumnHeader StartIP;
         private System.Windows.Forms.ColumnHeader EndIP;
@@ -587,9 +774,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private MaterialSkin.Controls.MaterialLabel minerFoundCountLabel;
-        private MaterialSkin.Controls.MaterialButton stopScanButton;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox nameTextBox;
         private System.Windows.Forms.ColumnHeader groupName;
         private MaterialSkin.Controls.MaterialButton loadIPRangesButton;
         private System.Windows.Forms.OpenFileDialog loadIPRangesDialog;
@@ -605,6 +789,34 @@
         private System.Windows.Forms.ColumnHeader Hashboard3Status;
         private System.Windows.Forms.ColumnHeader Hashboard3Hashrate;
         private System.Windows.Forms.ColumnHeader Hashboard3Temperature;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialTextBox startIPTextBoxD;
+        private MaterialSkin.Controls.MaterialTextBox startIPTextBoxC;
+        private MaterialSkin.Controls.MaterialTextBox startIPTextBoxB;
+        private MaterialSkin.Controls.MaterialTextBox startIPTextBoxA;
+        private MaterialSkin.Controls.MaterialLabel startIPLabel;
+        private MaterialSkin.Controls.MaterialButton stopScanButton;
+        private MaterialSkin.Controls.MaterialButton translate;
+        private MaterialSkin.Controls.MaterialLabel ScanningIPLabel;
+        private MaterialSkin.Controls.MaterialLabel nameLabel;
+        private MaterialSkin.Controls.MaterialButton addIPButton;
+        private MaterialSkin.Controls.MaterialButton searchButton;
+        private MaterialSkin.Controls.MaterialTextBox nameTextBox;
+        private MaterialSkin.Controls.MaterialLabel endIPLabel;
+        private MaterialSkin.Controls.MaterialTextBox endIPTextBoxA;
+        private MaterialSkin.Controls.MaterialTextBox endIPTextBoxB;
+        private MaterialSkin.Controls.MaterialTextBox endIPTextBoxC;
+        private MaterialSkin.Controls.MaterialTextBox endIPTextBoxD;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }
 
