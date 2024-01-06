@@ -18,6 +18,7 @@ using System.Windows.Documents;
 using System.IO;
 using Microsoft.Win32;
 using System.Reflection;
+using System.Diagnostics;
 
 namespace MinerInfoApp
 {
@@ -25,7 +26,9 @@ namespace MinerInfoApp
     public partial class MainForm : MaterialForm
     {
         //How long before searching next IP
-        private const double timeoutTime = 0.05;
+        private const double timeoutTime = 0.08;
+
+        private bool isEnglish = true;
 
         //Tracks whether a scan Is running or not
         private int scanRunning = 0;//0 = not running, 1 = running
@@ -54,6 +57,8 @@ namespace MinerInfoApp
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green900, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             this.FormClosing += MainForm_FormClosing;
+
+            minerListView.DoubleBuffered(true);
 
             minerListView.ColumnClick += minerListView_ColumnClick;
 
@@ -89,6 +94,94 @@ namespace MinerInfoApp
             public string Hashboard3Temperature { get; set; }
         }
 
+        private void translate_Click(object sender, EventArgs e)
+        {
+            if (isEnglish) { 
+                isEnglish = false;
+                //Translate all the buttons to chinese
+                startIPLabel.Text = "";
+                endIPLabel.Text = "";
+                nameLabel.Text = "";
+                translate.Text = "English";
+                searchButton.Text = "";
+                addIPButton.Text = "";
+                stopScanButton.Text = "";
+                scanSelectedButton.Text = "";
+                saveRangesButton.Text = "";
+                loadIPRangesButton.Text = "";
+                deleteIPRanges.Text = "";
+                rebootButton.Text = "";
+                selfCheckButton.Text = "";
+                ipRangeListView.Columns[0].Text = "";
+                ipRangeListView.Columns[1].Text = "";
+                ipRangeListView.Columns[2].Text = "";
+                minerListView.Columns[0].Text = "";
+                minerListView.Columns[1].Text = "";
+                minerListView.Columns[2].Text = "";
+                minerListView.Columns[3].Text = "";
+                minerListView.Columns[4].Text = "";
+                minerListView.Columns[5].Text = "";
+                minerListView.Columns[6].Text = "";
+                minerListView.Columns[7].Text = "";
+                minerListView.Columns[8].Text = "";
+                minerListView.Columns[9].Text = "";
+                minerListView.Columns[10].Text = "";
+                minerListView.Columns[11].Text = "";
+                minerListView.Columns[12].Text = "";
+                minerListView.Columns[13].Text = "";
+                minerListView.Columns[14].Text = "";
+                minerListView.Columns[15].Text = "";
+                minerListView.Columns[16].Text = "";
+                minerListView.Columns[17].Text = "";
+                minerListView.Columns[18].Text = "";
+                minerListView.Columns[19].Text = "";
+                minerListView.Columns[20].Text = "";
+                minerListView.Columns[21].Text = "";
+            }
+            else 
+            { 
+                isEnglish = true;
+                //translate all the items to english
+                startIPLabel.Text = "Start IP";
+                endIPLabel.Text = "End IP";
+                nameLabel.Text = "Name";
+                translate.Text = "*Chinese text chinese*";
+                searchButton.Text = "<-Scan";
+                addIPButton.Text = "Add IP Range";
+                stopScanButton.Text = "Stop Scanning";
+                scanSelectedButton.Text = "Scan Selected Ranges";
+                saveRangesButton.Text = "Save Selected Ranges To File";
+                loadIPRangesButton.Text = "Load Ranges From File";
+                deleteIPRanges.Text = "Delete Selected Ranges";
+                rebootButton.Text = "Reboot Selected";
+                selfCheckButton.Text = "Self Check";
+                ipRangeListView.Columns[0].Text = "Start IP";
+                ipRangeListView.Columns[1].Text = "End IP";
+                ipRangeListView.Columns[2].Text = "Name";
+                minerListView.Columns[0].Text = "IP Address";
+                minerListView.Columns[1].Text = "Hashrate";
+                minerListView.Columns[2].Text = "Hashboard Status";
+                minerListView.Columns[3].Text = "Uptime";
+                minerListView.Columns[4].Text = "Fan Speed";
+                minerListView.Columns[5].Text = "Temperature";
+                minerListView.Columns[6].Text = "DAG Progress";
+                minerListView.Columns[7].Text = "Accepted Shares";
+                minerListView.Columns[8].Text = "Rejected Shares";
+                minerListView.Columns[9].Text = "Acceptance Rate";
+                minerListView.Columns[10].Text = "Pool";
+                minerListView.Columns[11].Text = "Pool User";
+                minerListView.Columns[12].Text = "Self Check Progress";
+                minerListView.Columns[13].Text = "Board 1 Status";
+                minerListView.Columns[14].Text = "Board 1 Hashrate";
+                minerListView.Columns[15].Text = "Board 1 Temp";
+                minerListView.Columns[16].Text = "Board 2 Status";
+                minerListView.Columns[17].Text = "Board 2 Hashrate";
+                minerListView.Columns[18].Text = "Board 2 Temp";
+                minerListView.Columns[19].Text = "Board 3 Status";
+                minerListView.Columns[20].Text = "Board 3 Hashrate";
+                minerListView.Columns[21].Text = "Board 3 Temp";
+            }
+        }
 
         //Runs when the '<- search" button is pressed
         private async void searchButton_Click(object sender, EventArgs e)
@@ -100,7 +193,6 @@ namespace MinerInfoApp
             scanRunning = 1;
             //Resets minerFound variable to 0
             minersFoundCount = 0;
-            Console.WriteLine("Search Clicked");
             //Try-Catch to clear data from the minerListView
             try
             {
@@ -111,12 +203,19 @@ namespace MinerInfoApp
 
             }
             //Declare variables which store the IPs that will be used to search the range
-            string startIP = startIPTextBox.Text;
-            string endIP = endIPTextBox.Text;
+            string startIP = (startIPTextBoxA.Text + "." + startIPTextBoxB.Text + "." + startIPTextBoxC.Text + "." + startIPTextBoxD.Text);
+            string endIP = (endIPTextBoxA.Text + "." + endIPTextBoxB.Text + "." + endIPTextBoxC.Text + "." + endIPTextBoxD.Text);
             //Checks to make sure the IP boxes are not empty
-            if (string.IsNullOrWhiteSpace(startIP) || string.IsNullOrWhiteSpace(endIP))
+            if (string.IsNullOrWhiteSpace(startIPTextBoxA.Text) || string.IsNullOrWhiteSpace(startIPTextBoxB.Text) || string.IsNullOrWhiteSpace(startIPTextBoxC.Text) || string.IsNullOrWhiteSpace(startIPTextBoxD.Text) || string.IsNullOrWhiteSpace(endIPTextBoxA.Text) || string.IsNullOrWhiteSpace(endIPTextBoxB.Text) || string.IsNullOrWhiteSpace(endIPTextBoxC.Text) || string.IsNullOrWhiteSpace(endIPTextBoxD.Text))
             {
-                MessageBox.Show("Please enter both start and end IP addresses.");
+                if (isEnglish)
+                {
+                    MessageBox.Show("Please fill in all fields for the start and end IP address");
+                }
+                else 
+                {
+                    MessageBox.Show("Chinese for fill in all fields");
+                }
                 return;
             }
 
@@ -143,7 +242,6 @@ namespace MinerInfoApp
                     minerFoundCountLabel.Text = ($"{minersFoundCount} Miners Found");
                     //Creates a new entry to the minerInfo Dictionary with the ip as the identifier
                     minerInfoDict[ip] = minerInfo;
-                    Console.WriteLine($"{ip} Miner found");
                     //Adds all the other data to the minerListView entry
                     ListViewItem item = new ListViewItem(ip);
                     item.SubItems.Add(minerInfo.HashRate);
@@ -174,7 +272,6 @@ namespace MinerInfoApp
                 //if no response is recieved from the IP address, or the data recieved is unreadable
                 else
                 {
-                    Console.WriteLine($"{ip} not found.");
                 };
             }
             //After itterating through the IP List sets the scanRunning variable to false and updated the label to show scanning is done
@@ -191,7 +288,6 @@ namespace MinerInfoApp
 
             minersFoundCount = 0;
             List<string> ipList = new List<string>();
-            Console.WriteLine("Search Clicked");
             try
             {
                 minerListView.Items.Clear(); // Clear existing items
@@ -226,7 +322,6 @@ namespace MinerInfoApp
                     minersFoundCount++;
                     minerFoundCountLabel.Text = ($"{minersFoundCount} Miners Found");
                     minerInfoDict[ip] = minerInfo;
-                    Console.WriteLine($"{ip} Miner found");
                     ListViewItem item = new ListViewItem(ip);
                     item.SubItems.Add(minerInfo.HashRate);
                     item.SubItems.Add(minerInfo.HashboardStatus);
@@ -254,7 +349,6 @@ namespace MinerInfoApp
                 }
                 else
                 {
-                    Console.WriteLine($"{ip} not found.");
                 };
             }
             ScanningIPLabel.Text = "Scanning Done";
@@ -348,7 +442,6 @@ namespace MinerInfoApp
                         catch (Exception ex)
                         {
                             //if there is an error reading the parsed data it returns null
-                            Console.WriteLine("error getting pool info");
                             Console.WriteLine(ex.Message);
                             return null;
                         }
@@ -370,7 +463,6 @@ namespace MinerInfoApp
         //This function takes the start and end ip and returns a list with all the IPs in the range
         private List<string> GetIPRange(string startIPString, string endIPString)
         {
-            Console.WriteLine("Calling GetIPRange");
             //declaring new list
             List<string> ipList = new List<string>();
             //declaring IPAddress variables
@@ -389,7 +481,14 @@ namespace MinerInfoApp
                     if (startIpBytes[i] > endIpBytes[i])
                     {
                         //Makes sure the start IP is lower than the end ip
-                        MessageBox.Show("Make sure the starting IP is lower than the end");
+                        if (isEnglish)
+                        {
+                            MessageBox.Show("Make sure the starting IP is lower than the end");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chinese for Make sure the starting IP is lower than the end");
+                        }
                         return new List<string>();
                     }
                     else if (startIpBytes[i] < endIpBytes[i])
@@ -407,7 +506,6 @@ namespace MinerInfoApp
                         startIpBytes[3] = (byte)i;
                         IPAddress currentIp = new IPAddress(startIpBytes);
 
-                        Console.WriteLine("Processing IP address: " + currentIp.ToString());
                         ipList.Add(currentIp.ToString());
 
                         // Check if the last octet reached the end IP's last octet
@@ -427,14 +525,12 @@ namespace MinerInfoApp
                     // Check if the second-to-last octet reached the end IP's second-to-last octet
                     if (startIpBytes[2] > endIpBytes[2])
                     {
-                        Console.WriteLine("Returning IPList");
                         return ipList; // Exit the program when done
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Returning null");
                 return null;
             }
         }
@@ -455,7 +551,6 @@ namespace MinerInfoApp
                             rebootClient.Timeout = TimeSpan.FromSeconds(1);
                             rebootClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
                             var rebootResponse = await rebootClient.GetStringAsync($"http://{minerListView.Items[i].Text}/cgi-bin/cgiNetService.cgi?send_reboot_miner=send_reboot_miner");
-                            Console.WriteLine(minerListView.Items[i].Text + " Rebooted");
                             ScanningIPLabel.Text = minerListView.Items[i].Text + " Rebooted";
                             minerListView.Items.RemoveAt(i);
                             i -= 1;
@@ -475,7 +570,6 @@ namespace MinerInfoApp
 
         private async void selfCheckButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("calling selfCheckButtn");
             for (int i = 0; i < minerListView.Items.Count; i++)
             {
                 // Check if the item is a Control containing a CheckBox
@@ -506,13 +600,20 @@ namespace MinerInfoApp
 
         private void addIPButton_Click(object sender, EventArgs e)
         {
-            string startIP1 = startIPTextBox.Text;
-            string endIP1 = endIPTextBox.Text;
+            string startIP1 = (startIPTextBoxA.Text + "." + startIPTextBoxB.Text + "." + startIPTextBoxC.Text + "." + startIPTextBoxD.Text);
+            string endIP1 = (endIPTextBoxA.Text + "." + endIPTextBoxB.Text + "." + endIPTextBoxC.Text + "." + endIPTextBoxD.Text);
             string rangeName = nameTextBox.Text;
-
-            if (string.IsNullOrWhiteSpace(startIP1) || string.IsNullOrWhiteSpace(endIP1))
+            //Checks to make sure the IP boxes are not empty
+            if (string.IsNullOrWhiteSpace(startIPTextBoxA.Text) || string.IsNullOrWhiteSpace(startIPTextBoxB.Text) || string.IsNullOrWhiteSpace(startIPTextBoxC.Text) || string.IsNullOrWhiteSpace(startIPTextBoxD.Text) || string.IsNullOrWhiteSpace(endIPTextBoxA.Text) || string.IsNullOrWhiteSpace(endIPTextBoxB.Text) || string.IsNullOrWhiteSpace(endIPTextBoxC.Text) || string.IsNullOrWhiteSpace(endIPTextBoxD.Text))
             {
-                MessageBox.Show("Please enter both start and end IP addresses.");
+                if (isEnglish)
+                {
+                    MessageBox.Show("Please fill in all fields for the start and end IP address");
+                }
+                else
+                {
+                    MessageBox.Show("Chinese for Please fill in all fields for the start and end IP address");
+                }
                 return;
             }
 
@@ -524,8 +625,10 @@ namespace MinerInfoApp
             ipRangeListView.Items.Add(newItem);
 
             //Clear the text boxes
-            startIPTextBox.Clear();
-            endIPTextBox.Clear();
+            startIPTextBoxC.Clear();
+            startIPTextBoxD.Clear();
+            endIPTextBoxC.Clear();
+            endIPTextBoxD.Clear();
             nameTextBox.Clear();
         }
 
@@ -597,7 +700,6 @@ namespace MinerInfoApp
         {
             try
             {
-                Console.WriteLine("Saving IPs");
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
                 foreach (ListViewItem item in ipRangeListView.Items)
@@ -728,7 +830,15 @@ namespace MinerInfoApp
                 }
                 catch (IOException ex)
                 {
-                    MessageBox.Show("Error reading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (isEnglish)
+                    {
+                        MessageBox.Show("Error reading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chinese for Error reading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
             }
         }
@@ -762,16 +872,80 @@ namespace MinerInfoApp
                     // Write the IP ranges to the selected file
                     File.WriteAllLines(filePath, ipRanges);
 
-                    MessageBox.Show("IP ranges have been successfully saved to the file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    if (isEnglish)
+                    {
+                        MessageBox.Show("IP ranges have been successfully saved to the file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chinese for IP ranges have been successfully saved to the file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (IOException ex)
                 {
-                    MessageBox.Show("Error saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    if (isEnglish)
+                    {
+                        MessageBox.Show("Error saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chinese for Error saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
+        private void minerListView_DoubleClick(object sender, EventArgs e)
+        {
+            
+            if (minerListView.SelectedItems.Count > 0)
+            {
+                string selectedIPAddress = minerListView.SelectedItems[0].Text;
 
+                // Open the selected IP address in a browser
+                OpenInBrowser(selectedIPAddress);
+            }
+        }
+
+        private void OpenInBrowser(string ipAddress)
+        {
+            // Replace "http://" with the appropriate protocol if needed
+            string url = $"http://{ipAddress}";
+
+            // Open the URL in the default web browser
+            Process.Start(url);
+        }
+
+        private void focusText(MaterialTextBox newBox)
+        {
+            newBox.Focus();
+            newBox.SelectionStart = newBox.Text.Length;
+        }
+
+        private void startIPTextBoxA_TextChanged(object sender, EventArgs e)
+        {
+            if(startIPTextBoxA.Text.Length == 3 || startIPTextBoxA.Text == "10")
+            {
+                focusText(startIPTextBoxB);
+                endIPTextBoxA.Text = startIPTextBoxA.Text;
+            }
+        }
+
+        private void startIPTextBoxB_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxB.Text.Length == 3)
+            {
+                focusText(startIPTextBoxC);
+                endIPTextBoxB.Text = startIPTextBoxB.Text;
+            }
+        }
+
+        private void startIPTextBoxC_TextChanged(object sender, EventArgs e)
+        {
+            endIPTextBoxC.Text = startIPTextBoxC.Text;
+        }
 
     }
 
@@ -787,10 +961,11 @@ namespace MinerInfoApp
             Application.Run(new MainForm());
         }
     }
-}
 
-//Class to sort listview by column
-public class ListViewItemComparer : IComparer
+    }
+
+    //Class to sort listview by column
+    public class ListViewItemComparer : IComparer
 {
     private int columnToSort;
     private SortOrder order;
