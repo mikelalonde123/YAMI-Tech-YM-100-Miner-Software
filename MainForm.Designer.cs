@@ -365,9 +365,11 @@
             this.startIPTextBoxD.Depth = 0;
             resources.ApplyResources(this.startIPTextBoxD, "startIPTextBoxD");
             this.startIPTextBoxD.LeadingIcon = null;
+            this.startIPTextBoxD.LeaveOnEnterKey = true;
             this.startIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxD.Name = "startIPTextBoxD";
             this.startIPTextBoxD.TrailingIcon = null;
+            this.startIPTextBoxD.TextChanged += new System.EventHandler(this.startIPTextBoxD_TextChanged);
             // 
             // startIPTextBoxC
             // 
@@ -376,6 +378,7 @@
             this.startIPTextBoxC.Depth = 0;
             resources.ApplyResources(this.startIPTextBoxC, "startIPTextBoxC");
             this.startIPTextBoxC.LeadingIcon = null;
+            this.startIPTextBoxC.LeaveOnEnterKey = true;
             this.startIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxC.Name = "startIPTextBoxC";
             this.startIPTextBoxC.TrailingIcon = null;
@@ -388,6 +391,7 @@
             this.startIPTextBoxB.Depth = 0;
             resources.ApplyResources(this.startIPTextBoxB, "startIPTextBoxB");
             this.startIPTextBoxB.LeadingIcon = null;
+            this.startIPTextBoxB.LeaveOnEnterKey = true;
             this.startIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxB.Name = "startIPTextBoxB";
             this.startIPTextBoxB.TrailingIcon = null;
@@ -518,9 +522,11 @@
             this.endIPTextBoxA.Depth = 0;
             resources.ApplyResources(this.endIPTextBoxA, "endIPTextBoxA");
             this.endIPTextBoxA.LeadingIcon = null;
+            this.endIPTextBoxA.LeaveOnEnterKey = true;
             this.endIPTextBoxA.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxA.Name = "endIPTextBoxA";
             this.endIPTextBoxA.TrailingIcon = null;
+            this.endIPTextBoxA.TextChanged += new System.EventHandler(this.endIPTextBoxA_TextChanged);
             // 
             // endIPTextBoxB
             // 
@@ -529,9 +535,11 @@
             this.endIPTextBoxB.Depth = 0;
             resources.ApplyResources(this.endIPTextBoxB, "endIPTextBoxB");
             this.endIPTextBoxB.LeadingIcon = null;
+            this.endIPTextBoxB.LeaveOnEnterKey = true;
             this.endIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxB.Name = "endIPTextBoxB";
             this.endIPTextBoxB.TrailingIcon = null;
+            this.endIPTextBoxB.TextChanged += new System.EventHandler(this.endIPTextBoxB_TextChanged);
             // 
             // endIPTextBoxC
             // 
@@ -540,9 +548,11 @@
             this.endIPTextBoxC.Depth = 0;
             resources.ApplyResources(this.endIPTextBoxC, "endIPTextBoxC");
             this.endIPTextBoxC.LeadingIcon = null;
+            this.endIPTextBoxC.LeaveOnEnterKey = true;
             this.endIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxC.Name = "endIPTextBoxC";
             this.endIPTextBoxC.TrailingIcon = null;
+            this.endIPTextBoxC.TextChanged += new System.EventHandler(this.endIPTextBoxC_TextChanged);
             // 
             // endIPTextBoxD
             // 
@@ -551,9 +561,11 @@
             this.endIPTextBoxD.Depth = 0;
             resources.ApplyResources(this.endIPTextBoxD, "endIPTextBoxD");
             this.endIPTextBoxD.LeadingIcon = null;
+            this.endIPTextBoxD.LeaveOnEnterKey = true;
             this.endIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxD.Name = "endIPTextBoxD";
             this.endIPTextBoxD.TrailingIcon = null;
+            this.endIPTextBoxD.TextChanged += new System.EventHandler(this.endIPTextBoxD_TextChanged);
             // 
             // materialLabel4
             // 
@@ -734,6 +746,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();

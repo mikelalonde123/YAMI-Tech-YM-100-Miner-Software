@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
@@ -13,12 +8,11 @@ using System.Configuration;
 using System.Collections;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using System.Collections.Specialized;
-using System.Windows.Documents;
 using System.IO;
-using Microsoft.Win32;
 using System.Reflection;
 using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
 
 namespace MinerInfoApp
 {
@@ -26,7 +20,7 @@ namespace MinerInfoApp
     public partial class MainForm : MaterialForm
     {
         //How long before searching next IP
-        private const double timeoutTime = 0.08;
+        private const double timeoutTime = 0.05;
 
         private bool isEnglish = true;
 
@@ -46,6 +40,7 @@ namespace MinerInfoApp
         //Variable to track miners found in a search
         private int minersFoundCount = 0;
 
+
         //Declare and initialize controls
         public MainForm()
         {
@@ -59,6 +54,8 @@ namespace MinerInfoApp
             this.FormClosing += MainForm_FormClosing;
 
             minerListView.DoubleBuffered(true);
+
+            AttachNumericTextBoxEventHandlers();
 
             minerListView.ColumnClick += minerListView_ColumnClick;
 
@@ -94,58 +91,48 @@ namespace MinerInfoApp
             public string Hashboard3Temperature { get; set; }
         }
 
-        private void translate_Click(object sender, EventArgs e)
+        //Only allow numbers to be entered in the IP address
+        private void AttachNumericTextBoxEventHandlers()
         {
-            if (isEnglish) { 
+            startIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+        }
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+            CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
+
+            string language = currentCulture.TwoLetterISOLanguageName;
+
+            if (language == "zh")
+            {
+                Console.WriteLine("Chinese detected");
                 isEnglish = false;
-                //Translate all the buttons to chinese
-                startIPLabel.Text = "";
-                endIPLabel.Text = "";
-                nameLabel.Text = "";
-                translate.Text = "English";
-                searchButton.Text = "";
-                addIPButton.Text = "";
-                stopScanButton.Text = "";
-                scanSelectedButton.Text = "";
-                saveRangesButton.Text = "";
-                loadIPRangesButton.Text = "";
-                deleteIPRanges.Text = "";
-                rebootButton.Text = "";
-                selfCheckButton.Text = "";
-                ipRangeListView.Columns[0].Text = "";
-                ipRangeListView.Columns[1].Text = "";
-                ipRangeListView.Columns[2].Text = "";
-                minerListView.Columns[0].Text = "";
-                minerListView.Columns[1].Text = "";
-                minerListView.Columns[2].Text = "";
-                minerListView.Columns[3].Text = "";
-                minerListView.Columns[4].Text = "";
-                minerListView.Columns[5].Text = "";
-                minerListView.Columns[6].Text = "";
-                minerListView.Columns[7].Text = "";
-                minerListView.Columns[8].Text = "";
-                minerListView.Columns[9].Text = "";
-                minerListView.Columns[10].Text = "";
-                minerListView.Columns[11].Text = "";
-                minerListView.Columns[12].Text = "";
-                minerListView.Columns[13].Text = "";
-                minerListView.Columns[14].Text = "";
-                minerListView.Columns[15].Text = "";
-                minerListView.Columns[16].Text = "";
-                minerListView.Columns[17].Text = "";
-                minerListView.Columns[18].Text = "";
-                minerListView.Columns[19].Text = "";
-                minerListView.Columns[20].Text = "";
-                minerListView.Columns[21].Text = "";
+                translateLanguage();
             }
-            else 
-            { 
-                isEnglish = true;
+            else
+            {
+                
+            }
+        }
+
+
+        private void translateLanguage() {
+            if (isEnglish)
+            {
                 //translate all the items to english
                 startIPLabel.Text = "Start IP";
                 endIPLabel.Text = "End IP";
                 nameLabel.Text = "Name";
-                translate.Text = "*Chinese text chinese*";
+                translate.Text = "中文";
                 searchButton.Text = "<-Scan";
                 addIPButton.Text = "Add IP Range";
                 stopScanButton.Text = "Stop Scanning";
@@ -180,6 +167,74 @@ namespace MinerInfoApp
                 minerListView.Columns[19].Text = "Board 3 Status";
                 minerListView.Columns[20].Text = "Board 3 Hashrate";
                 minerListView.Columns[21].Text = "Board 3 Temp";
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            }
+            else
+            {
+                //Translate all the buttons to chinese
+                startIPLabel.Text = "开始IP";
+                endIPLabel.Text = "结束IP";
+                nameLabel.Text = "名称";
+                translate.Text = "English";
+                searchButton.Text = "<- 扫描";
+                addIPButton.Text = "添加IP范围";
+                stopScanButton.Text = "停止扫描";
+                scanSelectedButton.Text = "扫描选定IP段";
+                saveRangesButton.Text = "保存选定IP段到本地文件";
+                loadIPRangesButton.Text = "从文件添加IP段";
+                deleteIPRanges.Text = "删除选定IP段";
+                rebootButton.Text = "重启选定矿机";
+                selfCheckButton.Text = "自检选定矿机";
+                ipRangeListView.Columns[0].Text = "开始IP";
+                ipRangeListView.Columns[1].Text = "结束IP";
+                ipRangeListView.Columns[2].Text = "名称";
+                minerListView.Columns[0].Text = "IP地址";
+                minerListView.Columns[1].Text = "算力";
+                minerListView.Columns[2].Text = "算力板状态";
+                minerListView.Columns[3].Text = "运行时间";
+                minerListView.Columns[4].Text = "风扇转速";
+                minerListView.Columns[5].Text = "温度";
+                minerListView.Columns[6].Text = "DAG进度";
+                minerListView.Columns[7].Text = "接受额";
+                minerListView.Columns[8].Text = "拒绝额";
+                minerListView.Columns[9].Text = "接受率";
+                minerListView.Columns[10].Text = "矿池";
+                minerListView.Columns[11].Text = "用户";
+                minerListView.Columns[12].Text = "自检进度";
+                minerListView.Columns[13].Text = "板1状态";
+                minerListView.Columns[14].Text = "板1算力";
+                minerListView.Columns[15].Text = "板1温度";
+                minerListView.Columns[16].Text = "板2状态";
+                minerListView.Columns[17].Text = "板2算力";
+                minerListView.Columns[18].Text = "板2温度";
+                minerListView.Columns[19].Text = "板3状态";
+                minerListView.Columns[20].Text = "板3算力";
+                minerListView.Columns[21].Text = "板3温度";
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("zh-CN");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-CN");
+            }
+        }
+        private void translate_Click(object sender, EventArgs e)
+        {
+            if (isEnglish)
+            {
+                isEnglish = false;
+                translateLanguage();
+            }
+            else
+            {
+                isEnglish = true;
+                translateLanguage();
+            }
+        }
+
+        private void numericTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, backspace, and the delete key
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
@@ -214,7 +269,7 @@ namespace MinerInfoApp
                 }
                 else 
                 {
-                    MessageBox.Show("Chinese for fill in all fields");
+                    MessageBox.Show("请填写开始与结束IP地址");
                 }
                 return;
             }
@@ -276,7 +331,13 @@ namespace MinerInfoApp
             }
             //After itterating through the IP List sets the scanRunning variable to false and updated the label to show scanning is done
             scanRunning = 0;
-            ScanningIPLabel.Text = "Scanning Done";
+            if (isEnglish)
+            {
+                ScanningIPLabel.Text = "Scanning Done";
+            }
+            else {
+                ScanningIPLabel.Text = "扫描完成";
+            }
         }
 
         //Similar to the SearchButton_Click function, Just using the ip range list view instead
@@ -351,14 +412,28 @@ namespace MinerInfoApp
                 {
                 };
             }
-            ScanningIPLabel.Text = "Scanning Done";
+            if (isEnglish)
+            {
+                ScanningIPLabel.Text = "Scanning Done";
+            }
+            else
+            {
+                ScanningIPLabel.Text = "扫描完成";
+            }
         }
 
 
         //This is the function that gets the data of each miner
         private async Task<MinerInfo> GetData(string minerIP)
         {
-            ScanningIPLabel.Text = ($"Scanning {minerIP}");
+            if (isEnglish)
+            {
+                ScanningIPLabel.Text = ($"Scanning {minerIP}");
+            }
+            else
+            {
+                ScanningIPLabel.Text = ($"扫描 {minerIP}");
+            }
             try
             {
                 //Create new instance of httpChient
@@ -612,7 +687,7 @@ namespace MinerInfoApp
                 }
                 else
                 {
-                    MessageBox.Show("Chinese for Please fill in all fields for the start and end IP address");
+                    MessageBox.Show("请填写开始与结束IP地址");
                 }
                 return;
             }
@@ -836,7 +911,7 @@ namespace MinerInfoApp
                     }
                     else
                     {
-                        MessageBox.Show("Chinese for Error reading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("读取文件时出错: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
@@ -879,7 +954,7 @@ namespace MinerInfoApp
                     }
                     else
                     {
-                        MessageBox.Show("Chinese for IP ranges have been successfully saved to the file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("IP段已成功添加到本地文件", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (IOException ex)
@@ -891,7 +966,7 @@ namespace MinerInfoApp
                     }
                     else
                     {
-                        MessageBox.Show("Chinese for Error saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("保存文件时出错: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -918,6 +993,8 @@ namespace MinerInfoApp
             Process.Start(url);
         }
 
+        private bool isUpdatingEndTextBox = false;
+
         private void focusText(MaterialTextBox newBox)
         {
             newBox.Focus();
@@ -926,10 +1003,12 @@ namespace MinerInfoApp
 
         private void startIPTextBoxA_TextChanged(object sender, EventArgs e)
         {
-            if(startIPTextBoxA.Text.Length == 3 || startIPTextBoxA.Text == "10")
+            if (startIPTextBoxA.Text.Length == 3 || startIPTextBoxA.Text == "10")
             {
                 focusText(startIPTextBoxB);
+                isUpdatingEndTextBox = true;
                 endIPTextBoxA.Text = startIPTextBoxA.Text;
+                isUpdatingEndTextBox = false;
             }
         }
 
@@ -938,15 +1017,58 @@ namespace MinerInfoApp
             if (startIPTextBoxB.Text.Length == 3)
             {
                 focusText(startIPTextBoxC);
+                isUpdatingEndTextBox = true;
                 endIPTextBoxB.Text = startIPTextBoxB.Text;
+                isUpdatingEndTextBox = false;
             }
         }
 
         private void startIPTextBoxC_TextChanged(object sender, EventArgs e)
         {
-            endIPTextBoxC.Text = startIPTextBoxC.Text;
+            if (startIPTextBoxC.Text.Length == 3)
+            {
+                isUpdatingEndTextBox = true;
+                endIPTextBoxC.Text = startIPTextBoxC.Text;
+                isUpdatingEndTextBox = false;
+            }
         }
 
+        private void startIPTextBoxD_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxD.Text.Length == 3 || startIPTextBoxD.Text == "0")
+            {
+                focusText(endIPTextBoxA);
+            }
+        }
+
+        private void endIPTextBoxA_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && (endIPTextBoxA.Text.Length == 3 || endIPTextBoxA.Text == "10"))
+            {
+                focusText(endIPTextBoxB);
+            }
+        }
+
+        private void endIPTextBoxB_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && endIPTextBoxB.Text.Length == 3)
+            {
+                focusText(endIPTextBoxC);
+            }
+        }
+
+        private void endIPTextBoxC_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && endIPTextBoxC.Text.Length == 3)
+            {
+                focusText(endIPTextBoxD);
+            }
+        }
+
+        private void endIPTextBoxD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
