@@ -20,7 +20,7 @@ namespace MinerInfoApp
     public partial class MainForm : MaterialForm
     {
         //How long before searching next IP
-        private const double timeoutTime = 0.05;
+        private const double timeoutTime = 0.1;
 
         private bool isEnglish = true;
 
