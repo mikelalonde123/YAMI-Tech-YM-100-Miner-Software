@@ -10,14 +10,15 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO;
 using System.Reflection;
-using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
+using System.Drawing;
+using System.Diagnostics;
 
 namespace MinerInfoApp
 {
 
-    public partial class MainForm : MaterialForm
+    public partial class Main : MaterialForm
     {
         //How long before searching next IP
         private const double timeoutTime = 0.1;
@@ -42,7 +43,7 @@ namespace MinerInfoApp
 
 
         //Declare and initialize controls
-        public MainForm()
+        public Main()
         {
             InitializeComponent();
 
@@ -59,7 +60,11 @@ namespace MinerInfoApp
 
             minerListView.ColumnClick += minerListView_ColumnClick;
 
-            minerListView.DoubleBuffered(true);
+            ScanningIPLabel.BackColor = Color.FromArgb(27, 94, 32);
+
+            materialTabControl1.ItemSize = new Size(100, 50);
+
+            this.DoubleBuffered(true);
 
             LoadSavedIPRanges();
         }
@@ -108,7 +113,6 @@ namespace MinerInfoApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             CultureInfo currentCulture = CultureInfo.CurrentCulture;
-            CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
 
             string language = currentCulture.TwoLetterISOLanguageName;
 
@@ -118,11 +122,7 @@ namespace MinerInfoApp
                 isEnglish = false;
                 translateLanguage();
             }
-            else
-            {
-                
             }
-        }
 
 
         private void translateLanguage() {
@@ -257,10 +257,6 @@ namespace MinerInfoApp
             {
 
             }
-            //Declare variables which store the IPs that will be used to search the range
-            string startIP = (startIPTextBoxA.Text + "." + startIPTextBoxB.Text + "." + startIPTextBoxC.Text + "." + startIPTextBoxD.Text);
-            string endIP = (endIPTextBoxA.Text + "." + endIPTextBoxB.Text + "." + endIPTextBoxC.Text + "." + endIPTextBoxD.Text);
-            //Checks to make sure the IP boxes are not empty
             if (string.IsNullOrWhiteSpace(startIPTextBoxA.Text) || string.IsNullOrWhiteSpace(startIPTextBoxB.Text) || string.IsNullOrWhiteSpace(startIPTextBoxC.Text) || string.IsNullOrWhiteSpace(startIPTextBoxD.Text) || string.IsNullOrWhiteSpace(endIPTextBoxA.Text) || string.IsNullOrWhiteSpace(endIPTextBoxB.Text) || string.IsNullOrWhiteSpace(endIPTextBoxC.Text) || string.IsNullOrWhiteSpace(endIPTextBoxD.Text))
             {
                 if (isEnglish)
@@ -273,6 +269,10 @@ namespace MinerInfoApp
                 }
                 return;
             }
+            //Declare variables which store the IPs that will be used to search the range
+            string startIP = (Int32.Parse(startIPTextBoxA.Text).ToString() + "." + Int32.Parse(startIPTextBoxB.Text).ToString() + "." + Int32.Parse(startIPTextBoxC.Text).ToString() + "." + Int32.Parse(startIPTextBoxD.Text).ToString());
+            string endIP = (Int32.Parse(endIPTextBoxA.Text).ToString() + "." + Int32.Parse(endIPTextBoxB.Text).ToString() + "." + Int32.Parse(endIPTextBoxC.Text).ToString() + "." + Int32.Parse(endIPTextBoxD.Text).ToString());
+
 
             //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
             List<string> ipList = GetIPRange(startIP, endIP);
@@ -986,7 +986,6 @@ namespace MinerInfoApp
 
         private void OpenInBrowser(string ipAddress)
         {
-            // Replace "http://" with the appropriate protocol if needed
             string url = $"http://{ipAddress}";
 
             // Open the URL in the default web browser
@@ -1069,6 +1068,191 @@ namespace MinerInfoApp
         {
 
         }
+
+        private async void setPoolButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Set pool Clicked");
+            // /cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIp}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string poolUrl = poolUrlTextBox.Text;
+                        string poolUser = poolUserTextBox.Text;
+                        string poolIp = minerListView.Items[i].Text;
+                        string poolPass = poolPasswordTextBox.Text;
+                        ScanningIPLabel.Text = poolIp + " Setting Pools";
+                        string poolIpSet = poolIp.Replace('.', 'x');
+                        poolUrl = WebUtility.UrlEncode(poolUrl);
+                        poolUser = WebUtility.UrlEncode(poolUser);
+                        poolPass = WebUtility.UrlEncode(poolPass);
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{poolIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22{poolPass}%22,%22currency%22:%22ETC%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set pool exception: " + ex);
+                }
+
+            }
+            ScanningIPLabel.Text = "Done Setting Pools";
+        }
+
+        private async void performanceButton_Click(object sender, EventArgs e)
+        {
+            // /cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:4,%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D
+            Console.WriteLine("Set performance Clicked");
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string performanceSelect = performanceDropdown.SelectedItem.ToString();
+                        string performanceMode = "4";
+                        if (performanceSelect == "Efficiency")
+                        {
+                            performanceMode = "1";
+                        }
+                        else if (performanceSelect == "Balanced")
+                        {
+                            performanceMode = "2";
+                        }
+                        else if (performanceSelect == "Factory")
+                        {
+                            performanceMode = "3";
+                        }
+                        else
+                        {
+                            performanceMode = "4";
+                        }
+                        ScanningIPLabel.Text = minerIp + " Setting Static";
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:{performanceMode},%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set performance exception: " + ex);
+                }
+
+            }
+            ScanningIPLabel.Text = "Done Setting Performance";
+        }
+
+        private async void setStaticIPButton_Click(object sender, EventArgs e)
+        {
+            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%2210.100.5.32%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22%22%7D
+            Console.WriteLine("Set password Clicked");
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string[] ipParts = minerIp.Split('.');
+                        int newIPStart = 10;
+                        int newIPTwo = int.Parse(ipParts[1]);
+                        int newIPThree = int.Parse(ipParts[2]);
+                        string newIPEnd = newIpTextBox.Text;
+                        string newIP = newIPStart.ToString() + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
+                        ScanningIPLabel.Text = minerIp + " Setting Static";
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
+                            minerListView.Items[i].Text = newIP;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set static exception: " + ex);
+                }
+
+            }
+            ScanningIPLabel.Text = "Done Setting static";
+        }
+
+        private async void setDynamicIPButton_Click(object sender, EventArgs e)
+        {
+            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D
+            Console.WriteLine("Set password Clicked");
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string newIp = newIpTextBox.Text;
+                        ScanningIPLabel.Text = minerIp + " Setting IP Static";
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set dynamic exception: " + ex);
+                }
+
+            }
+            ScanningIPLabel.Text = "Done Setting Dynamic";
+        }
+
+        private async void setPasswordButton_Click(object sender, EventArgs e)
+        {
+            // /cgi-bin/cgiNetService.cgi?send_change_password_param=%7B%22user%22:%22admin%22,%22current_admin_password%22:%22admin%22,%22new_password%22:%22admin%22,%22confirm_password%22:%22admin%22%7D
+            Console.WriteLine("Set password Clicked");
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string newPass = newPasswordTextBox.Text;
+                        ScanningIPLabel.Text = minerIp + " Setting Password";
+                        newPass = WebUtility.UrlEncode(newPass);
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_change_password_param=%7B%22user%22:%22admin%22,%22current_admin_password%22:%22admin%22,%22new_password%22:%22{newPass}%22,%22confirm_password%22:%22a{newPass}%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set password exception: " + ex);
+        }
+
+    }
+            ScanningIPLabel.Text = "Done Setting Passwords";
+        }
     }
 
 
@@ -1080,7 +1264,7 @@ namespace MinerInfoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            Application.Run(new MainForm());
+            Application.Run(new Main());
         }
     }
 
