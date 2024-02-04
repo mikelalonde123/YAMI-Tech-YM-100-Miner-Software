@@ -22,7 +22,7 @@ namespace MinerInfoApp
     public partial class Main : MaterialForm
     {
 
-        #pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable IDE1006 // Naming Styles
 
         //How long before searching next IP
         private const double timeoutTime = 0.1;
@@ -90,7 +90,7 @@ namespace MinerInfoApp
         private void minerListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             Console.WriteLine("Item Selection Changed");
-            switch (readyToRun) 
+            switch (readyToRun)
             {
                 case false:
 
@@ -126,11 +126,11 @@ namespace MinerInfoApp
                 case true:
                     readyToRun = true;
                     break;
-                default: 
-                    
+                default:
+
                     break;
             }
-            
+
         }
         //Class for Miner Info
         public class MinerInfo
@@ -162,8 +162,8 @@ namespace MinerInfoApp
             public String MacAddress { get; set; }
             public MinerInfo()
             {
-                
-        }
+
+            }
             public MinerInfo(string minerIPAddress, string hashRate, string uptime, string hashboardStatus, string temperature, string fanSpeed,
                     string accepted, string rejected, string dagProgress, string acceptedRate, string pool, string poolUser,
                     string selfCheckProgress, string hashboard1Status, string hashboard1HashRate, string hashboard1Temperature,
@@ -224,7 +224,7 @@ namespace MinerInfoApp
                 isEnglish = false;
                 translateLanguage();
             }
-            }
+        }
 
 
         private void translateLanguage()
@@ -366,7 +366,7 @@ namespace MinerInfoApp
                 {
                     MessageBox.Show("Please fill in all fields for the start and end IP address");
                 }
-                else 
+                else
                 {
                     MessageBox.Show("请填写开始与结束IP地址");
                 }
@@ -1065,7 +1065,7 @@ namespace MinerInfoApp
                     // Write the IP ranges to the selected file
                     File.WriteAllLines(filePath, ipRanges);
 
-                    
+
                     if (isEnglish)
                     {
                         MessageBox.Show("IP ranges have been successfully saved to the file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1077,7 +1077,7 @@ namespace MinerInfoApp
                 }
                 catch (IOException ex)
                 {
-                    
+
                     if (isEnglish)
                     {
                         MessageBox.Show("Error saving the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1132,8 +1132,8 @@ namespace MinerInfoApp
                     string driverWindowHandle = driver.CurrentWindowHandle;
                     if (driver != null)
                     {
-                    driver.SwitchTo().NewWindow(WindowType.Tab);
-                }
+                        driver.SwitchTo().NewWindow(WindowType.Tab);
+                    }
                     else
                     {
                         driver = new ChromeDriver(path + @"\drivers\");
@@ -1412,9 +1412,9 @@ namespace MinerInfoApp
                 catch (Exception ex)
                 {
                     Console.Write("set password exception: " + ex);
-        }
+                }
 
-    }
+            }
             ScanningIPLabel.Text = "Done Setting Passwords";
         }
 
@@ -1434,9 +1434,9 @@ namespace MinerInfoApp
         }
     }
 
-    }
+}
 
-    //Class to sort listview by column
+//Class to sort listview by column
 public class ListViewItemComparer : IComparer
 {
 
