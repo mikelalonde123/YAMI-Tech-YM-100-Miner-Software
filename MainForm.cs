@@ -13,13 +13,17 @@ using System.Reflection;
 using System.Globalization;
 using System.Threading;
 using System.Drawing;
-using System.Diagnostics;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
 
 namespace MinerInfoApp
 {
 
     public partial class Main : MaterialForm
     {
+
+        #pragma warning disable IDE1006 // Naming Styles
+
         //How long before searching next IP
         private const double timeoutTime = 0.1;
 
@@ -41,6 +45,11 @@ namespace MinerInfoApp
         //Variable to track miners found in a search
         private int minersFoundCount = 0;
 
+        //Tracking var for automatic listview checking
+        bool readyToRun = false;
+
+        //Initialize IWebDrivere
+        IWebDriver driver;
 
         //Declare and initialize controls
         public Main()
@@ -66,13 +75,67 @@ namespace MinerInfoApp
 
             this.DoubleBuffered(true);
 
+            minerListView.ItemSelectionChanged += minerListView_ItemSelectionChanged;
+
             LoadSavedIPRanges();
         }
 
+        protected override Point ScrollToControl(Control activeControl)
+        {
+            Console.WriteLine("Scroll to conreol activated");
+            Point pt = this.AutoScrollPosition;
+            return pt;
+        }
 
+        private void minerListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            Console.WriteLine("Item Selection Changed");
+            switch (readyToRun) 
+            {
+                case false:
+
+                    Task.Delay(1000000);
+                    foreach (ListViewItem ipItem in minerListView.Items)
+                    {
+                        switch (ipItem.Selected)
+                        {
+                            case true:
+                                ipItem.Checked = true;
+                                break;
+                            case false:
+                                ipItem.Checked = false;
+                                break;
+                            default:
+
+                                break;
+                        }
+                        //If the items checkbox is checked, it runs the GetIPRange function and adds that list to the others
+                        if (ipItem.Selected)
+                        {
+                            ipItem.Checked = true;
+
+                        }
+                        else if (ipItem.Selected == false)
+                        {
+                            ipItem.Checked = false;
+                        }
+
+                    }
+                    readyToRun = false;
+                    break;
+                case true:
+                    readyToRun = true;
+                    break;
+                default: 
+                    
+                    break;
+            }
+            
+        }
         //Class for Miner Info
         public class MinerInfo
         {
+            public string MinerIPAddress { get; set; }
             public string HashRate { get; set; }
             public string Uptime { get; set; }
             public string HashboardStatus { get; set; }
@@ -94,6 +157,45 @@ namespace MinerInfoApp
             public string Hashboard3Status { get; set; }
             public string Hashboard3HashRate { get; set; }
             public string Hashboard3Temperature { get; set; }
+            public string FirmwareVersion { get; set; }
+            public string Account { get; set; }
+            public String MacAddress { get; set; }
+            public MinerInfo()
+            {
+                
+        }
+            public MinerInfo(string minerIPAddress, string hashRate, string uptime, string hashboardStatus, string temperature, string fanSpeed,
+                    string accepted, string rejected, string dagProgress, string acceptedRate, string pool, string poolUser,
+                    string selfCheckProgress, string hashboard1Status, string hashboard1HashRate, string hashboard1Temperature,
+                    string hashboard2Status, string hashboard2HashRate, string hashboard2Temperature, string hashboard3Status,
+                    string hashboard3HashRate, string hashboard3Temperature, string firmwareVersion, string account, string macAddress)
+            {
+                MinerIPAddress = minerIPAddress;
+                HashRate = hashRate;
+                Uptime = uptime;
+                HashboardStatus = hashboardStatus;
+                Temperature = temperature;
+                FanSpeed = fanSpeed;
+                Accepted = accepted;
+                Rejected = rejected;
+                DagProgress = dagProgress;
+                AcceptedRate = acceptedRate;
+                Pool = pool;
+                PoolUser = poolUser;
+                SelfCheckProgress = selfCheckProgress;
+                Hashboard1Status = hashboard1Status;
+                Hashboard1HashRate = hashboard1HashRate;
+                Hashboard1Temperature = hashboard1Temperature;
+                Hashboard2Status = hashboard2Status;
+                Hashboard2HashRate = hashboard2HashRate;
+                Hashboard2Temperature = hashboard2Temperature;
+                Hashboard3Status = hashboard3Status;
+                Hashboard3HashRate = hashboard3HashRate;
+                Hashboard3Temperature = hashboard3Temperature;
+                FirmwareVersion = firmwareVersion;
+                Account = account;
+                MacAddress = macAddress;
+            }
         }
 
         //Only allow numbers to be entered in the IP address
@@ -125,7 +227,8 @@ namespace MinerInfoApp
             }
 
 
-        private void translateLanguage() {
+        private void translateLanguage()
+        {
             if (isEnglish)
             {
                 //translate all the items to english
@@ -244,7 +347,7 @@ namespace MinerInfoApp
             //Cancels other scans then waits 0.5 seconds
             scanRunning = 0;
             await Task.Delay(500);
-            //Sets the scanRunning variable to sow there is an active scan running
+            //Sets the scanRunning variable to show there is an active scan running
             scanRunning = 1;
             //Resets minerFound variable to 0
             minersFoundCount = 0;
@@ -255,7 +358,7 @@ namespace MinerInfoApp
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
             }
             if (string.IsNullOrWhiteSpace(startIPTextBoxA.Text) || string.IsNullOrWhiteSpace(startIPTextBoxB.Text) || string.IsNullOrWhiteSpace(startIPTextBoxC.Text) || string.IsNullOrWhiteSpace(startIPTextBoxD.Text) || string.IsNullOrWhiteSpace(endIPTextBoxA.Text) || string.IsNullOrWhiteSpace(endIPTextBoxB.Text) || string.IsNullOrWhiteSpace(endIPTextBoxC.Text) || string.IsNullOrWhiteSpace(endIPTextBoxD.Text))
             {
@@ -300,17 +403,20 @@ namespace MinerInfoApp
                     //Adds all the other data to the minerListView entry
                     ListViewItem item = new ListViewItem(ip);
                     item.SubItems.Add(minerInfo.HashRate);
-                    item.SubItems.Add(minerInfo.HashboardStatus);
-                    item.SubItems.Add(minerInfo.Uptime);
-                    item.SubItems.Add(minerInfo.FanSpeed);
-                    item.SubItems.Add(minerInfo.Temperature);
-                    item.SubItems.Add(minerInfo.DagProgress);
-                    item.SubItems.Add(minerInfo.Accepted);
-                    item.SubItems.Add(minerInfo.Rejected);
-                    item.SubItems.Add(minerInfo.AcceptedRate);
                     item.SubItems.Add(minerInfo.Pool);
                     item.SubItems.Add(minerInfo.PoolUser);
+                    item.SubItems.Add(minerInfo.Account);
+                    item.SubItems.Add(minerInfo.DagProgress);
                     item.SubItems.Add(minerInfo.SelfCheckProgress);
+                    item.SubItems.Add(minerInfo.HashboardStatus);
+                    item.SubItems.Add(minerInfo.AcceptedRate);
+                    item.SubItems.Add(minerInfo.Accepted);
+                    item.SubItems.Add(minerInfo.Rejected);
+                    item.SubItems.Add(minerInfo.MacAddress);
+                    item.SubItems.Add(minerInfo.Uptime);
+                    item.SubItems.Add(minerInfo.Temperature);
+                    item.SubItems.Add(minerInfo.FanSpeed);
+                    item.SubItems.Add(minerInfo.FirmwareVersion);
                     item.SubItems.Add(minerInfo.Hashboard1Status);
                     item.SubItems.Add(minerInfo.Hashboard1HashRate);
                     item.SubItems.Add(minerInfo.Hashboard1Temperature);
@@ -320,9 +426,8 @@ namespace MinerInfoApp
                     item.SubItems.Add(minerInfo.Hashboard3Status);
                     item.SubItems.Add(minerInfo.Hashboard3HashRate);
                     item.SubItems.Add(minerInfo.Hashboard3Temperature);
-                    //Adds the Entry to the listView
-                    minerListView.Items.Add(item);
 
+                    minerListView.Items.Add(item);
                 }
                 //if no response is recieved from the IP address, or the data recieved is unreadable
                 else
@@ -335,7 +440,8 @@ namespace MinerInfoApp
             {
                 ScanningIPLabel.Text = "Scanning Done";
             }
-            else {
+            else
+            {
                 ScanningIPLabel.Text = "扫描完成";
             }
         }
@@ -355,7 +461,7 @@ namespace MinerInfoApp
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             //Cycles through the items in the ip range list view
             foreach (ListViewItem ipItem in ipRangeListView.Items)
@@ -385,17 +491,20 @@ namespace MinerInfoApp
                     minerInfoDict[ip] = minerInfo;
                     ListViewItem item = new ListViewItem(ip);
                     item.SubItems.Add(minerInfo.HashRate);
-                    item.SubItems.Add(minerInfo.HashboardStatus);
-                    item.SubItems.Add(minerInfo.Uptime);
-                    item.SubItems.Add(minerInfo.FanSpeed);
-                    item.SubItems.Add(minerInfo.Temperature);
-                    item.SubItems.Add(minerInfo.DagProgress);
-                    item.SubItems.Add(minerInfo.Accepted);
-                    item.SubItems.Add(minerInfo.Rejected);
-                    item.SubItems.Add(minerInfo.AcceptedRate);
                     item.SubItems.Add(minerInfo.Pool);
                     item.SubItems.Add(minerInfo.PoolUser);
+                    item.SubItems.Add(minerInfo.Account);
+                    item.SubItems.Add(minerInfo.DagProgress);
                     item.SubItems.Add(minerInfo.SelfCheckProgress);
+                    item.SubItems.Add(minerInfo.HashboardStatus);
+                    item.SubItems.Add(minerInfo.AcceptedRate);
+                    item.SubItems.Add(minerInfo.Accepted);
+                    item.SubItems.Add(minerInfo.Rejected);
+                    item.SubItems.Add(minerInfo.MacAddress);
+                    item.SubItems.Add(minerInfo.Uptime);
+                    item.SubItems.Add(minerInfo.Temperature);
+                    item.SubItems.Add(minerInfo.FanSpeed);
+                    item.SubItems.Add(minerInfo.FirmwareVersion);
                     item.SubItems.Add(minerInfo.Hashboard1Status);
                     item.SubItems.Add(minerInfo.Hashboard1HashRate);
                     item.SubItems.Add(minerInfo.Hashboard1Temperature);
@@ -424,6 +533,7 @@ namespace MinerInfoApp
 
 
         //This is the function that gets the data of each miner
+        //returns a new class object of the MinerInfo class
         private async Task<MinerInfo> GetData(string minerIP)
         {
             if (isEnglish)
@@ -452,6 +562,11 @@ namespace MinerInfoApp
                         var minerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(response);
                         var selfResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_selfcheck_progress");
                         var selfMinerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(selfResponse);
+                        var poolResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_pools");
+                        var poolInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(poolResponse);
+                        var firmwareResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_overview");
+                        var firmwareInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(firmwareResponse);
+                        Console.WriteLine(firmwareInfo);
                         //Determine hashboard status
                         try
                         {
@@ -489,7 +604,7 @@ namespace MinerInfoApp
                             //Uses the parsed JSON to extract data and set it to the various attributes of the MinerInfo class
                             MinerInfo info = new MinerInfo
                             {
-
+                                MinerIPAddress = minerIP,
                                 HashRate = minerInfo.data.uptime.hash_rate.ToString(),
                                 Uptime = minerInfo.data.uptime.up_time.ToString(),
                                 HashboardStatus = ($"{hash1} , {hash2} , {hash3}"),
@@ -500,7 +615,7 @@ namespace MinerInfoApp
                                 Rejected = minerInfo.data.uptime.reject_num.ToString(),
                                 AcceptedRate = Math.Round((100 - (100 * Convert.ToDouble(minerInfo.data.uptime.reject_num) / Convert.ToDouble(minerInfo.data.uptime.accept_num))), 2).ToString(),
                                 Pool = minerInfo.data.pooldata[0].pool.ToString(),
-                                PoolUser = minerInfo.data.pooldata[0].user.ToString(),
+                                PoolUser = poolInfo.data.username,
                                 SelfCheckProgress = Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString(),
                                 Hashboard1Status = hash1a,
                                 Hashboard1HashRate = minerInfo.data.minerinfo[0].hash_rate,
@@ -511,6 +626,9 @@ namespace MinerInfoApp
                                 Hashboard3Status = hash3a,
                                 Hashboard3HashRate = minerInfo.data.minerinfo[2].hash_rate,
                                 Hashboard3Temperature = minerInfo.data.minerinfo[2].temperature,
+                                Account = minerInfo.data.pooldata[0].user.ToString(),
+                                FirmwareVersion = firmwareInfo.data.form1.platform_version,
+                                MacAddress = firmwareInfo.data.form1.mac_address
                             };
                             return info;
                         }
@@ -527,9 +645,9 @@ namespace MinerInfoApp
                     }
                 }
             }
-            catch (HttpRequestException ex)
+            catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
                 return null;
             }
         }
@@ -541,11 +659,9 @@ namespace MinerInfoApp
             //declaring new list
             List<string> ipList = new List<string>();
             //declaring IPAddress variables
-            IPAddress startIp;
-            IPAddress endIp;
 
             // Convert the start and end IP addresses to integers
-            if (System.Net.IPAddress.TryParse(startIPString, out startIp) && System.Net.IPAddress.TryParse(endIPString, out endIp))
+            if (System.Net.IPAddress.TryParse(startIPString, out IPAddress startIp) && System.Net.IPAddress.TryParse(endIPString, out IPAddress endIp))
             {
                 byte[] startIpBytes = startIp.GetAddressBytes();
                 byte[] endIpBytes = endIp.GetAddressBytes();
@@ -628,6 +744,7 @@ namespace MinerInfoApp
                             var rebootResponse = await rebootClient.GetStringAsync($"http://{minerListView.Items[i].Text}/cgi-bin/cgiNetService.cgi?send_reboot_miner=send_reboot_miner");
                             ScanningIPLabel.Text = minerListView.Items[i].Text + " Rebooted";
                             minerListView.Items.RemoveAt(i);
+                            minerInfoDict.Remove(minerListView.Items[i].Text);
                             i -= 1;
                         }
                     }
@@ -658,14 +775,14 @@ namespace MinerInfoApp
                             selfCheckClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
                             var selfCheckResponse = await selfCheckClient.GetStringAsync($"http://{minerListView.Items[i].Text}/cgi-bin/cgiNetService.cgi?send_selfcheck_instructions=send_selfcheck_instructions");
                             minerListView.Items.RemoveAt(i);
-                            ScanningIPLabel.Text = minerListView.Items[i].Text + " Started Check";
+                            ScanningIPLabel.Text = minerListView.Items[i].Text + " Started Self Check";
                             i -= 1;
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
                 }
 
             }
@@ -698,13 +815,6 @@ namespace MinerInfoApp
             newItem.SubItems.Add(rangeName);
             // Add the new item to the ListView
             ipRangeListView.Items.Add(newItem);
-
-            //Clear the text boxes
-            startIPTextBoxC.Clear();
-            startIPTextBoxD.Clear();
-            endIPTextBoxC.Clear();
-            endIPTextBoxD.Clear();
-            nameTextBox.Clear();
         }
 
 
@@ -813,6 +923,14 @@ namespace MinerInfoApp
         {
             // Save the current IP range to app.config
             Console.WriteLine("Exiting program");
+            try
+            {
+                driver?.Quit();
+            }
+            catch (Exception)
+            {
+
+            }
             SaveCurrentIPRange();
         }
 
@@ -972,9 +1090,19 @@ namespace MinerInfoApp
             }
         }
 
+        private void openInBrowserButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+                if (minerListView.Items[i].Checked)
+                {
+                    OpenInBrowser(minerListView.Items[i].Text);
+                }
+
+            }
+        }
         private void minerListView_DoubleClick(object sender, EventArgs e)
         {
-            
             if (minerListView.SelectedItems.Count > 0)
             {
                 string selectedIPAddress = minerListView.SelectedItems[0].Text;
@@ -982,14 +1110,53 @@ namespace MinerInfoApp
                 // Open the selected IP address in a browser
                 OpenInBrowser(selectedIPAddress);
             }
+            minerListView.SelectedItems[0].Checked = false;
         }
 
+        bool initializeDriver = true;
         private void OpenInBrowser(string ipAddress)
         {
-            string url = $"http://{ipAddress}";
-
             // Open the URL in the default web browser
-            Process.Start(url);
+            //Process.Start(url);
+            string url = $"http://{ipAddress}";
+            string path = Environment.CurrentDirectory;
+            if (initializeDriver == true)
+            {
+                initializeDriver = false;
+                driver = new ChromeDriver(path + @"\drivers\");
+            }
+            else if (initializeDriver == false)
+            {
+                try
+                {
+                    string driverWindowHandle = driver.CurrentWindowHandle;
+                    if (driver != null)
+                    {
+                    driver.SwitchTo().NewWindow(WindowType.Tab);
+                }
+                    else
+                    {
+                        driver = new ChromeDriver(path + @"\drivers\");
+                    }
+                }
+                catch (OpenQA.Selenium.NoSuchWindowException)
+                {
+                    driver.Quit();
+                    driver = new ChromeDriver(path + @"\drivers\");
+                }
+                catch (OpenQA.Selenium.WebDriverException)
+                {
+                    driver = new ChromeDriver(path + @"\drivers\");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
+
+            driver.Navigate().GoToUrl(url);
+            driver.Manage().Cookies.AddCookie(new OpenQA.Selenium.Cookie("Admin-Token", "admin-token"));
+            driver.Navigate().Refresh();
         }
 
         private bool isUpdatingEndTextBox = false;
@@ -1071,7 +1238,6 @@ namespace MinerInfoApp
 
         private async void setPoolButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Set pool Clicked");
             // /cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIp}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D
             for (int i = 0; i < minerListView.Items.Count; i++)
             {
@@ -1136,7 +1302,7 @@ namespace MinerInfoApp
                         {
                             performanceMode = "4";
                         }
-                        ScanningIPLabel.Text = minerIp + " Setting Static";
+                        ScanningIPLabel.Text = minerIp + " Setting Performance Mode";
                         using (HttpClient setPool = new HttpClient())
                         {
                             setPool.Timeout = TimeSpan.FromSeconds(1);
@@ -1151,13 +1317,12 @@ namespace MinerInfoApp
                 }
 
             }
-            ScanningIPLabel.Text = "Done Setting Performance";
+            ScanningIPLabel.Text = "Done Setting Performance Mode";
         }
 
         private async void setStaticIPButton_Click(object sender, EventArgs e)
         {
             // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%2210.100.5.32%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22%22%7D
-            Console.WriteLine("Set password Clicked");
             for (int i = 0; i < minerListView.Items.Count; i++)
             {
 
@@ -1172,7 +1337,7 @@ namespace MinerInfoApp
                         int newIPThree = int.Parse(ipParts[2]);
                         string newIPEnd = newIpTextBox.Text;
                         string newIP = newIPStart.ToString() + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
-                        ScanningIPLabel.Text = minerIp + " Setting Static";
+                        ScanningIPLabel.Text = minerIp + " Setting Static IP";
                         using (HttpClient setPool = new HttpClient())
                         {
                             setPool.Timeout = TimeSpan.FromSeconds(1);
@@ -1188,13 +1353,12 @@ namespace MinerInfoApp
                 }
 
             }
-            ScanningIPLabel.Text = "Done Setting static";
+            ScanningIPLabel.Text = "Done Setting Static IP";
         }
 
         private async void setDynamicIPButton_Click(object sender, EventArgs e)
         {
             // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D
-            Console.WriteLine("Set password Clicked");
             for (int i = 0; i < minerListView.Items.Count; i++)
             {
 
@@ -1204,7 +1368,7 @@ namespace MinerInfoApp
                     {
                         string minerIp = minerListView.Items[i].Text;
                         string newIp = newIpTextBox.Text;
-                        ScanningIPLabel.Text = minerIp + " Setting IP Static";
+                        ScanningIPLabel.Text = minerIp + " Setting Dynamic IP";
                         using (HttpClient setPool = new HttpClient())
                         {
                             setPool.Timeout = TimeSpan.FromSeconds(1);
@@ -1253,6 +1417,8 @@ namespace MinerInfoApp
     }
             ScanningIPLabel.Text = "Done Setting Passwords";
         }
+
+
     }
 
 
@@ -1260,7 +1426,7 @@ namespace MinerInfoApp
     static class Program
     {
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
@@ -1271,10 +1437,11 @@ namespace MinerInfoApp
     }
 
     //Class to sort listview by column
-    public class ListViewItemComparer : IComparer
+public class ListViewItemComparer : IComparer
 {
-    private int columnToSort;
-    private SortOrder order;
+
+    private readonly int columnToSort;
+    private readonly SortOrder order;
 
     public ListViewItemComparer()
     {
@@ -1325,30 +1492,33 @@ namespace MinerInfoApp
 
                 break;
             //Strings
-            case 2: //Hashboard Status
-            case 3: //Uptime
-            case 10: //Pool URL
-            case 11: //Pool Username
-            case 13: //Board 1 sataus
-            case 16: //Board 2 sataus
-            case 19: //Board 3 sataus
+            case 2: //Pool
+            case 3: //Pool User
+            case 4: //Account
+            case 7: //Hashboard status
+            case 11: //Mac Address
+            case 12: //UP Time
+            case 15: //Firmware
+            case 16: //Board 1 sataus
+            case 19: //Board 2 sataus
+            case 22: //Board 3 sataus
                 compareResult = string.Compare(itemX.SubItems[columnToSort].Text, itemY.SubItems[columnToSort].Text);
                 break;
             //Doubles
             case 1: //HashRate
-            case 4: //Fan Speed
-            case 5: //Temperature
-            case 6: //DAG rogress
-            case 7: //Accepted Shares
-            case 8: //Rejected Shares
-            case 9: //Acceptance Rate
-            case 12: // Self Check Progress
-            case 14: //Board 1 Hashrate
-            case 15: //Board 1 Temp
-            case 17: //Board 2 Hashrate
-            case 18: //Board 2 Temp
-            case 20: //Board 3 Hashrate
-            case 21: //Board 3 Temp
+            case 5: //DAG
+            case 6: //Self Check Progress
+            case 8: //Acceptance Rate
+            case 9: //Accepted Shares
+            case 10: //Rejected Shares
+            case 13: //Temperature
+            case 14: //Fan speed
+            case 17: //Board 1 Hashrate
+            case 18: //Board 1 Temp
+            case 20: //Board 2 Hashrate
+            case 21: //Board 2 Temp
+            case 23: //Board 3 Hashrate
+            case 24: //Board 3 Temp
                 double hashRateX = double.Parse(itemX.SubItems[columnToSort].Text);
                 double hashRateY = double.Parse(itemY.SubItems[columnToSort].Text);
                 compareResult = hashRateX.CompareTo(hashRateY);
@@ -1367,7 +1537,7 @@ namespace MinerInfoApp
         return compareResult;
     }
 }
-//Add a class to change the doubleBuffered property of the list view to true, reducing flickering
+//Add a class to change the doubleBuffered property to true, reducing flickering
 public static class ControlExtensions
 {
     public static void DoubleBuffered(this Control control, bool enable)

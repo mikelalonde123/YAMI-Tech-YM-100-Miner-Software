@@ -1,6 +1,6 @@
 ﻿namespace MinerInfoApp
 {
-    partial class MainForm
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.rebootButton = new MaterialSkin.Controls.MaterialButton();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ipRangeListView = new System.Windows.Forms.ListView();
             this.StartIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,8 +64,6 @@
             this.startIPTextBoxA = new MaterialSkin.Controls.MaterialTextBox();
             this.startIPLabel = new MaterialSkin.Controls.MaterialLabel();
             this.stopScanButton = new MaterialSkin.Controls.MaterialButton();
-            this.translate = new MaterialSkin.Controls.MaterialButton();
-            this.ScanningIPLabel = new MaterialSkin.Controls.MaterialLabel();
             this.nameLabel = new MaterialSkin.Controls.MaterialLabel();
             this.addIPButton = new MaterialSkin.Controls.MaterialButton();
             this.searchButton = new MaterialSkin.Controls.MaterialButton();
@@ -72,21 +74,48 @@
             this.endIPTextBoxC = new MaterialSkin.Controls.MaterialTextBox();
             this.endIPTextBoxD = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.minerListView = new System.Windows.Forms.ListView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.performanceDropdown = new MaterialSkin.Controls.MaterialComboBox();
+            this.performanceButton = new MaterialSkin.Controls.MaterialButton();
+            this.selfCheckButton = new MaterialSkin.Controls.MaterialButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.poolPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.setPoolButton = new MaterialSkin.Controls.MaterialButton();
+            this.poolUrlTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.poolUserTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.setStaticIPButton = new MaterialSkin.Controls.MaterialButton();
+            this.newIpTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.setDynamicIPButton = new MaterialSkin.Controls.MaterialButton();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.newPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.setPasswordButton = new MaterialSkin.Controls.MaterialButton();
+            this.minerFoundCountLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.translate = new MaterialSkin.Controls.MaterialButton();
+            this.ScanningIPLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.loadIPRangesDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveIPRangesDialog = new System.Windows.Forms.SaveFileDialog();
             this.IPAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashrate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.HashboardStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Uptime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.FanSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DAG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Accepted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Rejected = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.AcceptanceRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pool = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PoolUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Account = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DAG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SelfCheckProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HashboardStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AcceptanceRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Accepted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Rejected = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MacAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Uptime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FanSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Firmware = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard1Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard1Hashrate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard1Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -96,14 +125,17 @@
             this.Hashboard3Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard3Hashrate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard3Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.selfCheckButton = new MaterialSkin.Controls.MaterialButton();
-            this.minerFoundCountLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.loadIPRangesDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveIPRangesDialog = new System.Windows.Forms.SaveFileDialog();
+            this.minerListView = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1.SuspendLayout();
+            this.materialTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // rebootButton
@@ -158,10 +190,49 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.materialTabSelector1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.minerFoundCountLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.materialTabControl1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.minerListView, 0, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector1.Depth = 0;
+            resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            // 
+            // materialTabControl1
+            // 
+            resources.ApplyResources(this.materialTabControl1, "materialTabControl1");
+            this.materialTabControl1.Controls.Add(this.tabPage1);
+            this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Controls.Add(this.tabPage3);
+            this.materialTabControl1.Controls.Add(this.tabPage4);
+            this.materialTabControl1.Controls.Add(this.tabPage5);
+            this.materialTabControl1.Depth = 0;
+            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl1.Multiline = true;
+            this.materialTabControl1.Name = "materialTabControl1";
+            this.materialTabControl1.SelectedIndex = 0;
+            this.materialTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tableLayoutPanel6);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             // 
             // tableLayoutPanel3
             // 
@@ -280,8 +351,6 @@
             this.tableLayoutPanel2.Controls.Add(this.startIPTextBoxA, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.startIPLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.stopScanButton, 19, 1);
-            this.tableLayoutPanel2.Controls.Add(this.translate, 17, 0);
-            this.tableLayoutPanel2.Controls.Add(this.ScanningIPLabel, 18, 0);
             this.tableLayoutPanel2.Controls.Add(this.nameLabel, 16, 0);
             this.tableLayoutPanel2.Controls.Add(this.addIPButton, 18, 1);
             this.tableLayoutPanel2.Controls.Add(this.searchButton, 17, 1);
@@ -415,6 +484,7 @@
             resources.ApplyResources(this.startIPLabel, "startIPLabel");
             this.tableLayoutPanel2.SetColumnSpan(this.startIPLabel, 7);
             this.startIPLabel.Depth = 0;
+            this.startIPLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.startIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.startIPLabel.Name = "startIPLabel";
             // 
@@ -432,30 +502,6 @@
             this.stopScanButton.UseAccentColor = false;
             this.stopScanButton.UseVisualStyleBackColor = true;
             this.stopScanButton.Click += new System.EventHandler(this.stopScanButton_Click);
-            // 
-            // translate
-            // 
-            resources.ApplyResources(this.translate, "translate");
-            this.translate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.translate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.translate.Depth = 0;
-            this.translate.HighEmphasis = true;
-            this.translate.Icon = null;
-            this.translate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.translate.Name = "translate";
-            this.translate.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.translate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.translate.UseAccentColor = false;
-            this.translate.UseVisualStyleBackColor = true;
-            this.translate.Click += new System.EventHandler(this.translate_Click);
-            // 
-            // ScanningIPLabel
-            // 
-            resources.ApplyResources(this.ScanningIPLabel, "ScanningIPLabel");
-            this.tableLayoutPanel2.SetColumnSpan(this.ScanningIPLabel, 2);
-            this.ScanningIPLabel.Depth = 0;
-            this.ScanningIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ScanningIPLabel.Name = "ScanningIPLabel";
             // 
             // nameLabel
             // 
@@ -574,49 +620,286 @@
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             // 
-            // tableLayoutPanel4
+            // tabPage2
             // 
-            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.minerListView, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.rebootButton, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.selfCheckButton, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.minerFoundCountLabel, 2, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tabPage2.Controls.Add(this.performanceDropdown);
+            this.tabPage2.Controls.Add(this.performanceButton);
+            this.tabPage2.Controls.Add(this.selfCheckButton);
+            this.tabPage2.Controls.Add(this.rebootButton);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // minerListView
+            // performanceDropdown
             // 
-            this.minerListView.CheckBoxes = true;
-            this.minerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.IPAddress,
-            this.Hashrate,
-            this.HashboardStatus,
-            this.Uptime,
-            this.FanSpeed,
-            this.Temperature,
-            this.DAG,
-            this.Accepted,
-            this.Rejected,
-            this.AcceptanceRate,
-            this.Pool,
-            this.PoolUser,
-            this.SelfCheckProgress,
-            this.Hashboard1Status,
-            this.Hashboard1Hashrate,
-            this.Hashboard1Temperature,
-            this.Hashboard2Status,
-            this.Hashboard2Hashrate,
-            this.Hashboard2Temperature,
-            this.Hashboard3Status,
-            this.Hashboard3Hashrate,
-            this.Hashboard3Temperature});
-            this.tableLayoutPanel4.SetColumnSpan(this.minerListView, 3);
-            resources.ApplyResources(this.minerListView, "minerListView");
-            this.minerListView.HideSelection = false;
-            this.minerListView.Name = "minerListView";
-            this.minerListView.TabStop = false;
-            this.minerListView.UseCompatibleStateImageBehavior = false;
-            this.minerListView.View = System.Windows.Forms.View.Details;
-            this.minerListView.DoubleClick += new System.EventHandler(this.minerListView_DoubleClick);
+            this.performanceDropdown.AutoResize = false;
+            this.performanceDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.performanceDropdown.Depth = 0;
+            this.performanceDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.performanceDropdown.DropDownHeight = 174;
+            this.performanceDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.performanceDropdown.DropDownWidth = 121;
+            resources.ApplyResources(this.performanceDropdown, "performanceDropdown");
+            this.performanceDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.performanceDropdown.FormattingEnabled = true;
+            this.performanceDropdown.Items.AddRange(new object[] {
+            resources.GetString("performanceDropdown.Items"),
+            resources.GetString("performanceDropdown.Items1"),
+            resources.GetString("performanceDropdown.Items2"),
+            resources.GetString("performanceDropdown.Items3")});
+            this.performanceDropdown.MouseState = MaterialSkin.MouseState.OUT;
+            this.performanceDropdown.Name = "performanceDropdown";
+            this.performanceDropdown.StartIndex = 0;
+            // 
+            // performanceButton
+            // 
+            resources.ApplyResources(this.performanceButton, "performanceButton");
+            this.performanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.performanceButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.performanceButton.Depth = 0;
+            this.performanceButton.HighEmphasis = true;
+            this.performanceButton.Icon = null;
+            this.performanceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.performanceButton.Name = "performanceButton";
+            this.performanceButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.performanceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.performanceButton.UseAccentColor = false;
+            this.performanceButton.UseVisualStyleBackColor = true;
+            this.performanceButton.Click += new System.EventHandler(this.performanceButton_Click);
+            // 
+            // selfCheckButton
+            // 
+            resources.ApplyResources(this.selfCheckButton, "selfCheckButton");
+            this.selfCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selfCheckButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.selfCheckButton.Depth = 0;
+            this.selfCheckButton.HighEmphasis = true;
+            this.selfCheckButton.Icon = null;
+            this.selfCheckButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.selfCheckButton.Name = "selfCheckButton";
+            this.selfCheckButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.selfCheckButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.selfCheckButton.UseAccentColor = false;
+            this.selfCheckButton.UseVisualStyleBackColor = true;
+            this.selfCheckButton.Click += new System.EventHandler(this.selfCheckButton_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.poolPasswordTextBox);
+            this.tabPage3.Controls.Add(this.materialLabel3);
+            this.tabPage3.Controls.Add(this.materialLabel2);
+            this.tabPage3.Controls.Add(this.materialLabel1);
+            this.tabPage3.Controls.Add(this.setPoolButton);
+            this.tabPage3.Controls.Add(this.poolUrlTextBox);
+            this.tabPage3.Controls.Add(this.poolUserTextBox);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // poolPasswordTextBox
+            // 
+            this.poolPasswordTextBox.AnimateReadOnly = false;
+            this.poolPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.poolPasswordTextBox.Depth = 0;
+            resources.ApplyResources(this.poolPasswordTextBox, "poolPasswordTextBox");
+            this.poolPasswordTextBox.LeadingIcon = null;
+            this.poolPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolPasswordTextBox.Name = "poolPasswordTextBox";
+            this.poolPasswordTextBox.TrailingIcon = null;
+            // 
+            // materialLabel3
+            // 
+            resources.ApplyResources(this.materialLabel3, "materialLabel3");
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            // 
+            // materialLabel2
+            // 
+            resources.ApplyResources(this.materialLabel2, "materialLabel2");
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            // 
+            // materialLabel1
+            // 
+            resources.ApplyResources(this.materialLabel1, "materialLabel1");
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            // 
+            // setPoolButton
+            // 
+            resources.ApplyResources(this.setPoolButton, "setPoolButton");
+            this.setPoolButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.setPoolButton.Depth = 0;
+            this.setPoolButton.HighEmphasis = true;
+            this.setPoolButton.Icon = null;
+            this.setPoolButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.setPoolButton.Name = "setPoolButton";
+            this.setPoolButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.setPoolButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.setPoolButton.UseAccentColor = false;
+            this.setPoolButton.UseVisualStyleBackColor = true;
+            this.setPoolButton.Click += new System.EventHandler(this.setPoolButton_Click);
+            // 
+            // poolUrlTextBox
+            // 
+            this.poolUrlTextBox.AnimateReadOnly = false;
+            this.poolUrlTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.poolUrlTextBox.Depth = 0;
+            resources.ApplyResources(this.poolUrlTextBox, "poolUrlTextBox");
+            this.poolUrlTextBox.LeadingIcon = null;
+            this.poolUrlTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolUrlTextBox.Name = "poolUrlTextBox";
+            this.poolUrlTextBox.TrailingIcon = null;
+            // 
+            // poolUserTextBox
+            // 
+            this.poolUserTextBox.AnimateReadOnly = false;
+            this.poolUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.poolUserTextBox.Depth = 0;
+            resources.ApplyResources(this.poolUserTextBox, "poolUserTextBox");
+            this.poolUserTextBox.LeadingIcon = null;
+            this.poolUserTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolUserTextBox.Name = "poolUserTextBox";
+            this.poolUserTextBox.TrailingIcon = null;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.setStaticIPButton);
+            this.tabPage4.Controls.Add(this.newIpTextBox);
+            this.tabPage4.Controls.Add(this.materialLabel14);
+            this.tabPage4.Controls.Add(this.setDynamicIPButton);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // setStaticIPButton
+            // 
+            resources.ApplyResources(this.setStaticIPButton, "setStaticIPButton");
+            this.setStaticIPButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.setStaticIPButton.Depth = 0;
+            this.setStaticIPButton.HighEmphasis = true;
+            this.setStaticIPButton.Icon = null;
+            this.setStaticIPButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.setStaticIPButton.Name = "setStaticIPButton";
+            this.setStaticIPButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.setStaticIPButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.setStaticIPButton.UseAccentColor = false;
+            this.setStaticIPButton.UseVisualStyleBackColor = true;
+            this.setStaticIPButton.Click += new System.EventHandler(this.setStaticIPButton_Click);
+            // 
+            // newIpTextBox
+            // 
+            this.newIpTextBox.AnimateReadOnly = false;
+            this.newIpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newIpTextBox.Depth = 0;
+            resources.ApplyResources(this.newIpTextBox, "newIpTextBox");
+            this.newIpTextBox.LeadingIcon = null;
+            this.newIpTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.newIpTextBox.Name = "newIpTextBox";
+            this.newIpTextBox.TrailingIcon = null;
+            // 
+            // materialLabel14
+            // 
+            resources.ApplyResources(this.materialLabel14, "materialLabel14");
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            // 
+            // setDynamicIPButton
+            // 
+            resources.ApplyResources(this.setDynamicIPButton, "setDynamicIPButton");
+            this.setDynamicIPButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.setDynamicIPButton.Depth = 0;
+            this.setDynamicIPButton.HighEmphasis = true;
+            this.setDynamicIPButton.Icon = null;
+            this.setDynamicIPButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.setDynamicIPButton.Name = "setDynamicIPButton";
+            this.setDynamicIPButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.setDynamicIPButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.setDynamicIPButton.UseAccentColor = false;
+            this.setDynamicIPButton.UseVisualStyleBackColor = true;
+            this.setDynamicIPButton.Click += new System.EventHandler(this.setDynamicIPButton_Click);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.newPasswordTextBox);
+            this.tabPage5.Controls.Add(this.materialLabel15);
+            this.tabPage5.Controls.Add(this.setPasswordButton);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.AnimateReadOnly = false;
+            this.newPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newPasswordTextBox.Depth = 0;
+            resources.ApplyResources(this.newPasswordTextBox, "newPasswordTextBox");
+            this.newPasswordTextBox.LeadingIcon = null;
+            this.newPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.TrailingIcon = null;
+            // 
+            // materialLabel15
+            // 
+            resources.ApplyResources(this.materialLabel15, "materialLabel15");
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            // 
+            // setPasswordButton
+            // 
+            resources.ApplyResources(this.setPasswordButton, "setPasswordButton");
+            this.setPasswordButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.setPasswordButton.Depth = 0;
+            this.setPasswordButton.HighEmphasis = true;
+            this.setPasswordButton.Icon = null;
+            this.setPasswordButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.setPasswordButton.Name = "setPasswordButton";
+            this.setPasswordButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.setPasswordButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.setPasswordButton.UseAccentColor = false;
+            this.setPasswordButton.UseVisualStyleBackColor = true;
+            this.setPasswordButton.Click += new System.EventHandler(this.setPasswordButton_Click);
+            // 
+            // minerFoundCountLabel
+            // 
+            resources.ApplyResources(this.minerFoundCountLabel, "minerFoundCountLabel");
+            this.minerFoundCountLabel.Depth = 0;
+            this.minerFoundCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.minerFoundCountLabel.Name = "minerFoundCountLabel";
+            // 
+            // translate
+            // 
+            resources.ApplyResources(this.translate, "translate");
+            this.translate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.translate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.translate.Depth = 0;
+            this.translate.HighEmphasis = true;
+            this.translate.Icon = null;
+            this.translate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.translate.Name = "translate";
+            this.translate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.translate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.translate.UseAccentColor = false;
+            this.translate.UseVisualStyleBackColor = true;
+            this.translate.Click += new System.EventHandler(this.translate_Click);
+            // 
+            // ScanningIPLabel
+            // 
+            this.ScanningIPLabel.BackColor = System.Drawing.Color.Green;
+            this.ScanningIPLabel.Depth = 0;
+            resources.ApplyResources(this.ScanningIPLabel, "ScanningIPLabel");
+            this.ScanningIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ScanningIPLabel.Name = "ScanningIPLabel";
+            // 
+            // loadIPRangesDialog
+            // 
+            this.loadIPRangesDialog.FileName = "openFileDialog1";
+            resources.ApplyResources(this.loadIPRangesDialog, "loadIPRangesDialog");
             // 
             // IPAddress
             // 
@@ -626,25 +909,33 @@
             // 
             resources.ApplyResources(this.Hashrate, "Hashrate");
             // 
-            // HashboardStatus
+            // Pool
             // 
-            resources.ApplyResources(this.HashboardStatus, "HashboardStatus");
+            resources.ApplyResources(this.Pool, "Pool");
             // 
-            // Uptime
+            // PoolUser
             // 
-            resources.ApplyResources(this.Uptime, "Uptime");
+            resources.ApplyResources(this.PoolUser, "PoolUser");
             // 
-            // FanSpeed
+            // Account
             // 
-            resources.ApplyResources(this.FanSpeed, "FanSpeed");
-            // 
-            // Temperature
-            // 
-            resources.ApplyResources(this.Temperature, "Temperature");
+            resources.ApplyResources(this.Account, "Account");
             // 
             // DAG
             // 
             resources.ApplyResources(this.DAG, "DAG");
+            // 
+            // SelfCheckProgress
+            // 
+            resources.ApplyResources(this.SelfCheckProgress, "SelfCheckProgress");
+            // 
+            // HashboardStatus
+            // 
+            resources.ApplyResources(this.HashboardStatus, "HashboardStatus");
+            // 
+            // AcceptanceRate
+            // 
+            resources.ApplyResources(this.AcceptanceRate, "AcceptanceRate");
             // 
             // Accepted
             // 
@@ -654,21 +945,25 @@
             // 
             resources.ApplyResources(this.Rejected, "Rejected");
             // 
-            // AcceptanceRate
+            // MacAddress
             // 
-            resources.ApplyResources(this.AcceptanceRate, "AcceptanceRate");
+            resources.ApplyResources(this.MacAddress, "MacAddress");
             // 
-            // Pool
+            // Uptime
             // 
-            resources.ApplyResources(this.Pool, "Pool");
+            resources.ApplyResources(this.Uptime, "Uptime");
             // 
-            // PoolUser
+            // Temperature
             // 
-            resources.ApplyResources(this.PoolUser, "PoolUser");
+            resources.ApplyResources(this.Temperature, "Temperature");
             // 
-            // SelfCheckProgress
+            // FanSpeed
             // 
-            resources.ApplyResources(this.SelfCheckProgress, "SelfCheckProgress");
+            resources.ApplyResources(this.FanSpeed, "FanSpeed");
+            // 
+            // Firmware
+            // 
+            resources.ApplyResources(this.Firmware, "Firmware");
             // 
             // Hashboard1Status
             // 
@@ -706,55 +1001,74 @@
             // 
             resources.ApplyResources(this.Hashboard3Temperature, "Hashboard3Temperature");
             // 
-            // selfCheckButton
+            // minerListView
             // 
-            resources.ApplyResources(this.selfCheckButton, "selfCheckButton");
-            this.selfCheckButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selfCheckButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.selfCheckButton.Depth = 0;
-            this.selfCheckButton.HighEmphasis = true;
-            this.selfCheckButton.Icon = null;
-            this.selfCheckButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.selfCheckButton.Name = "selfCheckButton";
-            this.selfCheckButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.selfCheckButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.selfCheckButton.UseAccentColor = false;
-            this.selfCheckButton.UseVisualStyleBackColor = true;
-            this.selfCheckButton.Click += new System.EventHandler(this.selfCheckButton_Click);
+            this.minerListView.CheckBoxes = true;
+            this.minerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IPAddress,
+            this.Hashrate,
+            this.Pool,
+            this.PoolUser,
+            this.Account,
+            this.DAG,
+            this.SelfCheckProgress,
+            this.HashboardStatus,
+            this.AcceptanceRate,
+            this.Accepted,
+            this.Rejected,
+            this.MacAddress,
+            this.Uptime,
+            this.Temperature,
+            this.FanSpeed,
+            this.Firmware,
+            this.Hashboard1Status,
+            this.Hashboard1Hashrate,
+            this.Hashboard1Temperature,
+            this.Hashboard2Status,
+            this.Hashboard2Hashrate,
+            this.Hashboard2Temperature,
+            this.Hashboard3Status,
+            this.Hashboard3Hashrate,
+            this.Hashboard3Temperature});
+            resources.ApplyResources(this.minerListView, "minerListView");
+            this.minerListView.FullRowSelect = true;
+            this.minerListView.HideSelection = false;
+            this.minerListView.Name = "minerListView";
+            this.minerListView.TabStop = false;
+            this.minerListView.UseCompatibleStateImageBehavior = false;
+            this.minerListView.View = System.Windows.Forms.View.Details;
+            this.minerListView.DoubleClick += new System.EventHandler(this.minerListView_DoubleClick);
             // 
-            // minerFoundCountLabel
-            // 
-            resources.ApplyResources(this.minerFoundCountLabel, "minerFoundCountLabel");
-            this.minerFoundCountLabel.Depth = 0;
-            this.minerFoundCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.minerFoundCountLabel.Name = "minerFoundCountLabel";
-            // 
-            // loadIPRangesDialog
-            // 
-            this.loadIPRangesDialog.FileName = "openFileDialog1";
-            resources.ApplyResources(this.loadIPRangesDialog, "loadIPRangesDialog");
-            // 
-            // saveIPRangesDialog
-            // 
-            this.saveIPRangesDialog.FileName = "Yami_IP_Ranges";
-            resources.ApplyResources(this.saveIPRangesDialog, "saveIPRangesDialog");
-            // 
-            // MainForm
+            // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "MainForm";
+            this.Controls.Add(this.translate);
+            this.Controls.Add(this.ScanningIPLabel);
+            this.Name = "Main";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.materialTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -765,43 +1079,18 @@
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListView minerListView;
-        private System.Windows.Forms.ColumnHeader IPAddress;
-        private System.Windows.Forms.ColumnHeader Hashrate;
-        private System.Windows.Forms.ColumnHeader HashboardStatus;
-        private System.Windows.Forms.ColumnHeader Uptime;
-        private System.Windows.Forms.ColumnHeader FanSpeed;
-        private System.Windows.Forms.ColumnHeader Temperature;
-        private System.Windows.Forms.ColumnHeader DAG;
-        private System.Windows.Forms.ColumnHeader Accepted;
-        private System.Windows.Forms.ColumnHeader Rejected;
-        private System.Windows.Forms.ColumnHeader AcceptanceRate;
-        private System.Windows.Forms.ColumnHeader Pool;
         private System.Windows.Forms.ListView ipRangeListView;
         private System.Windows.Forms.ColumnHeader StartIP;
         private System.Windows.Forms.ColumnHeader EndIP;
-        private System.Windows.Forms.ColumnHeader PoolUser;
         private MaterialSkin.Controls.MaterialButton selfCheckButton;
         private MaterialSkin.Controls.MaterialButton scanSelectedButton;
         private MaterialSkin.Controls.MaterialButton deleteIPRanges;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private MaterialSkin.Controls.MaterialLabel minerFoundCountLabel;
         private System.Windows.Forms.ColumnHeader groupName;
         private MaterialSkin.Controls.MaterialButton loadIPRangesButton;
         private System.Windows.Forms.OpenFileDialog loadIPRangesDialog;
         private MaterialSkin.Controls.MaterialButton saveRangesButton;
         private System.Windows.Forms.SaveFileDialog saveIPRangesDialog;
-        private System.Windows.Forms.ColumnHeader SelfCheckProgress;
-        private System.Windows.Forms.ColumnHeader Hashboard1Status;
-        private System.Windows.Forms.ColumnHeader Hashboard1Hashrate;
-        private System.Windows.Forms.ColumnHeader Hashboard1Temperature;
-        private System.Windows.Forms.ColumnHeader Hashboard2Status;
-        private System.Windows.Forms.ColumnHeader Hashboard2Hashrate;
-        private System.Windows.Forms.ColumnHeader Hashboard2Temperature;
-        private System.Windows.Forms.ColumnHeader Hashboard3Status;
-        private System.Windows.Forms.ColumnHeader Hashboard3Hashrate;
-        private System.Windows.Forms.ColumnHeader Hashboard3Temperature;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -830,6 +1119,57 @@
         private MaterialSkin.Controls.MaterialTextBox endIPTextBoxC;
         private MaterialSkin.Controls.MaterialTextBox endIPTextBoxD;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private MaterialSkin.Controls.MaterialButton setPoolButton;
+        private MaterialSkin.Controls.MaterialTextBox poolUrlTextBox;
+        private MaterialSkin.Controls.MaterialTextBox poolUserTextBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel minerFoundCountLabel;
+        private MaterialSkin.Controls.MaterialTextBox poolPasswordTextBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialButton performanceButton;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private MaterialSkin.Controls.MaterialComboBox performanceDropdown;
+        private MaterialSkin.Controls.MaterialButton setStaticIPButton;
+        private MaterialSkin.Controls.MaterialTextBox newIpTextBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel14;
+        private MaterialSkin.Controls.MaterialButton setDynamicIPButton;
+        private MaterialSkin.Controls.MaterialTextBox newPasswordTextBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel15;
+        private MaterialSkin.Controls.MaterialButton setPasswordButton;
+        private System.Windows.Forms.ListView minerListView;
+        private System.Windows.Forms.ColumnHeader IPAddress;
+        private System.Windows.Forms.ColumnHeader Hashrate;
+        private System.Windows.Forms.ColumnHeader Pool;
+        private System.Windows.Forms.ColumnHeader PoolUser;
+        private System.Windows.Forms.ColumnHeader Account;
+        private System.Windows.Forms.ColumnHeader DAG;
+        private System.Windows.Forms.ColumnHeader SelfCheckProgress;
+        private System.Windows.Forms.ColumnHeader HashboardStatus;
+        private System.Windows.Forms.ColumnHeader AcceptanceRate;
+        private System.Windows.Forms.ColumnHeader Accepted;
+        private System.Windows.Forms.ColumnHeader Rejected;
+        private System.Windows.Forms.ColumnHeader MacAddress;
+        private System.Windows.Forms.ColumnHeader Uptime;
+        private System.Windows.Forms.ColumnHeader Temperature;
+        private System.Windows.Forms.ColumnHeader FanSpeed;
+        private System.Windows.Forms.ColumnHeader Firmware;
+        private System.Windows.Forms.ColumnHeader Hashboard1Status;
+        private System.Windows.Forms.ColumnHeader Hashboard1Hashrate;
+        private System.Windows.Forms.ColumnHeader Hashboard1Temperature;
+        private System.Windows.Forms.ColumnHeader Hashboard2Status;
+        private System.Windows.Forms.ColumnHeader Hashboard2Hashrate;
+        private System.Windows.Forms.ColumnHeader Hashboard2Temperature;
+        private System.Windows.Forms.ColumnHeader Hashboard3Status;
+        private System.Windows.Forms.ColumnHeader Hashboard3Hashrate;
+        private System.Windows.Forms.ColumnHeader Hashboard3Temperature;
     }
 }
 
