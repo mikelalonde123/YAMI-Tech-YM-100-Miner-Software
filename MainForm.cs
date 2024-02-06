@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using System.Net;
+using System.Net.Sockets;
 using System.Configuration;
 using System.Collections;
 using MaterialSkin;
@@ -15,6 +16,8 @@ using System.Threading;
 using System.Drawing;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
+using System.Text;
+
 
 namespace MinerInfoApp
 {
@@ -22,6 +25,7 @@ namespace MinerInfoApp
     public partial class Main : MaterialForm
     {
 
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 #pragma warning disable IDE1006 // Naming Styles
 
         //How long before searching next IP
@@ -50,6 +54,9 @@ namespace MinerInfoApp
 
         //Initialize IWebDrivere
         IWebDriver driver;
+
+        //UdpClient for listening for YAMI IP Report
+        UdpClient udpListener;
 
         //Declare and initialize controls
         public Main()
@@ -566,7 +573,6 @@ namespace MinerInfoApp
                         var poolInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(poolResponse);
                         var firmwareResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_overview");
                         var firmwareInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(firmwareResponse);
-                        Console.WriteLine(firmwareInfo);
                         //Determine hashboard status
                         try
                         {
@@ -1338,12 +1344,23 @@ namespace MinerInfoApp
                         string newIPEnd = newIpTextBox.Text;
                         string newIP = newIPStart.ToString() + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
                         ScanningIPLabel.Text = minerIp + " Setting Static IP";
+                        using (HttpClient setStaticIP = new HttpClient())
+                        {
+                            setStaticIP.Timeout = TimeSpan.FromSeconds(1);
+                            setStaticIP.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setStaticIP.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
+                            minerListView.Items[i].Text = newIP;
+                        }
+                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
+                        string poolUser = minerListView.Items[i].SubItems[4].Text;
+                        string poolIpSet = newIP.Replace('.', 'x');
+                        poolUrl = WebUtility.UrlEncode(poolUrl);
+                        poolUser = WebUtility.UrlEncode(poolUser);
                         using (HttpClient setPool = new HttpClient())
                         {
                             setPool.Timeout = TimeSpan.FromSeconds(1);
                             setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
-                            minerListView.Items[i].Text = newIP;
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
                         }
                     }
                 }
@@ -1374,6 +1391,17 @@ namespace MinerInfoApp
                             setPool.Timeout = TimeSpan.FromSeconds(1);
                             setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
                             var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D");
+                        }
+                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
+                        string poolUser = minerListView.Items[i].SubItems[4].Text;
+                        string poolIpSet = newIp.Replace('.', 'x');
+                        poolUrl = WebUtility.UrlEncode(poolUrl);
+                        poolUser = WebUtility.UrlEncode(poolUser);
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
                         }
                     }
                 }
@@ -1417,8 +1445,96 @@ namespace MinerInfoApp
             }
             ScanningIPLabel.Text = "Done Setting Passwords";
         }
+        bool shouldListen = true;
+        bool UDPListenerAlive = false;
+        // Define a method for receiving data asynchronously
+        async Task ReceiveDataAsync()
+        {
+            
+            try
+            {
+                if (UDPListenerAlive == false)
+                {
+                    udpListener = new UdpClient(6687);
+                    UDPListenerAlive = true;
+                }
+                while (shouldListen)
+                {
+                    Console.WriteLine("Listening");
+                    UdpReceiveResult result = await udpListener.ReceiveAsync();
+                    string receivedData = Encoding.ASCII.GetString(result.Buffer);
 
+                    // Extract the IP address from the remote endpoint
+                    IPAddress ip = result.RemoteEndPoint.Address;
 
+                    Console.WriteLine("Received data from " + ip + ": " + receivedData);
+                    MinerInfo minerInfo = await GetData(ip.ToString());
+                    //If the ip is found and the data can be read properly
+                    if (minerInfo != null)
+                    {
+                        //Add one to the counter for found miners and update it's label
+                        minersFoundCount++;
+                        minerFoundCountLabel.Text = ($"{minersFoundCount} Miners Found");
+                        //Creates a new entry to the minerInfo Dictionary with the ip as the identifier
+                        minerInfoDict[ip.ToString()] = minerInfo;
+                        //Adds all the other data to the minerListView entry
+                        ListViewItem item = new ListViewItem(ip.ToString());
+                        item.SubItems.Add(minerInfo.HashRate);
+                        item.SubItems.Add(minerInfo.Pool);
+                        item.SubItems.Add(minerInfo.PoolUser);
+                        item.SubItems.Add(minerInfo.Account);
+                        item.SubItems.Add(minerInfo.DagProgress);
+                        item.SubItems.Add(minerInfo.SelfCheckProgress);
+                        item.SubItems.Add(minerInfo.HashboardStatus);
+                        item.SubItems.Add(minerInfo.AcceptedRate);
+                        item.SubItems.Add(minerInfo.Accepted);
+                        item.SubItems.Add(minerInfo.Rejected);
+                        item.SubItems.Add(minerInfo.MacAddress);
+                        item.SubItems.Add(minerInfo.Uptime);
+                        item.SubItems.Add(minerInfo.Temperature);
+                        item.SubItems.Add(minerInfo.FanSpeed);
+                        item.SubItems.Add(minerInfo.FirmwareVersion);
+                        item.SubItems.Add(minerInfo.Hashboard1Status);
+                        item.SubItems.Add(minerInfo.Hashboard1HashRate);
+                        item.SubItems.Add(minerInfo.Hashboard1Temperature);
+                        item.SubItems.Add(minerInfo.Hashboard2Status);
+                        item.SubItems.Add(minerInfo.Hashboard2HashRate);
+                        item.SubItems.Add(minerInfo.Hashboard2Temperature);
+                        item.SubItems.Add(minerInfo.Hashboard3Status);
+                        item.SubItems.Add(minerInfo.Hashboard3HashRate);
+                        item.SubItems.Add(minerInfo.Hashboard3Temperature);
+
+                        minerListView.Items.Add(item);
+                    }
+                    //if no response is recieved from the IP address, or the data recieved is unreadable
+                    else
+                    {
+                    };
+                }
+            }
+            catch (SocketException ex)
+            {
+                // Handle socket exceptions
+                Console.WriteLine("SocketException: " + ex.Message);
+            }
+        }
+
+        bool alreadyCalled = false;
+        private void startListeningButton_Click(object sender, EventArgs e)
+        {
+            shouldListen = true;
+            if (!alreadyCalled)
+            {
+                alreadyCalled = true;
+                ReceiveDataAsync();
+            }
+
+        }
+
+        private void stopListeningButtons_Click(object sender, EventArgs e)
+        {
+            shouldListen = false;
+        }
     }
 
 
