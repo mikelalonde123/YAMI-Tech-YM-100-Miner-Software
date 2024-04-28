@@ -17,6 +17,7 @@ using System.Drawing;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Text;
+using System.Linq;
 
 
 namespace MinerInfoApp
@@ -186,6 +187,11 @@ namespace MinerInfoApp
             timer.Interval = 100;
             timer.Tick += Timer_Tick;
             timer.Start();
+        }
+
+        private void print(string text)
+        {
+            Console.WriteLine(text);
         }
 
         //Each time the timer ticks(every time the timer reaches timer.interval), runs the updateListViewItems
@@ -1197,6 +1203,98 @@ namespace MinerInfoApp
         }
 
 
+        private async void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+                openFileDialog.Title = "Select File to Upload";
+                openFileDialog.Filter = "Tar Gzip Files (*.tar.gz)|*.tar.gz|All Files (*.*)|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileToUpload = openFileDialog.FileName;
+
+                    List<string> ipAddressesToUpdate = new List<string>();
+
+                    // Iterate over the items in the minerListView
+                    foreach (ListViewItem item in minerListView.Items)
+                    {
+                        // Check if the item is checked
+                        if (item.Checked)
+                        {
+                            // Assuming the IP address is stored in the first subitem
+                            string ipAddress = item.Text;
+                            ipAddressesToUpdate.Add(ipAddress);
+                        }
+                    }
+
+                    List<Task<string>> uploadTasks = new List<Task<string>>();
+
+                    foreach (string ipAddr in ipAddressesToUpdate)
+                    {
+                        // Offload each upload operation to a background thread and store the task
+                        uploadTasks.Add(Task.Run(() => UploadFileAsync(fileToUpload, ipAddr)));
+                        ScanningIPLabel.Text = "Updating " + ipAddr;
+                    }
+
+                    // Wait for all tasks to complete
+                    string[] responses = await Task.WhenAll(uploadTasks);
+
+                    // Display responses for each server
+                    for (int i = 0; i < responses.Length; i++)
+                    {
+                        string numericResponse = new string(responses[i].Where(char.IsDigit).ToArray());
+
+                        if (numericResponse != "200") // Check if response code is not 200
+                        {
+                            MessageBox.Show($"Error updating {ipAddressesToUpdate[i]}:\n{responses[i]}");
+                        }
+                    }
+                }
+            }
+            catch (WebException webEx)
+            {
+                if (webEx.Response != null)
+                {
+                    using (var stream = webEx.Response.GetResponseStream())
+                    using (var reader = new StreamReader(stream))
+                    {
+                        string errorResponse = reader.ReadToEnd();
+                        MessageBox.Show("Error: " + webEx.Message + "\nResponse from server: " + errorResponse);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + webEx.Message);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private string UploadFileAsync(string fileToUpload, string server)
+        {
+
+            string url = $"http://{server}/cgi-bin/cgiNetService.cgi";
+            using (WebClient myClient = new WebClient())
+            {
+                myClient.Credentials = CredentialCache.DefaultCredentials;
+                byte[] responseBytes = myClient.UploadFile(url, "POST", fileToUpload);
+                return Encoding.UTF8.GetString(responseBytes);
+            }
+        }
+
+
+
+        private ChromeDriver getNewDriver()
+        {
+            var chromeDriverService = ChromeDriverService.CreateDefaultService();
+            chromeDriverService.HideCommandPromptWindow = true;
+            return new ChromeDriver(chromeDriverService, new ChromeOptions());
+        }
         bool initializeDriver = true;
         private void OpenInBrowser(string ipAddress)
         {
@@ -1207,7 +1305,8 @@ namespace MinerInfoApp
             if (initializeDriver == true)
             {
                 initializeDriver = false;
-                driver = new ChromeDriver(path + @"\drivers\");
+                driver = getNewDriver();
+
             }
             else if (initializeDriver == false)
             {

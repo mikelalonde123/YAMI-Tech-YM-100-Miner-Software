@@ -79,23 +79,24 @@
             this.stopListeningButtons = new MaterialSkin.Controls.MaterialButton();
             this.startListeningButton = new MaterialSkin.Controls.MaterialButton();
             this.newIpTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.performanceButton = new MaterialSkin.Controls.MaterialButton();
             this.setStaticIPButton = new MaterialSkin.Controls.MaterialButton();
             this.newStaticLabel = new MaterialSkin.Controls.MaterialLabel();
             this.newPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.poolURLLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.poolPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.poolUrlTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.poolAccountLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.poolUserTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.performanceButton = new MaterialSkin.Controls.MaterialButton();
             this.poolPasswordLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.performanceDropdown = new MaterialSkin.Controls.MaterialComboBox();
             this.selfCheckButton = new MaterialSkin.Controls.MaterialButton();
-            this.setPoolButton = new MaterialSkin.Controls.MaterialButton();
             this.setPasswordButton = new MaterialSkin.Controls.MaterialButton();
             this.minerPasswordLabel = new MaterialSkin.Controls.MaterialLabel();
             this.openInBrowserButton = new MaterialSkin.Controls.MaterialButton();
             this.setDynamicIPButton = new MaterialSkin.Controls.MaterialButton();
+            this.performanceDropdown = new MaterialSkin.Controls.MaterialComboBox();
+            this.setPoolButton = new MaterialSkin.Controls.MaterialButton();
+            this.updateButton = new MaterialSkin.Controls.MaterialButton();
+            this.poolAccountLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.poolUserTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.poolPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.poolUrlTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.poolURLLabel = new MaterialSkin.Controls.MaterialLabel();
             this.minerFoundCountLabel = new MaterialSkin.Controls.MaterialLabel();
             this.minerListView = new System.Windows.Forms.ListView();
             this.IPAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -634,19 +635,20 @@
             this.tableLayoutPanel4.Controls.Add(this.newStaticLabel, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.newPasswordTextBox, 3, 2);
             this.tableLayoutPanel4.Controls.Add(this.rebootButton, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.poolURLLabel, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.poolPasswordTextBox, 5, 2);
-            this.tableLayoutPanel4.Controls.Add(this.poolUrlTextBox, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.poolAccountLabel, 4, 1);
-            this.tableLayoutPanel4.Controls.Add(this.poolUserTextBox, 5, 1);
             this.tableLayoutPanel4.Controls.Add(this.poolPasswordLabel, 4, 2);
             this.tableLayoutPanel4.Controls.Add(this.selfCheckButton, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.setPoolButton, 4, 3);
             this.tableLayoutPanel4.Controls.Add(this.setPasswordButton, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.minerPasswordLabel, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.openInBrowserButton, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.setDynamicIPButton, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.performanceDropdown, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.setPoolButton, 7, 2);
+            this.tableLayoutPanel4.Controls.Add(this.updateButton, 4, 3);
+            this.tableLayoutPanel4.Controls.Add(this.poolAccountLabel, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.poolUserTextBox, 6, 1);
+            this.tableLayoutPanel4.Controls.Add(this.poolPasswordTextBox, 6, 2);
+            this.tableLayoutPanel4.Controls.Add(this.poolUrlTextBox, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.poolURLLabel, 4, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
             // stopListeningButtons
@@ -692,6 +694,22 @@
             this.newIpTextBox.Name = "newIpTextBox";
             this.newIpTextBox.TrailingIcon = null;
             // 
+            // performanceButton
+            // 
+            resources.ApplyResources(this.performanceButton, "performanceButton");
+            this.performanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.performanceButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.performanceButton.Depth = 0;
+            this.performanceButton.HighEmphasis = true;
+            this.performanceButton.Icon = null;
+            this.performanceButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.performanceButton.Name = "performanceButton";
+            this.performanceButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.performanceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.performanceButton.UseAccentColor = false;
+            this.performanceButton.UseVisualStyleBackColor = true;
+            this.performanceButton.Click += new System.EventHandler(this.performanceButton_Click);
+            // 
             // setStaticIPButton
             // 
             resources.ApplyResources(this.setStaticIPButton, "setStaticIPButton");
@@ -726,96 +744,13 @@
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.TrailingIcon = null;
             // 
-            // poolURLLabel
-            // 
-            resources.ApplyResources(this.poolURLLabel, "poolURLLabel");
-            this.poolURLLabel.Depth = 0;
-            this.poolURLLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.poolURLLabel.Name = "poolURLLabel";
-            // 
-            // poolPasswordTextBox
-            // 
-            this.poolPasswordTextBox.AnimateReadOnly = false;
-            this.poolPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poolPasswordTextBox.Depth = 0;
-            resources.ApplyResources(this.poolPasswordTextBox, "poolPasswordTextBox");
-            this.poolPasswordTextBox.LeadingIcon = null;
-            this.poolPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.poolPasswordTextBox.Name = "poolPasswordTextBox";
-            this.poolPasswordTextBox.TrailingIcon = null;
-            // 
-            // poolUrlTextBox
-            // 
-            this.poolUrlTextBox.AnimateReadOnly = false;
-            this.poolUrlTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poolUrlTextBox.Depth = 0;
-            resources.ApplyResources(this.poolUrlTextBox, "poolUrlTextBox");
-            this.poolUrlTextBox.LeadingIcon = null;
-            this.poolUrlTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.poolUrlTextBox.Name = "poolUrlTextBox";
-            this.poolUrlTextBox.TrailingIcon = null;
-            // 
-            // poolAccountLabel
-            // 
-            resources.ApplyResources(this.poolAccountLabel, "poolAccountLabel");
-            this.poolAccountLabel.Depth = 0;
-            this.poolAccountLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.poolAccountLabel.Name = "poolAccountLabel";
-            // 
-            // poolUserTextBox
-            // 
-            this.poolUserTextBox.AnimateReadOnly = false;
-            this.poolUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poolUserTextBox.Depth = 0;
-            resources.ApplyResources(this.poolUserTextBox, "poolUserTextBox");
-            this.poolUserTextBox.LeadingIcon = null;
-            this.poolUserTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.poolUserTextBox.Name = "poolUserTextBox";
-            this.poolUserTextBox.TrailingIcon = null;
-            // 
-            // performanceButton
-            // 
-            resources.ApplyResources(this.performanceButton, "performanceButton");
-            this.performanceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.performanceButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.performanceButton.Depth = 0;
-            this.performanceButton.HighEmphasis = true;
-            this.performanceButton.Icon = null;
-            this.performanceButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.performanceButton.Name = "performanceButton";
-            this.performanceButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.performanceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.performanceButton.UseAccentColor = false;
-            this.performanceButton.UseVisualStyleBackColor = true;
-            this.performanceButton.Click += new System.EventHandler(this.performanceButton_Click);
-            // 
             // poolPasswordLabel
             // 
             resources.ApplyResources(this.poolPasswordLabel, "poolPasswordLabel");
+            this.tableLayoutPanel4.SetColumnSpan(this.poolPasswordLabel, 2);
             this.poolPasswordLabel.Depth = 0;
             this.poolPasswordLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.poolPasswordLabel.Name = "poolPasswordLabel";
-            // 
-            // performanceDropdown
-            // 
-            this.performanceDropdown.AutoResize = false;
-            this.performanceDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.performanceDropdown.Depth = 0;
-            resources.ApplyResources(this.performanceDropdown, "performanceDropdown");
-            this.performanceDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.performanceDropdown.DropDownHeight = 174;
-            this.performanceDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.performanceDropdown.DropDownWidth = 121;
-            this.performanceDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.performanceDropdown.FormattingEnabled = true;
-            this.performanceDropdown.Items.AddRange(new object[] {
-            resources.GetString("performanceDropdown.Items"),
-            resources.GetString("performanceDropdown.Items1"),
-            resources.GetString("performanceDropdown.Items2"),
-            resources.GetString("performanceDropdown.Items3")});
-            this.performanceDropdown.MouseState = MaterialSkin.MouseState.OUT;
-            this.performanceDropdown.Name = "performanceDropdown";
-            this.performanceDropdown.StartIndex = 0;
             // 
             // selfCheckButton
             // 
@@ -832,22 +767,6 @@
             this.selfCheckButton.UseAccentColor = false;
             this.selfCheckButton.UseVisualStyleBackColor = true;
             this.selfCheckButton.Click += new System.EventHandler(this.selfCheckButton_Click);
-            // 
-            // setPoolButton
-            // 
-            resources.ApplyResources(this.setPoolButton, "setPoolButton");
-            this.tableLayoutPanel4.SetColumnSpan(this.setPoolButton, 2);
-            this.setPoolButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.setPoolButton.Depth = 0;
-            this.setPoolButton.HighEmphasis = true;
-            this.setPoolButton.Icon = null;
-            this.setPoolButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.setPoolButton.Name = "setPoolButton";
-            this.setPoolButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.setPoolButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.setPoolButton.UseAccentColor = false;
-            this.setPoolButton.UseVisualStyleBackColor = true;
-            this.setPoolButton.Click += new System.EventHandler(this.setPoolButton_Click);
             // 
             // setPasswordButton
             // 
@@ -902,6 +821,109 @@
             this.setDynamicIPButton.UseAccentColor = false;
             this.setDynamicIPButton.UseVisualStyleBackColor = true;
             this.setDynamicIPButton.Click += new System.EventHandler(this.setDynamicIPButton_Click);
+            // 
+            // performanceDropdown
+            // 
+            this.performanceDropdown.AutoResize = false;
+            this.performanceDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.performanceDropdown.Depth = 0;
+            resources.ApplyResources(this.performanceDropdown, "performanceDropdown");
+            this.performanceDropdown.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.performanceDropdown.DropDownHeight = 174;
+            this.performanceDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.performanceDropdown.DropDownWidth = 121;
+            this.performanceDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.performanceDropdown.FormattingEnabled = true;
+            this.performanceDropdown.Items.AddRange(new object[] {
+            resources.GetString("performanceDropdown.Items"),
+            resources.GetString("performanceDropdown.Items1"),
+            resources.GetString("performanceDropdown.Items2"),
+            resources.GetString("performanceDropdown.Items3")});
+            this.performanceDropdown.MouseState = MaterialSkin.MouseState.OUT;
+            this.performanceDropdown.Name = "performanceDropdown";
+            this.performanceDropdown.StartIndex = 0;
+            // 
+            // setPoolButton
+            // 
+            resources.ApplyResources(this.setPoolButton, "setPoolButton");
+            this.setPoolButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.setPoolButton.Depth = 0;
+            this.setPoolButton.HighEmphasis = true;
+            this.setPoolButton.Icon = null;
+            this.setPoolButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.setPoolButton.Name = "setPoolButton";
+            this.setPoolButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.setPoolButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.setPoolButton.UseAccentColor = false;
+            this.setPoolButton.UseVisualStyleBackColor = true;
+            this.setPoolButton.Click += new System.EventHandler(this.setPoolButton_Click);
+            // 
+            // updateButton
+            // 
+            resources.ApplyResources(this.updateButton, "updateButton");
+            this.tableLayoutPanel4.SetColumnSpan(this.updateButton, 4);
+            this.updateButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.updateButton.Depth = 0;
+            this.updateButton.HighEmphasis = true;
+            this.updateButton.Icon = null;
+            this.updateButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.updateButton.Name = "updateButton";
+            this.updateButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.updateButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.updateButton.UseAccentColor = false;
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // poolAccountLabel
+            // 
+            resources.ApplyResources(this.poolAccountLabel, "poolAccountLabel");
+            this.tableLayoutPanel4.SetColumnSpan(this.poolAccountLabel, 2);
+            this.poolAccountLabel.Depth = 0;
+            this.poolAccountLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.poolAccountLabel.Name = "poolAccountLabel";
+            // 
+            // poolUserTextBox
+            // 
+            this.poolUserTextBox.AnimateReadOnly = false;
+            this.poolUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableLayoutPanel4.SetColumnSpan(this.poolUserTextBox, 2);
+            this.poolUserTextBox.Depth = 0;
+            resources.ApplyResources(this.poolUserTextBox, "poolUserTextBox");
+            this.poolUserTextBox.LeadingIcon = null;
+            this.poolUserTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolUserTextBox.Name = "poolUserTextBox";
+            this.poolUserTextBox.TrailingIcon = null;
+            // 
+            // poolPasswordTextBox
+            // 
+            this.poolPasswordTextBox.AnimateReadOnly = false;
+            this.poolPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.poolPasswordTextBox.Depth = 0;
+            resources.ApplyResources(this.poolPasswordTextBox, "poolPasswordTextBox");
+            this.poolPasswordTextBox.LeadingIcon = null;
+            this.poolPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolPasswordTextBox.Name = "poolPasswordTextBox";
+            this.poolPasswordTextBox.TrailingIcon = null;
+            // 
+            // poolUrlTextBox
+            // 
+            this.poolUrlTextBox.AnimateReadOnly = false;
+            this.poolUrlTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableLayoutPanel4.SetColumnSpan(this.poolUrlTextBox, 2);
+            this.poolUrlTextBox.Depth = 0;
+            resources.ApplyResources(this.poolUrlTextBox, "poolUrlTextBox");
+            this.poolUrlTextBox.LeadingIcon = null;
+            this.poolUrlTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.poolUrlTextBox.Name = "poolUrlTextBox";
+            this.poolUrlTextBox.TrailingIcon = null;
+            // 
+            // poolURLLabel
+            // 
+            resources.ApplyResources(this.poolURLLabel, "poolURLLabel");
+            this.tableLayoutPanel4.SetColumnSpan(this.poolURLLabel, 2);
+            this.poolURLLabel.Depth = 0;
+            this.poolURLLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.poolURLLabel.Name = "poolURLLabel";
             // 
             // minerFoundCountLabel
             // 
@@ -1194,7 +1216,6 @@
         private System.Windows.Forms.ColumnHeader Hashboard3Temperature;
         private MaterialSkin.Controls.MaterialTextBox poolPasswordTextBox;
         private MaterialSkin.Controls.MaterialLabel poolPasswordLabel;
-        private MaterialSkin.Controls.MaterialLabel poolURLLabel;
         private MaterialSkin.Controls.MaterialLabel poolAccountLabel;
         private MaterialSkin.Controls.MaterialButton setPoolButton;
         private MaterialSkin.Controls.MaterialTextBox poolUrlTextBox;
@@ -1210,6 +1231,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private MaterialSkin.Controls.MaterialButton stopListeningButtons;
         private MaterialSkin.Controls.MaterialButton startListeningButton;
+        private MaterialSkin.Controls.MaterialButton updateButton;
+        private MaterialSkin.Controls.MaterialLabel poolURLLabel;
     }
 }
 

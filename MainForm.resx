@@ -139,7 +139,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="rebootButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 38</value>
+    <value>195, 42</value>
   </data>
   <data name="rebootButton.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -234,1203 +234,6 @@
   <data name="tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Name" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,83,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1214, 225</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="stopListeningButtons.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="stopListeningButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="stopListeningButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="stopListeningButtons.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="stopListeningButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 167</value>
-  </data>
-  <data name="stopListeningButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="stopListeningButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 46</value>
-  </data>
-  <data name="stopListeningButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="stopListeningButtons.Text" xml:space="preserve">
-    <value>Stop Listening</value>
-  </data>
-  <data name="&gt;&gt;stopListeningButtons.Name" xml:space="preserve">
-    <value>stopListeningButtons</value>
-  </data>
-  <data name="&gt;&gt;stopListeningButtons.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;stopListeningButtons.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;stopListeningButtons.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="startListeningButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="startListeningButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="startListeningButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="startListeningButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="startListeningButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 167</value>
-  </data>
-  <data name="startListeningButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="startListeningButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 46</value>
-  </data>
-  <data name="startListeningButton.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="startListeningButton.Text" xml:space="preserve">
-    <value>Start Listening</value>
-  </data>
-  <data name="&gt;&gt;startListeningButton.Name" xml:space="preserve">
-    <value>startListeningButton</value>
-  </data>
-  <data name="&gt;&gt;startListeningButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startListeningButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;startListeningButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="newIpTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="newIpTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="newIpTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 3</value>
-  </data>
-  <data name="newIpTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="newIpTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="newIpTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 50</value>
-  </data>
-  <data name="newIpTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="newIpTextBox.Text" xml:space="preserve">
-    <value>123</value>
-  </data>
-  <data name="&gt;&gt;newIpTextBox.Name" xml:space="preserve">
-    <value>newIpTextBox</value>
-  </data>
-  <data name="&gt;&gt;newIpTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;newIpTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;newIpTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="performanceButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="performanceButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="performanceButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="performanceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="performanceButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 110</value>
-  </data>
-  <data name="performanceButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="performanceButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 45</value>
-  </data>
-  <data name="performanceButton.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="performanceButton.Text" xml:space="preserve">
-    <value>Set Performance Mode</value>
-  </data>
-  <data name="&gt;&gt;performanceButton.Name" xml:space="preserve">
-    <value>performanceButton</value>
-  </data>
-  <data name="&gt;&gt;performanceButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;performanceButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;performanceButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="setStaticIPButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="setStaticIPButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="setStaticIPButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="setStaticIPButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="setStaticIPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 56</value>
-  </data>
-  <data name="setStaticIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="setStaticIPButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 42</value>
-  </data>
-  <data name="setStaticIPButton.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="setStaticIPButton.Text" xml:space="preserve">
-    <value>Set Static IP</value>
-  </data>
-  <data name="&gt;&gt;setStaticIPButton.Name" xml:space="preserve">
-    <value>setStaticIPButton</value>
-  </data>
-  <data name="&gt;&gt;setStaticIPButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;setStaticIPButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;setStaticIPButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="newStaticLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="newStaticLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="newStaticLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="newStaticLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="newStaticLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 15</value>
-  </data>
-  <data name="newStaticLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 19</value>
-  </data>
-  <data name="newStaticLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="newStaticLabel.Text" xml:space="preserve">
-    <value>Last Number Of New Static IP</value>
-  </data>
-  <data name="&gt;&gt;newStaticLabel.Name" xml:space="preserve">
-    <value>newStaticLabel</value>
-  </data>
-  <data name="&gt;&gt;newStaticLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;newStaticLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;newStaticLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="newPasswordTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="newPasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="newPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 107</value>
-  </data>
-  <data name="newPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="newPasswordTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="newPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 50</value>
-  </data>
-  <data name="newPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="newPasswordTextBox.Text" xml:space="preserve">
-    <value>admin</value>
-  </data>
-  <data name="&gt;&gt;newPasswordTextBox.Name" xml:space="preserve">
-    <value>newPasswordTextBox</value>
-  </data>
-  <data name="&gt;&gt;newPasswordTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;newPasswordTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;newPasswordTextBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="poolURLLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="poolURLLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="poolURLLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="poolURLLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="poolURLLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>776, 15</value>
-  </data>
-  <data name="poolURLLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
-  </data>
-  <data name="poolURLLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="poolURLLabel.Text" xml:space="preserve">
-    <value>Pool URL</value>
-  </data>
-  <data name="&gt;&gt;poolURLLabel.Name" xml:space="preserve">
-    <value>poolURLLabel</value>
-  </data>
-  <data name="&gt;&gt;poolURLLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolURLLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolURLLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="poolPasswordTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="poolPasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="poolPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 107</value>
-  </data>
-  <data name="poolPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="poolPasswordTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="poolPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 50</value>
-  </data>
-  <data name="poolPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="poolPasswordTextBox.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordTextBox.Name" xml:space="preserve">
-    <value>poolPasswordTextBox</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="poolUrlTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="poolUrlTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="poolUrlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 3</value>
-  </data>
-  <data name="poolUrlTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="poolUrlTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="poolUrlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 50</value>
-  </data>
-  <data name="poolUrlTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="poolUrlTextBox.Text" xml:space="preserve">
-    <value>stratum+tcp://etc.ss.btc.com:1800</value>
-  </data>
-  <data name="&gt;&gt;poolUrlTextBox.Name" xml:space="preserve">
-    <value>poolUrlTextBox</value>
-  </data>
-  <data name="&gt;&gt;poolUrlTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolUrlTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolUrlTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="poolAccountLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="poolAccountLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="poolAccountLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="poolAccountLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="poolAccountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>762, 67</value>
-  </data>
-  <data name="poolAccountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 19</value>
-  </data>
-  <data name="poolAccountLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="poolAccountLabel.Text" xml:space="preserve">
-    <value>Pool Account</value>
-  </data>
-  <data name="&gt;&gt;poolAccountLabel.Name" xml:space="preserve">
-    <value>poolAccountLabel</value>
-  </data>
-  <data name="&gt;&gt;poolAccountLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolAccountLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolAccountLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="poolUserTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="poolUserTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="poolUserTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 53</value>
-  </data>
-  <data name="poolUserTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="poolUserTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="poolUserTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 50</value>
-  </data>
-  <data name="poolUserTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="poolUserTextBox.Text" xml:space="preserve">
-    <value>eheymetc</value>
-  </data>
-  <data name="&gt;&gt;poolUserTextBox.Name" xml:space="preserve">
-    <value>poolUserTextBox</value>
-  </data>
-  <data name="&gt;&gt;poolUserTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolUserTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolUserTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="poolPasswordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="poolPasswordLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="poolPasswordLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="poolPasswordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="poolPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>756, 123</value>
-  </data>
-  <data name="poolPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 19</value>
-  </data>
-  <data name="poolPasswordLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="poolPasswordLabel.Text" xml:space="preserve">
-    <value>Pool Password</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordLabel.Name" xml:space="preserve">
-    <value>poolPasswordLabel</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;poolPasswordLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="selfCheckButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="selfCheckButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="selfCheckButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="selfCheckButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 6</value>
-  </data>
-  <data name="selfCheckButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="selfCheckButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 38</value>
-  </data>
-  <data name="selfCheckButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="selfCheckButton.Text" xml:space="preserve">
-    <value>Self Check</value>
-  </data>
-  <data name="&gt;&gt;selfCheckButton.Name" xml:space="preserve">
-    <value>selfCheckButton</value>
-  </data>
-  <data name="&gt;&gt;selfCheckButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;selfCheckButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;selfCheckButton.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="setPoolButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="setPoolButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="setPoolButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="setPoolButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="setPoolButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>749, 167</value>
-  </data>
-  <data name="setPoolButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="setPoolButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 46</value>
-  </data>
-  <data name="setPoolButton.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="setPoolButton.Text" xml:space="preserve">
-    <value>Set Pools</value>
-  </data>
-  <data name="&gt;&gt;setPoolButton.Name" xml:space="preserve">
-    <value>setPoolButton</value>
-  </data>
-  <data name="&gt;&gt;setPoolButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;setPoolButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;setPoolButton.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="setPasswordButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="setPasswordButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="setPasswordButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="setPasswordButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="setPasswordButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 167</value>
-  </data>
-  <data name="setPasswordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="setPasswordButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 46</value>
-  </data>
-  <data name="setPasswordButton.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="setPasswordButton.Text" xml:space="preserve">
-    <value>Set New Password</value>
-  </data>
-  <data name="&gt;&gt;setPasswordButton.Name" xml:space="preserve">
-    <value>setPasswordButton</value>
-  </data>
-  <data name="&gt;&gt;setPasswordButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;setPasswordButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;setPasswordButton.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="minerPasswordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="minerPasswordLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minerPasswordLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="minerPasswordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="minerPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>468, 123</value>
-  </data>
-  <data name="minerPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 19</value>
-  </data>
-  <data name="minerPasswordLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="minerPasswordLabel.Text" xml:space="preserve">
-    <value>New Password</value>
-  </data>
-  <data name="&gt;&gt;minerPasswordLabel.Name" xml:space="preserve">
-    <value>minerPasswordLabel</value>
-  </data>
-  <data name="&gt;&gt;minerPasswordLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;minerPasswordLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;minerPasswordLabel.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="openInBrowserButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="openInBrowserButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="openInBrowserButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="openInBrowserButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="openInBrowserButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 56</value>
-  </data>
-  <data name="openInBrowserButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="openInBrowserButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 42</value>
-  </data>
-  <data name="openInBrowserButton.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="openInBrowserButton.Text" xml:space="preserve">
-    <value>Open In Browser</value>
-  </data>
-  <data name="&gt;&gt;openInBrowserButton.Name" xml:space="preserve">
-    <value>openInBrowserButton</value>
-  </data>
-  <data name="&gt;&gt;openInBrowserButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;openInBrowserButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;openInBrowserButton.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="setDynamicIPButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="setDynamicIPButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="setDynamicIPButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="setDynamicIPButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="setDynamicIPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 56</value>
-  </data>
-  <data name="setDynamicIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="setDynamicIPButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 42</value>
-  </data>
-  <data name="setDynamicIPButton.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="setDynamicIPButton.Text" xml:space="preserve">
-    <value>Set Dynamic IP</value>
-  </data>
-  <data name="&gt;&gt;setDynamicIPButton.Name" xml:space="preserve">
-    <value>setDynamicIPButton</value>
-  </data>
-  <data name="&gt;&gt;setDynamicIPButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;setDynamicIPButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;setDynamicIPButton.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="performanceDropdown.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="performanceDropdown.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14px, style=Bold</value>
-  </data>
-  <data name="performanceDropdown.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="performanceDropdown.ItemHeight" type="System.Int32, mscorlib">
-    <value>43</value>
-  </data>
-  <data name="performanceDropdown.Items" xml:space="preserve">
-    <value>Performance</value>
-  </data>
-  <data name="performanceDropdown.Items1" xml:space="preserve">
-    <value>Efficiency</value>
-  </data>
-  <data name="performanceDropdown.Items2" xml:space="preserve">
-    <value>Balanced</value>
-  </data>
-  <data name="performanceDropdown.Items3" xml:space="preserve">
-    <value>Factory</value>
-  </data>
-  <data name="performanceDropdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 107</value>
-  </data>
-  <data name="performanceDropdown.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="performanceDropdown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 49</value>
-  </data>
-  <data name="performanceDropdown.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;performanceDropdown.Name" xml:space="preserve">
-    <value>performanceDropdown</value>
-  </data>
-  <data name="&gt;&gt;performanceDropdown.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialComboBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;performanceDropdown.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;performanceDropdown.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="tableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1208, 219</value>
-  </data>
-  <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="3" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.14238,Percent,16.9702,Percent,20.11589,Percent,8.443708,Percent,10.67881,Percent,27.48344" /&gt;&lt;Rows Styles="Percent,22.93578,Percent,24.77064,Percent,26.48402,Percent,26.0274" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1214, 225</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Commands</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 77</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1222, 251</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="materialTabSelector1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 23</value>
-  </data>
-  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1216, 51</value>
-  </data>
-  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="materialTabSelector1.Text" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTabSelector, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="minerFoundCountLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minerFoundCountLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="minerFoundCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 328</value>
-  </data>
-  <data name="minerFoundCountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>5, 19</value>
-  </data>
-  <data name="minerFoundCountLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="minerFoundCountLabel.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="minerFoundCountLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Name" xml:space="preserve">
-    <value>minerFoundCountLabel</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="IPAddress.Text" xml:space="preserve">
-    <value>IP Address</value>
-  </data>
-  <data name="IPAddress.Width" type="System.Int32, mscorlib">
-    <value>133</value>
-  </data>
-  <data name="Hashrate.Text" xml:space="preserve">
-    <value>Hashrate</value>
-  </data>
-  <data name="Hashrate.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="Pool.Text" xml:space="preserve">
-    <value>Pool</value>
-  </data>
-  <data name="Pool.Width" type="System.Int32, mscorlib">
-    <value>291</value>
-  </data>
-  <data name="PoolUser.Text" xml:space="preserve">
-    <value>Pool User</value>
-  </data>
-  <data name="PoolUser.Width" type="System.Int32, mscorlib">
-    <value>174</value>
-  </data>
-  <data name="Account.Text" xml:space="preserve">
-    <value>Account</value>
-  </data>
-  <data name="Account.Width" type="System.Int32, mscorlib">
-    <value>107</value>
-  </data>
-  <data name="DAG.Text" xml:space="preserve">
-    <value>DAG Progress</value>
-  </data>
-  <data name="DAG.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="SelfCheckProgress.Text" xml:space="preserve">
-    <value>Self Check</value>
-  </data>
-  <data name="SelfCheckProgress.Width" type="System.Int32, mscorlib">
-    <value>123</value>
-  </data>
-  <data name="HashboardStatus.DisplayIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="HashboardStatus.Text" xml:space="preserve">
-    <value>HashboardStatus</value>
-  </data>
-  <data name="HashboardStatus.Width" type="System.Int32, mscorlib">
-    <value>113</value>
-  </data>
-  <data name="AcceptanceRate.DisplayIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="AcceptanceRate.Text" xml:space="preserve">
-    <value>Acceptance Rate</value>
-  </data>
-  <data name="AcceptanceRate.Width" type="System.Int32, mscorlib">
-    <value>139</value>
-  </data>
-  <data name="Accepted.DisplayIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="Accepted.Text" xml:space="preserve">
-    <value>Accepted Shares</value>
-  </data>
-  <data name="Accepted.Width" type="System.Int32, mscorlib">
-    <value>138</value>
-  </data>
-  <data name="Rejected.DisplayIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="Rejected.Text" xml:space="preserve">
-    <value>Rejected Shares</value>
-  </data>
-  <data name="Rejected.Width" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="MacAddress.DisplayIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="MacAddress.Text" xml:space="preserve">
-    <value>Mac Address</value>
-  </data>
-  <data name="MacAddress.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="Uptime.DisplayIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="Uptime.Text" xml:space="preserve">
-    <value>Uptime</value>
-  </data>
-  <data name="Uptime.Width" type="System.Int32, mscorlib">
-    <value>97</value>
-  </data>
-  <data name="Temperature.DisplayIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="Temperature.Text" xml:space="preserve">
-    <value>Temperature</value>
-  </data>
-  <data name="Temperature.Width" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="FanSpeed.DisplayIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="FanSpeed.Text" xml:space="preserve">
-    <value>Fan Speed</value>
-  </data>
-  <data name="FanSpeed.Width" type="System.Int32, mscorlib">
-    <value>92</value>
-  </data>
-  <data name="Firmware.DisplayIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="Firmware.Text" xml:space="preserve">
-    <value>Firmware Version</value>
-  </data>
-  <data name="Firmware.Width" type="System.Int32, mscorlib">
-    <value>250</value>
-  </data>
-  <data name="Hashboard1Status.Text" xml:space="preserve">
-    <value>Board 1 Status</value>
-  </data>
-  <data name="Hashboard1Status.Width" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
-  <data name="Hashboard1Hashrate.Text" xml:space="preserve">
-    <value>Board 1 Hashrate</value>
-  </data>
-  <data name="Hashboard1Hashrate.Width" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="Hashboard1Temperature.Text" xml:space="preserve">
-    <value>Board 1 Temp</value>
-  </data>
-  <data name="Hashboard1Temperature.Width" type="System.Int32, mscorlib">
-    <value>117</value>
-  </data>
-  <data name="Hashboard2Status.Text" xml:space="preserve">
-    <value>Board 2 Status</value>
-  </data>
-  <data name="Hashboard2Status.Width" type="System.Int32, mscorlib">
-    <value>108</value>
-  </data>
-  <data name="Hashboard2Hashrate.Text" xml:space="preserve">
-    <value>Board 2 Hashrate</value>
-  </data>
-  <data name="Hashboard2Hashrate.Width" type="System.Int32, mscorlib">
-    <value>119</value>
-  </data>
-  <data name="Hashboard2Temperature.Text" xml:space="preserve">
-    <value>Board 2 Temp</value>
-  </data>
-  <data name="Hashboard2Temperature.Width" type="System.Int32, mscorlib">
-    <value>103</value>
-  </data>
-  <data name="Hashboard3Status.Text" xml:space="preserve">
-    <value>Board 3 Status</value>
-  </data>
-  <data name="Hashboard3Status.Width" type="System.Int32, mscorlib">
-    <value>107</value>
-  </data>
-  <data name="Hashboard3Hashrate.Text" xml:space="preserve">
-    <value>Board 3 Hashrate</value>
-  </data>
-  <data name="Hashboard3Hashrate.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="Hashboard3Temperature.Text" xml:space="preserve">
-    <value>Board 3 Temp</value>
-  </data>
-  <data name="Hashboard3Temperature.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <data name="minerListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="minerListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="minerListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 347</value>
-  </data>
-  <data name="minerListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 80</value>
-  </data>
-  <data name="minerListView.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>10, 200</value>
-  </data>
-  <data name="minerListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1216, 515</value>
-  </data>
-  <data name="minerListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Name" xml:space="preserve">
-    <value>minerListView</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;minerListView.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 64</value>
-  </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tableLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 1</value>
-  </data>
-  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 20, 30, 50</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1299, 592</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialTabSelector1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerFoundCountLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerListView" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,57,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="tableLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1439,66 +242,6 @@
   </data>
   <data name="tableLayoutPanel6.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ipRangeListView" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="scanSelectedButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="loadIPRangesButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="deleteIPRanges" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="saveRangesButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,70,Percent,15,Percent,15" /&gt;&lt;Rows Styles="Percent,50.30675,Percent,49.69325" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialLabel6" Row="0" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel13" Row="1" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel12" Row="1" RowSpan="1" Column="13" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel11" Row="1" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel10" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel8" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel9" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxD" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxC" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxB" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxA" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startIPLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="7" /&gt;&lt;Control Name="stopScanButton" Row="1" RowSpan="1" Column="19" ColumnSpan="1" /&gt;&lt;Control Name="nameLabel" Row="0" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="addIPButton" Row="1" RowSpan="1" Column="18" ColumnSpan="1" /&gt;&lt;Control Name="searchButton" Row="1" RowSpan="1" Column="17" ColumnSpan="1" /&gt;&lt;Control Name="nameTextBox" Row="1" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="endIPLabel" Row="0" RowSpan="1" Column="8" ColumnSpan="7" /&gt;&lt;Control Name="endIPTextBoxA" Row="1" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxB" Row="1" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxC" Row="1" RowSpan="1" Column="12" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxD" Row="1" RowSpan="1" Column="14" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="1" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5.653021,Percent,0.7797271,Percent,5.653021,Percent,0.7797271,Percent,5.263158,Percent,0.7797271,Percent,5.165692,Percent,2.144249,Percent,5.653021,Percent,0.7797271,Percent,5.360624,Percent,0.877193,Percent,5.45809,Percent,0.7797271,Percent,5.360624,Percent,0.7797271,Percent,17.154,Percent,10.49996,Percent,10.2501,Percent,10.25009" /&gt;&lt;Rows Styles="Absolute,29,Absolute,51" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel6.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1208, 219</value>
-  </data>
-  <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Name" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,83,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1509,95 +252,23 @@
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;ipRangeListView.Name" xml:space="preserve">
-    <value>ipRangeListView</value>
+  <data name="StartIP.Text" xml:space="preserve">
+    <value>Start IP</value>
   </data>
-  <data name="&gt;&gt;ipRangeListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="StartIP.Width" type="System.Int32, mscorlib">
+    <value>180</value>
   </data>
-  <data name="&gt;&gt;ipRangeListView.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
+  <data name="EndIP.Text" xml:space="preserve">
+    <value>End IP</value>
   </data>
-  <data name="&gt;&gt;ipRangeListView.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="EndIP.Width" type="System.Int32, mscorlib">
+    <value>220</value>
   </data>
-  <data name="&gt;&gt;scanSelectedButton.Name" xml:space="preserve">
-    <value>scanSelectedButton</value>
+  <data name="groupName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="&gt;&gt;scanSelectedButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;scanSelectedButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;scanSelectedButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;loadIPRangesButton.Name" xml:space="preserve">
-    <value>loadIPRangesButton</value>
-  </data>
-  <data name="&gt;&gt;loadIPRangesButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;loadIPRangesButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;loadIPRangesButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;deleteIPRanges.Name" xml:space="preserve">
-    <value>deleteIPRanges</value>
-  </data>
-  <data name="&gt;&gt;deleteIPRanges.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;deleteIPRanges.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;deleteIPRanges.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;saveRangesButton.Name" xml:space="preserve">
-    <value>saveRangesButton</value>
-  </data>
-  <data name="&gt;&gt;saveRangesButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;saveRangesButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;saveRangesButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 86</value>
-  </data>
-  <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1202, 130</value>
-  </data>
-  <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ipRangeListView" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="scanSelectedButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="loadIPRangesButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="deleteIPRanges" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="saveRangesButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,70,Percent,15,Percent,15" /&gt;&lt;Rows Styles="Percent,50.30675,Percent,49.69325" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="groupName.Width" type="System.Int32, mscorlib">
+    <value>334</value>
   </data>
   <data name="ipRangeListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1622,24 +293,6 @@
   </data>
   <data name="&gt;&gt;ipRangeListView.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="StartIP.Text" xml:space="preserve">
-    <value>Start IP</value>
-  </data>
-  <data name="StartIP.Width" type="System.Int32, mscorlib">
-    <value>180</value>
-  </data>
-  <data name="EndIP.Text" xml:space="preserve">
-    <value>End IP</value>
-  </data>
-  <data name="EndIP.Width" type="System.Int32, mscorlib">
-    <value>220</value>
-  </data>
-  <data name="groupName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="groupName.Width" type="System.Int32, mscorlib">
-    <value>334</value>
   </data>
   <data name="scanSelectedButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1773,6 +426,36 @@
   <data name="&gt;&gt;saveRangesButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 86</value>
+  </data>
+  <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1202, 130</value>
+  </data>
+  <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
+    <value>tableLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ipRangeListView" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="scanSelectedButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="loadIPRangesButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="deleteIPRanges" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="saveRangesButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,70,Percent,15,Percent,15" /&gt;&lt;Rows Styles="Percent,50.30675,Percent,49.69325" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1781,336 +464,6 @@
   </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>20</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Name" xml:space="preserve">
-    <value>materialLabel6</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Name" xml:space="preserve">
-    <value>materialLabel5</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Name" xml:space="preserve">
-    <value>materialLabel13</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel12.Name" xml:space="preserve">
-    <value>materialLabel12</value>
-  </data>
-  <data name="&gt;&gt;materialLabel12.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel12.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel12.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;materialLabel11.Name" xml:space="preserve">
-    <value>materialLabel11</value>
-  </data>
-  <data name="&gt;&gt;materialLabel11.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel11.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel11.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;materialLabel10.Name" xml:space="preserve">
-    <value>materialLabel10</value>
-  </data>
-  <data name="&gt;&gt;materialLabel10.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel10.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel10.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;materialLabel8.Name" xml:space="preserve">
-    <value>materialLabel8</value>
-  </data>
-  <data name="&gt;&gt;materialLabel8.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel8.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel8.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;materialLabel7.Name" xml:space="preserve">
-    <value>materialLabel7</value>
-  </data>
-  <data name="&gt;&gt;materialLabel7.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel7.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel7.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;materialLabel9.Name" xml:space="preserve">
-    <value>materialLabel9</value>
-  </data>
-  <data name="&gt;&gt;materialLabel9.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel9.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel9.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxD.Name" xml:space="preserve">
-    <value>startIPTextBoxD</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxD.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxD.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxD.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxC.Name" xml:space="preserve">
-    <value>startIPTextBoxC</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxC.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxC.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxC.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxB.Name" xml:space="preserve">
-    <value>startIPTextBoxB</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxB.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxB.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxB.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxA.Name" xml:space="preserve">
-    <value>startIPTextBoxA</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxA.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxA.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;startIPTextBoxA.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;startIPLabel.Name" xml:space="preserve">
-    <value>startIPLabel</value>
-  </data>
-  <data name="&gt;&gt;startIPLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startIPLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;startIPLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;stopScanButton.Name" xml:space="preserve">
-    <value>stopScanButton</value>
-  </data>
-  <data name="&gt;&gt;stopScanButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;stopScanButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;stopScanButton.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;nameLabel.Name" xml:space="preserve">
-    <value>nameLabel</value>
-  </data>
-  <data name="&gt;&gt;nameLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;nameLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;nameLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;addIPButton.Name" xml:space="preserve">
-    <value>addIPButton</value>
-  </data>
-  <data name="&gt;&gt;addIPButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;addIPButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;addIPButton.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;searchButton.Name" xml:space="preserve">
-    <value>searchButton</value>
-  </data>
-  <data name="&gt;&gt;searchButton.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;searchButton.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;searchButton.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;nameTextBox.Name" xml:space="preserve">
-    <value>nameTextBox</value>
-  </data>
-  <data name="&gt;&gt;nameTextBox.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;nameTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;nameTextBox.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;endIPLabel.Name" xml:space="preserve">
-    <value>endIPLabel</value>
-  </data>
-  <data name="&gt;&gt;endIPLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;endIPLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;endIPLabel.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxA.Name" xml:space="preserve">
-    <value>endIPTextBoxA</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxA.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxA.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxA.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxB.Name" xml:space="preserve">
-    <value>endIPTextBoxB</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxB.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxB.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxB.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxC.Name" xml:space="preserve">
-    <value>endIPTextBoxC</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxC.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxC.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxC.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxD.Name" xml:space="preserve">
-    <value>endIPTextBoxD</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxD.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxD.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;endIPTextBoxD.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Name" xml:space="preserve">
-    <value>materialLabel4</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1202, 77</value>
-  </data>
-  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialLabel6" Row="0" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel13" Row="1" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel12" Row="1" RowSpan="1" Column="13" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel11" Row="1" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel10" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel8" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel9" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxD" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxC" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxB" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxA" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startIPLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="7" /&gt;&lt;Control Name="stopScanButton" Row="1" RowSpan="1" Column="19" ColumnSpan="1" /&gt;&lt;Control Name="nameLabel" Row="0" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="addIPButton" Row="1" RowSpan="1" Column="18" ColumnSpan="1" /&gt;&lt;Control Name="searchButton" Row="1" RowSpan="1" Column="17" ColumnSpan="1" /&gt;&lt;Control Name="nameTextBox" Row="1" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="endIPLabel" Row="0" RowSpan="1" Column="8" ColumnSpan="7" /&gt;&lt;Control Name="endIPTextBoxA" Row="1" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxB" Row="1" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxC" Row="1" RowSpan="1" Column="12" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxD" Row="1" RowSpan="1" Column="14" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="1" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5.653021,Percent,0.7797271,Percent,5.653021,Percent,0.7797271,Percent,5.263158,Percent,0.7797271,Percent,5.165692,Percent,2.144249,Percent,5.653021,Percent,0.7797271,Percent,5.360624,Percent,0.877193,Percent,5.45809,Percent,0.7797271,Percent,5.360624,Percent,0.7797271,Percent,17.154,Percent,10.49996,Percent,10.2501,Percent,10.25009" /&gt;&lt;Rows Styles="Absolute,29,Absolute,51" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="materialLabel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3123,6 +1476,1278 @@
   <data name="&gt;&gt;materialLabel4.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
+  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1202, 77</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialLabel6" Row="0" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel13" Row="1" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel12" Row="1" RowSpan="1" Column="13" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel11" Row="1" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel10" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel8" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel9" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxD" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxC" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxB" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxA" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startIPLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="7" /&gt;&lt;Control Name="stopScanButton" Row="1" RowSpan="1" Column="19" ColumnSpan="1" /&gt;&lt;Control Name="nameLabel" Row="0" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="addIPButton" Row="1" RowSpan="1" Column="18" ColumnSpan="1" /&gt;&lt;Control Name="searchButton" Row="1" RowSpan="1" Column="17" ColumnSpan="1" /&gt;&lt;Control Name="nameTextBox" Row="1" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="endIPLabel" Row="0" RowSpan="1" Column="8" ColumnSpan="7" /&gt;&lt;Control Name="endIPTextBoxA" Row="1" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxB" Row="1" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxC" Row="1" RowSpan="1" Column="12" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxD" Row="1" RowSpan="1" Column="14" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="1" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5.653021,Percent,0.7797271,Percent,5.653021,Percent,0.7797271,Percent,5.263158,Percent,0.7797271,Percent,5.165692,Percent,2.144249,Percent,5.653021,Percent,0.7797271,Percent,5.360624,Percent,0.877193,Percent,5.45809,Percent,0.7797271,Percent,5.360624,Percent,0.7797271,Percent,17.154,Percent,10.49996,Percent,10.2501,Percent,10.25009" /&gt;&lt;Rows Styles="Absolute,29,Absolute,51" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel6.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1208, 219</value>
+  </data>
+  <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Name" xml:space="preserve">
+    <value>tableLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,83,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1214, 225</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="stopListeningButtons.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="stopListeningButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="stopListeningButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="stopListeningButtons.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="stopListeningButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 168</value>
+  </data>
+  <data name="stopListeningButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="stopListeningButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 45</value>
+  </data>
+  <data name="stopListeningButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="stopListeningButtons.Text" xml:space="preserve">
+    <value>Stop Listening</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Name" xml:space="preserve">
+    <value>stopListeningButtons</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="startListeningButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="startListeningButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="startListeningButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="startListeningButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="startListeningButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 168</value>
+  </data>
+  <data name="startListeningButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="startListeningButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 45</value>
+  </data>
+  <data name="startListeningButton.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="startListeningButton.Text" xml:space="preserve">
+    <value>Start Listening</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Name" xml:space="preserve">
+    <value>startListeningButton</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="newIpTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="newIpTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="newIpTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>664, 3</value>
+  </data>
+  <data name="newIpTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="newIpTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="newIpTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 50</value>
+  </data>
+  <data name="newIpTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="newIpTextBox.Text" xml:space="preserve">
+    <value>123</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Name" xml:space="preserve">
+    <value>newIpTextBox</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="performanceButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="performanceButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="performanceButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="performanceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="performanceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 114</value>
+  </data>
+  <data name="performanceButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="performanceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 42</value>
+  </data>
+  <data name="performanceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="performanceButton.Text" xml:space="preserve">
+    <value>Set Performance Mode</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Name" xml:space="preserve">
+    <value>performanceButton</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="setStaticIPButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="setStaticIPButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="setStaticIPButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="setStaticIPButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setStaticIPButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 60</value>
+  </data>
+  <data name="setStaticIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="setStaticIPButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 42</value>
+  </data>
+  <data name="setStaticIPButton.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="setStaticIPButton.Text" xml:space="preserve">
+    <value>Set Static IP</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Name" xml:space="preserve">
+    <value>setStaticIPButton</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="newStaticLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="newStaticLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="newStaticLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="newStaticLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="newStaticLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>433, 17</value>
+  </data>
+  <data name="newStaticLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 19</value>
+  </data>
+  <data name="newStaticLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="newStaticLabel.Text" xml:space="preserve">
+    <value>Last Number Of New Static IP</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Name" xml:space="preserve">
+    <value>newStaticLabel</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="newPasswordTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="newPasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="newPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>664, 111</value>
+  </data>
+  <data name="newPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="newPasswordTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="newPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 50</value>
+  </data>
+  <data name="newPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="newPasswordTextBox.Text" xml:space="preserve">
+    <value>admin</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Name" xml:space="preserve">
+    <value>newPasswordTextBox</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="poolPasswordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="poolPasswordLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="poolPasswordLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="poolPasswordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="poolPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>796, 125</value>
+  </data>
+  <data name="poolPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 19</value>
+  </data>
+  <data name="poolPasswordLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="poolPasswordLabel.Text" xml:space="preserve">
+    <value>Pool Password</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Name" xml:space="preserve">
+    <value>poolPasswordLabel</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="selfCheckButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="selfCheckButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="selfCheckButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="selfCheckButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="selfCheckButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="selfCheckButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 42</value>
+  </data>
+  <data name="selfCheckButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="selfCheckButton.Text" xml:space="preserve">
+    <value>Self Check</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Name" xml:space="preserve">
+    <value>selfCheckButton</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="setPasswordButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="setPasswordButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="setPasswordButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="setPasswordButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setPasswordButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 168</value>
+  </data>
+  <data name="setPasswordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="setPasswordButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 45</value>
+  </data>
+  <data name="setPasswordButton.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="setPasswordButton.Text" xml:space="preserve">
+    <value>Set New Password</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Name" xml:space="preserve">
+    <value>setPasswordButton</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="minerPasswordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="minerPasswordLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="minerPasswordLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="minerPasswordLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="minerPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 125</value>
+  </data>
+  <data name="minerPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 19</value>
+  </data>
+  <data name="minerPasswordLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="minerPasswordLabel.Text" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Name" xml:space="preserve">
+    <value>minerPasswordLabel</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="openInBrowserButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="openInBrowserButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="openInBrowserButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="openInBrowserButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="openInBrowserButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 60</value>
+  </data>
+  <data name="openInBrowserButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="openInBrowserButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 42</value>
+  </data>
+  <data name="openInBrowserButton.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="openInBrowserButton.Text" xml:space="preserve">
+    <value>Open In Browser</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Name" xml:space="preserve">
+    <value>openInBrowserButton</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="setDynamicIPButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="setDynamicIPButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="setDynamicIPButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="setDynamicIPButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setDynamicIPButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 60</value>
+  </data>
+  <data name="setDynamicIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="setDynamicIPButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 42</value>
+  </data>
+  <data name="setDynamicIPButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="setDynamicIPButton.Text" xml:space="preserve">
+    <value>Set Dynamic IP</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Name" xml:space="preserve">
+    <value>setDynamicIPButton</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="performanceDropdown.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="performanceDropdown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14px, style=Bold</value>
+  </data>
+  <data name="performanceDropdown.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="performanceDropdown.ItemHeight" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="performanceDropdown.Items" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="performanceDropdown.Items1" xml:space="preserve">
+    <value>Efficiency</value>
+  </data>
+  <data name="performanceDropdown.Items2" xml:space="preserve">
+    <value>Balanced</value>
+  </data>
+  <data name="performanceDropdown.Items3" xml:space="preserve">
+    <value>Factory</value>
+  </data>
+  <data name="performanceDropdown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 111</value>
+  </data>
+  <data name="performanceDropdown.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="performanceDropdown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 49</value>
+  </data>
+  <data name="performanceDropdown.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Name" xml:space="preserve">
+    <value>performanceDropdown</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialComboBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="setPoolButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="setPoolButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="setPoolButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="setPoolButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setPoolButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1023, 114</value>
+  </data>
+  <data name="setPoolButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="setPoolButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 42</value>
+  </data>
+  <data name="setPoolButton.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="setPoolButton.Text" xml:space="preserve">
+    <value>Set Pools</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Name" xml:space="preserve">
+    <value>setPoolButton</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="updateButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="updateButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="updateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>779, 168</value>
+  </data>
+  <data name="updateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="updateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>425, 45</value>
+  </data>
+  <data name="updateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="updateButton.Text" xml:space="preserve">
+    <value>Update Firmware</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Name" xml:space="preserve">
+    <value>updateButton</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;updateButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="poolAccountLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="poolAccountLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="poolAccountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="poolAccountLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="poolAccountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>802, 71</value>
+  </data>
+  <data name="poolAccountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 19</value>
+  </data>
+  <data name="poolAccountLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="poolAccountLabel.Text" xml:space="preserve">
+    <value>Pool Account</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Name" xml:space="preserve">
+    <value>poolAccountLabel</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="poolUserTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="poolUserTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="poolUserTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>927, 57</value>
+  </data>
+  <data name="poolUserTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="poolUserTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="poolUserTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 50</value>
+  </data>
+  <data name="poolUserTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="poolUserTextBox.Text" xml:space="preserve">
+    <value>eheymetc</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Name" xml:space="preserve">
+    <value>poolUserTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="poolPasswordTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="poolPasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="poolPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>927, 111</value>
+  </data>
+  <data name="poolPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="poolPasswordTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="poolPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 50</value>
+  </data>
+  <data name="poolPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="poolPasswordTextBox.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Name" xml:space="preserve">
+    <value>poolPasswordTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="poolUrlTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="poolUrlTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="poolUrlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>927, 3</value>
+  </data>
+  <data name="poolUrlTextBox.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="poolUrlTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="poolUrlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 50</value>
+  </data>
+  <data name="poolUrlTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="poolUrlTextBox.Text" xml:space="preserve">
+    <value>stratum+tcp://etc.ss.btc.com:1800</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Name" xml:space="preserve">
+    <value>poolUrlTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="poolURLLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="poolURLLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="poolURLLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="poolURLLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>816, 17</value>
+  </data>
+  <data name="poolURLLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 19</value>
+  </data>
+  <data name="poolURLLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="poolURLLabel.Text" xml:space="preserve">
+    <value>Pool URL</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Name" xml:space="preserve">
+    <value>poolURLLabel</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="tableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1208, 219</value>
+  </data>
+  <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1214, 225</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Commands</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 77</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1222, 251</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="materialTabSelector1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 23</value>
+  </data>
+  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1216, 51</value>
+  </data>
+  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="materialTabSelector1.Text" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTabSelector, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="minerFoundCountLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="minerFoundCountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="minerFoundCountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 328</value>
+  </data>
+  <data name="minerFoundCountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>5, 19</value>
+  </data>
+  <data name="minerFoundCountLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="minerFoundCountLabel.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="minerFoundCountLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Name" xml:space="preserve">
+    <value>minerFoundCountLabel</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="IPAddress.Text" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="IPAddress.Width" type="System.Int32, mscorlib">
+    <value>133</value>
+  </data>
+  <data name="Hashrate.Text" xml:space="preserve">
+    <value>Hashrate</value>
+  </data>
+  <data name="Hashrate.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="Pool.Text" xml:space="preserve">
+    <value>Pool</value>
+  </data>
+  <data name="Pool.Width" type="System.Int32, mscorlib">
+    <value>291</value>
+  </data>
+  <data name="PoolUser.Text" xml:space="preserve">
+    <value>Pool User</value>
+  </data>
+  <data name="PoolUser.Width" type="System.Int32, mscorlib">
+    <value>174</value>
+  </data>
+  <data name="Account.Text" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Account.Width" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="DAG.Text" xml:space="preserve">
+    <value>DAG Progress</value>
+  </data>
+  <data name="DAG.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="SelfCheckProgress.Text" xml:space="preserve">
+    <value>Self Check</value>
+  </data>
+  <data name="SelfCheckProgress.Width" type="System.Int32, mscorlib">
+    <value>123</value>
+  </data>
+  <data name="HashboardStatus.DisplayIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="HashboardStatus.Text" xml:space="preserve">
+    <value>HashboardStatus</value>
+  </data>
+  <data name="HashboardStatus.Width" type="System.Int32, mscorlib">
+    <value>113</value>
+  </data>
+  <data name="AcceptanceRate.DisplayIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="AcceptanceRate.Text" xml:space="preserve">
+    <value>Acceptance Rate</value>
+  </data>
+  <data name="AcceptanceRate.Width" type="System.Int32, mscorlib">
+    <value>139</value>
+  </data>
+  <data name="Accepted.DisplayIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="Accepted.Text" xml:space="preserve">
+    <value>Accepted Shares</value>
+  </data>
+  <data name="Accepted.Width" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="Rejected.DisplayIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="Rejected.Text" xml:space="preserve">
+    <value>Rejected Shares</value>
+  </data>
+  <data name="Rejected.Width" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="MacAddress.DisplayIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="MacAddress.Text" xml:space="preserve">
+    <value>Mac Address</value>
+  </data>
+  <data name="MacAddress.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="Uptime.DisplayIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="Uptime.Text" xml:space="preserve">
+    <value>Uptime</value>
+  </data>
+  <data name="Uptime.Width" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="Temperature.DisplayIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Temperature.Text" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="Temperature.Width" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="FanSpeed.DisplayIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="FanSpeed.Text" xml:space="preserve">
+    <value>Fan Speed</value>
+  </data>
+  <data name="FanSpeed.Width" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="Firmware.DisplayIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Firmware.Text" xml:space="preserve">
+    <value>Firmware Version</value>
+  </data>
+  <data name="Firmware.Width" type="System.Int32, mscorlib">
+    <value>250</value>
+  </data>
+  <data name="Hashboard1Status.Text" xml:space="preserve">
+    <value>Board 1 Status</value>
+  </data>
+  <data name="Hashboard1Status.Width" type="System.Int32, mscorlib">
+    <value>106</value>
+  </data>
+  <data name="Hashboard1Hashrate.Text" xml:space="preserve">
+    <value>Board 1 Hashrate</value>
+  </data>
+  <data name="Hashboard1Hashrate.Width" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="Hashboard1Temperature.Text" xml:space="preserve">
+    <value>Board 1 Temp</value>
+  </data>
+  <data name="Hashboard1Temperature.Width" type="System.Int32, mscorlib">
+    <value>117</value>
+  </data>
+  <data name="Hashboard2Status.Text" xml:space="preserve">
+    <value>Board 2 Status</value>
+  </data>
+  <data name="Hashboard2Status.Width" type="System.Int32, mscorlib">
+    <value>108</value>
+  </data>
+  <data name="Hashboard2Hashrate.Text" xml:space="preserve">
+    <value>Board 2 Hashrate</value>
+  </data>
+  <data name="Hashboard2Hashrate.Width" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="Hashboard2Temperature.Text" xml:space="preserve">
+    <value>Board 2 Temp</value>
+  </data>
+  <data name="Hashboard2Temperature.Width" type="System.Int32, mscorlib">
+    <value>103</value>
+  </data>
+  <data name="Hashboard3Status.Text" xml:space="preserve">
+    <value>Board 3 Status</value>
+  </data>
+  <data name="Hashboard3Status.Width" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="Hashboard3Hashrate.Text" xml:space="preserve">
+    <value>Board 3 Hashrate</value>
+  </data>
+  <data name="Hashboard3Hashrate.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="Hashboard3Temperature.Text" xml:space="preserve">
+    <value>Board 3 Temp</value>
+  </data>
+  <data name="Hashboard3Temperature.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="minerListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="minerListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="minerListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 347</value>
+  </data>
+  <data name="minerListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 80</value>
+  </data>
+  <data name="minerListView.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>10, 200</value>
+  </data>
+  <data name="minerListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1216, 515</value>
+  </data>
+  <data name="minerListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Name" xml:space="preserve">
+    <value>minerListView</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;minerListView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 64</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 20, 30, 50</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1299, 592</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialTabSelector1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerFoundCountLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerListView" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,57,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="translate.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -3267,7 +2892,7 @@
     <value>0, 64, 0, 0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Yami Scanner V1.1.2</value>
+    <value>Yami Scanner V1.1.3</value>
   </data>
   <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
     <value>backgroundWorker1</value>
