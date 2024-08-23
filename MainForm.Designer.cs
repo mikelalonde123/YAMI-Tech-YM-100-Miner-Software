@@ -51,7 +51,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
@@ -128,6 +127,8 @@
             this.ScanningIPLabel = new MaterialSkin.Controls.MaterialLabel();
             this.loadIPRangesDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveIPRangesDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ExportBtn = new MaterialSkin.Controls.MaterialButton();
+            this.SettingsBtn = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -335,7 +336,6 @@
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
             this.tableLayoutPanel2.Controls.Add(this.materialLabel6, 15, 0);
             this.tableLayoutPanel2.Controls.Add(this.materialLabel5, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.materialLabel13, 15, 1);
             this.tableLayoutPanel2.Controls.Add(this.materialLabel12, 13, 1);
             this.tableLayoutPanel2.Controls.Add(this.materialLabel11, 11, 1);
             this.tableLayoutPanel2.Controls.Add(this.materialLabel10, 9, 1);
@@ -374,13 +374,6 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            // 
-            // materialLabel13
-            // 
-            resources.ApplyResources(this.materialLabel13, "materialLabel13");
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
             // 
             // materialLabel12
             // 
@@ -934,6 +927,7 @@
             // 
             // minerListView
             // 
+            resources.ApplyResources(this.minerListView, "minerListView");
             this.minerListView.CheckBoxes = true;
             this.minerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IPAddress,
@@ -961,7 +955,6 @@
             this.Hashboard3Status,
             this.Hashboard3Hashrate,
             this.Hashboard3Temperature});
-            resources.ApplyResources(this.minerListView, "minerListView");
             this.minerListView.FullRowSelect = true;
             this.minerListView.HideSelection = false;
             this.minerListView.Name = "minerListView";
@@ -1104,11 +1097,45 @@
             this.saveIPRangesDialog.FileName = "Yami_IP_Ranges";
             resources.ApplyResources(this.saveIPRangesDialog, "saveIPRangesDialog");
             // 
+            // ExportBtn
+            // 
+            resources.ApplyResources(this.ExportBtn, "ExportBtn");
+            this.ExportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExportBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ExportBtn.Depth = 0;
+            this.ExportBtn.HighEmphasis = true;
+            this.ExportBtn.Icon = null;
+            this.ExportBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ExportBtn.Name = "ExportBtn";
+            this.ExportBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ExportBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ExportBtn.UseAccentColor = false;
+            this.ExportBtn.UseVisualStyleBackColor = true;
+            this.ExportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
+            // 
+            // SettingsBtn
+            // 
+            resources.ApplyResources(this.SettingsBtn, "SettingsBtn");
+            this.SettingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingsBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.SettingsBtn.Depth = 0;
+            this.SettingsBtn.HighEmphasis = true;
+            this.SettingsBtn.Icon = null;
+            this.SettingsBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SettingsBtn.Name = "SettingsBtn";
+            this.SettingsBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.SettingsBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.SettingsBtn.UseAccentColor = false;
+            this.SettingsBtn.UseVisualStyleBackColor = true;
+            this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.SettingsBtn);
+            this.Controls.Add(this.ExportBtn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.translate);
             this.Controls.Add(this.ScanningIPLabel);
@@ -1129,7 +1156,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1155,7 +1181,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
@@ -1233,6 +1258,8 @@
         private MaterialSkin.Controls.MaterialButton startListeningButton;
         private MaterialSkin.Controls.MaterialButton updateButton;
         private MaterialSkin.Controls.MaterialLabel poolURLLabel;
+        private MaterialSkin.Controls.MaterialButton ExportBtn;
+        private MaterialSkin.Controls.MaterialButton SettingsBtn;
     }
 }
 

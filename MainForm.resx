@@ -139,7 +139,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="rebootButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 42</value>
+    <value>173, 42</value>
   </data>
   <data name="rebootButton.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -225,9 +225,6 @@
   <data name="tableLayoutPanel1.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="tableLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -252,36 +249,6 @@
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="StartIP.Text" xml:space="preserve">
-    <value>Start IP</value>
-  </data>
-  <data name="StartIP.Width" type="System.Int32, mscorlib">
-    <value>180</value>
-  </data>
-  <data name="EndIP.Text" xml:space="preserve">
-    <value>End IP</value>
-  </data>
-  <data name="EndIP.Width" type="System.Int32, mscorlib">
-    <value>220</value>
-  </data>
-  <data name="groupName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="groupName.Width" type="System.Int32, mscorlib">
-    <value>334</value>
-  </data>
-  <data name="ipRangeListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ipRangeListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ipRangeListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>835, 124</value>
-  </data>
-  <data name="ipRangeListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;ipRangeListView.Name" xml:space="preserve">
     <value>ipRangeListView</value>
   </data>
@@ -293,27 +260,6 @@
   </data>
   <data name="&gt;&gt;ipRangeListView.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="scanSelectedButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="scanSelectedButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="scanSelectedButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>845, 6</value>
-  </data>
-  <data name="scanSelectedButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="scanSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 53</value>
-  </data>
-  <data name="scanSelectedButton.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="scanSelectedButton.Text" xml:space="preserve">
-    <value>Scan Selected Range(s)</value>
   </data>
   <data name="&gt;&gt;scanSelectedButton.Name" xml:space="preserve">
     <value>scanSelectedButton</value>
@@ -327,27 +273,6 @@
   <data name="&gt;&gt;scanSelectedButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="loadIPRangesButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="loadIPRangesButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="loadIPRangesButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>845, 71</value>
-  </data>
-  <data name="loadIPRangesButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="loadIPRangesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 53</value>
-  </data>
-  <data name="loadIPRangesButton.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="loadIPRangesButton.Text" xml:space="preserve">
-    <value>Load Ranges From File</value>
-  </data>
   <data name="&gt;&gt;loadIPRangesButton.Name" xml:space="preserve">
     <value>loadIPRangesButton</value>
   </data>
@@ -360,27 +285,6 @@
   <data name="&gt;&gt;loadIPRangesButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="deleteIPRanges.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="deleteIPRanges.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="deleteIPRanges.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1025, 71</value>
-  </data>
-  <data name="deleteIPRanges.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="deleteIPRanges.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 53</value>
-  </data>
-  <data name="deleteIPRanges.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="deleteIPRanges.Text" xml:space="preserve">
-    <value>Delete Selected Range(s)</value>
-  </data>
   <data name="&gt;&gt;deleteIPRanges.Name" xml:space="preserve">
     <value>deleteIPRanges</value>
   </data>
@@ -392,27 +296,6 @@
   </data>
   <data name="&gt;&gt;deleteIPRanges.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="saveRangesButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="saveRangesButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="saveRangesButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1025, 6</value>
-  </data>
-  <data name="saveRangesButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="saveRangesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 53</value>
-  </data>
-  <data name="saveRangesButton.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="saveRangesButton.Text" xml:space="preserve">
-    <value>Save Selected Range(s) To File</value>
   </data>
   <data name="&gt;&gt;saveRangesButton.Name" xml:space="preserve">
     <value>saveRangesButton</value>
@@ -436,7 +319,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1202, 130</value>
+    <value>1070, 129</value>
   </data>
   <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -478,13 +361,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 0</value>
+    <value>535, 0</value>
   </data>
   <data name="materialLabel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 29</value>
+    <value>8, 29</value>
   </data>
   <data name="materialLabel6.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -517,13 +400,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 0</value>
+    <value>255, 0</value>
   </data>
   <data name="materialLabel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 29</value>
+    <value>23, 29</value>
   </data>
   <data name="materialLabel5.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -543,48 +426,6 @@
   <data name="&gt;&gt;materialLabel5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="materialLabel13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="materialLabel13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="materialLabel13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 29</value>
-  </data>
-  <data name="materialLabel13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="materialLabel13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
-  </data>
-  <data name="materialLabel13.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="materialLabel13.Text" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="materialLabel13.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Name" xml:space="preserve">
-    <value>materialLabel13</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel13.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="materialLabel12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -598,13 +439,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 29</value>
+    <value>470, 29</value>
   </data>
   <data name="materialLabel12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
+    <value>8, 51</value>
   </data>
   <data name="materialLabel12.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -625,7 +466,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel12.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="materialLabel11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -640,13 +481,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>454, 29</value>
+    <value>403, 29</value>
   </data>
   <data name="materialLabel11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 51</value>
+    <value>9, 51</value>
   </data>
   <data name="materialLabel11.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -667,7 +508,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel11.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="materialLabel10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -682,13 +523,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 29</value>
+    <value>338, 29</value>
   </data>
   <data name="materialLabel10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
+    <value>8, 51</value>
   </data>
   <data name="materialLabel10.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -709,7 +550,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel10.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="materialLabel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -724,13 +565,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 29</value>
+    <value>128, 29</value>
   </data>
   <data name="materialLabel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
+    <value>8, 51</value>
   </data>
   <data name="materialLabel8.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -751,7 +592,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel8.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="materialLabel7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -766,13 +607,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 29</value>
+    <value>60, 29</value>
   </data>
   <data name="materialLabel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
+    <value>8, 51</value>
   </data>
   <data name="materialLabel7.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -793,7 +634,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel7.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="materialLabel9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -808,13 +649,13 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 29</value>
+    <value>192, 29</value>
   </data>
   <data name="materialLabel9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="materialLabel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>9, 51</value>
+    <value>8, 51</value>
   </data>
   <data name="materialLabel9.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -835,7 +676,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel9.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="startIPTextBoxD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -844,7 +685,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="startIPTextBoxD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 29</value>
+    <value>200, 29</value>
   </data>
   <data name="startIPTextBoxD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -859,13 +700,13 @@
     <value>False</value>
   </data>
   <data name="startIPTextBoxD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 50</value>
+    <value>55, 50</value>
   </data>
   <data name="startIPTextBoxD.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="startIPTextBoxD.Text" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;startIPTextBoxD.Name" xml:space="preserve">
     <value>startIPTextBoxD</value>
@@ -877,7 +718,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;startIPTextBoxD.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="startIPTextBoxC.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -886,7 +727,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="startIPTextBoxC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 29</value>
+    <value>136, 29</value>
   </data>
   <data name="startIPTextBoxC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -901,7 +742,7 @@
     <value>False</value>
   </data>
   <data name="startIPTextBoxC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 50</value>
+    <value>56, 50</value>
   </data>
   <data name="startIPTextBoxC.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -919,7 +760,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;startIPTextBoxC.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="startIPTextBoxB.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -928,7 +769,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="startIPTextBoxB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 29</value>
+    <value>68, 29</value>
   </data>
   <data name="startIPTextBoxB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -943,7 +784,7 @@
     <value>False</value>
   </data>
   <data name="startIPTextBoxB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 50</value>
+    <value>60, 50</value>
   </data>
   <data name="startIPTextBoxB.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -961,7 +802,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;startIPTextBoxB.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="startIPTextBoxA.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -985,7 +826,7 @@
     <value>False</value>
   </data>
   <data name="startIPTextBoxA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 50</value>
+    <value>60, 50</value>
   </data>
   <data name="startIPTextBoxA.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1003,7 +844,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;startIPTextBoxA.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="startIPLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1021,7 +862,7 @@
     <value>3, 0</value>
   </data>
   <data name="startIPLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 29</value>
+    <value>249, 29</value>
   </data>
   <data name="startIPLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1042,7 +883,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;startIPLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="stopScanButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1054,13 +895,13 @@
     <value>NoControl</value>
   </data>
   <data name="stopScanButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1071, 35</value>
+    <value>954, 35</value>
   </data>
   <data name="stopScanButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="stopScanButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 39</value>
+    <value>112, 39</value>
   </data>
   <data name="stopScanButton.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1078,7 +919,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;stopScanButton.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="nameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1093,10 +934,10 @@
     <value>NoControl</value>
   </data>
   <data name="nameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 0</value>
+    <value>546, 0</value>
   </data>
   <data name="nameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 29</value>
+    <value>178, 29</value>
   </data>
   <data name="nameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1117,7 +958,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;nameLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="addIPButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1129,13 +970,13 @@
     <value>NoControl</value>
   </data>
   <data name="addIPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 35</value>
+    <value>844, 35</value>
   </data>
   <data name="addIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="addIPButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 39</value>
+    <value>102, 39</value>
   </data>
   <data name="addIPButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1153,7 +994,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;addIPButton.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="searchButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1165,13 +1006,13 @@
     <value>NoControl</value>
   </data>
   <data name="searchButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>822, 35</value>
+    <value>731, 35</value>
   </data>
   <data name="searchButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="searchButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 39</value>
+    <value>105, 39</value>
   </data>
   <data name="searchButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1189,7 +1030,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;searchButton.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="nameTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1198,7 +1039,7 @@
     <value>Roboto, 16px</value>
   </data>
   <data name="nameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>611, 29</value>
+    <value>543, 29</value>
   </data>
   <data name="nameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1210,7 +1051,7 @@
     <value>False</value>
   </data>
   <data name="nameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 50</value>
+    <value>184, 50</value>
   </data>
   <data name="nameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1228,7 +1069,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;nameTextBox.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="endIPLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1243,10 +1084,10 @@
     <value>NoControl</value>
   </data>
   <data name="endIPLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 0</value>
+    <value>281, 0</value>
   </data>
   <data name="endIPLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 29</value>
+    <value>251, 29</value>
   </data>
   <data name="endIPLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1267,7 +1108,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;endIPLabel.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="endIPTextBoxA.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1276,7 +1117,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="endIPTextBoxA.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 29</value>
+    <value>278, 29</value>
   </data>
   <data name="endIPTextBoxA.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1291,7 +1132,7 @@
     <value>False</value>
   </data>
   <data name="endIPTextBoxA.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 50</value>
+    <value>60, 50</value>
   </data>
   <data name="endIPTextBoxA.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1309,7 +1150,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxA.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="endIPTextBoxB.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1318,7 +1159,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="endIPTextBoxB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 29</value>
+    <value>346, 29</value>
   </data>
   <data name="endIPTextBoxB.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1333,7 +1174,7 @@
     <value>False</value>
   </data>
   <data name="endIPTextBoxB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 50</value>
+    <value>57, 50</value>
   </data>
   <data name="endIPTextBoxB.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1351,7 +1192,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxB.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>20</value>
   </data>
   <data name="endIPTextBoxC.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1360,7 +1201,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="endIPTextBoxC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 29</value>
+    <value>412, 29</value>
   </data>
   <data name="endIPTextBoxC.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1375,7 +1216,7 @@
     <value>False</value>
   </data>
   <data name="endIPTextBoxC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 50</value>
+    <value>58, 50</value>
   </data>
   <data name="endIPTextBoxC.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1393,7 +1234,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxC.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>21</value>
   </data>
   <data name="endIPTextBoxD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1402,7 +1243,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="endIPTextBoxD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>538, 29</value>
+    <value>478, 29</value>
   </data>
   <data name="endIPTextBoxD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1417,13 +1258,13 @@
     <value>False</value>
   </data>
   <data name="endIPTextBoxD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 50</value>
+    <value>57, 50</value>
   </data>
   <data name="endIPTextBoxD.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="endIPTextBoxD.Text" xml:space="preserve">
-    <value>255</value>
+    <value>253</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxD.Name" xml:space="preserve">
     <value>endIPTextBoxD</value>
@@ -1435,7 +1276,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxD.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>22</value>
   </data>
   <data name="materialLabel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1450,10 +1291,10 @@
     <value>NoControl</value>
   </data>
   <data name="materialLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 29</value>
+    <value>258, 29</value>
   </data>
   <data name="materialLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 51</value>
+    <value>17, 51</value>
   </data>
   <data name="materialLabel4.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1474,7 +1315,7 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;materialLabel4.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1486,7 +1327,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1202, 77</value>
+    <value>1070, 77</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1504,7 +1345,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialLabel6" Row="0" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel13" Row="1" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel12" Row="1" RowSpan="1" Column="13" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel11" Row="1" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel10" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel8" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel9" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxD" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxC" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxB" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxA" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startIPLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="7" /&gt;&lt;Control Name="stopScanButton" Row="1" RowSpan="1" Column="19" ColumnSpan="1" /&gt;&lt;Control Name="nameLabel" Row="0" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="addIPButton" Row="1" RowSpan="1" Column="18" ColumnSpan="1" /&gt;&lt;Control Name="searchButton" Row="1" RowSpan="1" Column="17" ColumnSpan="1" /&gt;&lt;Control Name="nameTextBox" Row="1" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="endIPLabel" Row="0" RowSpan="1" Column="8" ColumnSpan="7" /&gt;&lt;Control Name="endIPTextBoxA" Row="1" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxB" Row="1" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxC" Row="1" RowSpan="1" Column="12" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxD" Row="1" RowSpan="1" Column="14" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="1" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5.653021,Percent,0.7797271,Percent,5.653021,Percent,0.7797271,Percent,5.263158,Percent,0.7797271,Percent,5.165692,Percent,2.144249,Percent,5.653021,Percent,0.7797271,Percent,5.360624,Percent,0.877193,Percent,5.45809,Percent,0.7797271,Percent,5.360624,Percent,0.7797271,Percent,17.154,Percent,10.49996,Percent,10.2501,Percent,10.25009" /&gt;&lt;Rows Styles="Absolute,29,Absolute,51" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialLabel6" Row="0" RowSpan="1" Column="15" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel12" Row="1" RowSpan="1" Column="13" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel11" Row="1" RowSpan="1" Column="11" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel10" Row="1" RowSpan="1" Column="9" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel8" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel9" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxD" Row="1" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxC" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxB" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="startIPTextBoxA" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startIPLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="7" /&gt;&lt;Control Name="stopScanButton" Row="1" RowSpan="1" Column="19" ColumnSpan="1" /&gt;&lt;Control Name="nameLabel" Row="0" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="addIPButton" Row="1" RowSpan="1" Column="18" ColumnSpan="1" /&gt;&lt;Control Name="searchButton" Row="1" RowSpan="1" Column="17" ColumnSpan="1" /&gt;&lt;Control Name="nameTextBox" Row="1" RowSpan="1" Column="16" ColumnSpan="1" /&gt;&lt;Control Name="endIPLabel" Row="0" RowSpan="1" Column="8" ColumnSpan="7" /&gt;&lt;Control Name="endIPTextBoxA" Row="1" RowSpan="1" Column="8" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxB" Row="1" RowSpan="1" Column="10" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxC" Row="1" RowSpan="1" Column="12" ColumnSpan="1" /&gt;&lt;Control Name="endIPTextBoxD" Row="1" RowSpan="1" Column="14" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="1" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5.653021,Percent,0.7797271,Percent,5.653021,Percent,0.7797271,Percent,5.263158,Percent,0.7797271,Percent,5.165692,Percent,2.144249,Percent,5.653021,Percent,0.7797271,Percent,5.360624,Percent,0.877193,Percent,5.45809,Percent,0.7797271,Percent,5.360624,Percent,0.7797271,Percent,17.154,Percent,10.49996,Percent,10.2501,Percent,10.25009" /&gt;&lt;Rows Styles="Absolute,29,Absolute,51" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1516,7 +1357,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1208, 219</value>
+    <value>1076, 218</value>
   </data>
   <data name="tableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1543,7 +1384,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1214, 225</value>
+    <value>1082, 224</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1563,8 +1404,668 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1082, 224</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Commands</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 57</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1090, 250</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="materialTabSelector1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 3</value>
+  </data>
+  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1084, 51</value>
+  </data>
+  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="materialTabSelector1.Text" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTabSelector, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="minerFoundCountLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="minerFoundCountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Roboto, 14px</value>
+  </data>
+  <data name="minerFoundCountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 307</value>
+  </data>
+  <data name="minerFoundCountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>5, 19</value>
+  </data>
+  <data name="minerFoundCountLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="minerFoundCountLabel.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="minerFoundCountLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Name" xml:space="preserve">
+    <value>minerFoundCountLabel</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;minerFoundCountLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="minerListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="minerListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="minerListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 327</value>
+  </data>
+  <data name="minerListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 15</value>
+  </data>
+  <data name="minerListView.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>4, 70</value>
+  </data>
+  <data name="minerListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1084, 269</value>
+  </data>
+  <data name="minerListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Name" xml:space="preserve">
+    <value>minerListView</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minerListView.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;minerListView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 64</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 10, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1110, 611</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialTabSelector1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerFoundCountLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerListView" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,57,Absolute,250,Absolute,20,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="ipRangeListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ipRangeListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="ipRangeListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>743, 123</value>
+  </data>
+  <data name="ipRangeListView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ipRangeListView.Name" xml:space="preserve">
+    <value>ipRangeListView</value>
+  </data>
+  <data name="&gt;&gt;ipRangeListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ipRangeListView.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;ipRangeListView.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StartIP.Text" xml:space="preserve">
+    <value>Start IP</value>
+  </data>
+  <data name="StartIP.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="EndIP.Text" xml:space="preserve">
+    <value>End IP</value>
+  </data>
+  <data name="EndIP.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="groupName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="groupName.Width" type="System.Int32, mscorlib">
+    <value>420</value>
+  </data>
+  <data name="scanSelectedButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="scanSelectedButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scanSelectedButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>753, 6</value>
+  </data>
+  <data name="scanSelectedButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="scanSelectedButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 52</value>
+  </data>
+  <data name="scanSelectedButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="scanSelectedButton.Text" xml:space="preserve">
+    <value>Scan Selected Range(s)</value>
+  </data>
+  <data name="&gt;&gt;scanSelectedButton.Name" xml:space="preserve">
+    <value>scanSelectedButton</value>
+  </data>
+  <data name="&gt;&gt;scanSelectedButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scanSelectedButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;scanSelectedButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="loadIPRangesButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="loadIPRangesButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="loadIPRangesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>753, 70</value>
+  </data>
+  <data name="loadIPRangesButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="loadIPRangesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 53</value>
+  </data>
+  <data name="loadIPRangesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="loadIPRangesButton.Text" xml:space="preserve">
+    <value>Load Ranges From File</value>
+  </data>
+  <data name="&gt;&gt;loadIPRangesButton.Name" xml:space="preserve">
+    <value>loadIPRangesButton</value>
+  </data>
+  <data name="&gt;&gt;loadIPRangesButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;loadIPRangesButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;loadIPRangesButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="deleteIPRanges.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="deleteIPRanges.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="deleteIPRanges.Location" type="System.Drawing.Point, System.Drawing">
+    <value>913, 70</value>
+  </data>
+  <data name="deleteIPRanges.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="deleteIPRanges.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 53</value>
+  </data>
+  <data name="deleteIPRanges.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="deleteIPRanges.Text" xml:space="preserve">
+    <value>Delete Selected Range(s)</value>
+  </data>
+  <data name="&gt;&gt;deleteIPRanges.Name" xml:space="preserve">
+    <value>deleteIPRanges</value>
+  </data>
+  <data name="&gt;&gt;deleteIPRanges.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;deleteIPRanges.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;deleteIPRanges.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="saveRangesButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="saveRangesButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="saveRangesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>913, 6</value>
+  </data>
+  <data name="saveRangesButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="saveRangesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 52</value>
+  </data>
+  <data name="saveRangesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="saveRangesButton.Text" xml:space="preserve">
+    <value>Save Selected Range(s) To File</value>
+  </data>
+  <data name="&gt;&gt;saveRangesButton.Name" xml:space="preserve">
+    <value>saveRangesButton</value>
+  </data>
+  <data name="&gt;&gt;saveRangesButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;saveRangesButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;saveRangesButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Name" xml:space="preserve">
+    <value>stopListeningButtons</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;stopListeningButtons.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Name" xml:space="preserve">
+    <value>startListeningButton</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;startListeningButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Name" xml:space="preserve">
+    <value>newIpTextBox</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newIpTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Name" xml:space="preserve">
+    <value>performanceButton</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;performanceButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Name" xml:space="preserve">
+    <value>setStaticIPButton</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setStaticIPButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Name" xml:space="preserve">
+    <value>newStaticLabel</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newStaticLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Name" xml:space="preserve">
+    <value>newPasswordTextBox</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;newPasswordTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Name" xml:space="preserve">
+    <value>poolPasswordLabel</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Name" xml:space="preserve">
+    <value>selfCheckButton</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;selfCheckButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Name" xml:space="preserve">
+    <value>setPasswordButton</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setPasswordButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Name" xml:space="preserve">
+    <value>minerPasswordLabel</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;minerPasswordLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Name" xml:space="preserve">
+    <value>openInBrowserButton</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;openInBrowserButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Name" xml:space="preserve">
+    <value>setDynamicIPButton</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setDynamicIPButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Name" xml:space="preserve">
+    <value>performanceDropdown</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialComboBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;performanceDropdown.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Name" xml:space="preserve">
+    <value>setPoolButton</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;setPoolButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Name" xml:space="preserve">
+    <value>updateButton</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;updateButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;updateButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Name" xml:space="preserve">
+    <value>poolAccountLabel</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolAccountLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Name" xml:space="preserve">
+    <value>poolUserTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolUserTextBox.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Name" xml:space="preserve">
+    <value>poolPasswordTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolPasswordTextBox.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Name" xml:space="preserve">
+    <value>poolUrlTextBox</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialTextBox, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolUrlTextBox.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Name" xml:space="preserve">
+    <value>poolURLLabel</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;poolURLLabel.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="tableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1076, 218</value>
+  </data>
+  <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="stopListeningButtons.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1579,13 +2080,13 @@
     <value>NoControl</value>
   </data>
   <data name="stopListeningButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 168</value>
+    <value>185, 168</value>
   </data>
   <data name="stopListeningButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="stopListeningButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 45</value>
+    <value>182, 44</value>
   </data>
   <data name="stopListeningButtons.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -1624,7 +2125,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="startListeningButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 45</value>
+    <value>173, 44</value>
   </data>
   <data name="startListeningButton.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1651,7 +2152,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="newIpTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>664, 3</value>
+    <value>592, 3</value>
   </data>
   <data name="newIpTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1660,7 +2161,7 @@
     <value>False</value>
   </data>
   <data name="newIpTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 50</value>
+    <value>95, 50</value>
   </data>
   <data name="newIpTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -1699,7 +2200,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="performanceButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 42</value>
+    <value>173, 42</value>
   </data>
   <data name="performanceButton.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -1732,13 +2233,13 @@
     <value>NoControl</value>
   </data>
   <data name="setStaticIPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 60</value>
+    <value>375, 60</value>
   </data>
   <data name="setStaticIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="setStaticIPButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 42</value>
+    <value>311, 42</value>
   </data>
   <data name="setStaticIPButton.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -1771,7 +2272,7 @@
     <value>NoControl</value>
   </data>
   <data name="newStaticLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 17</value>
+    <value>374, 17</value>
   </data>
   <data name="newStaticLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 19</value>
@@ -1801,7 +2302,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="newPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>664, 111</value>
+    <value>592, 111</value>
   </data>
   <data name="newPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -1810,7 +2311,7 @@
     <value>False</value>
   </data>
   <data name="newPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 50</value>
+    <value>95, 50</value>
   </data>
   <data name="newPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1843,7 +2344,7 @@
     <value>NoControl</value>
   </data>
   <data name="poolPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>796, 125</value>
+    <value>702, 125</value>
   </data>
   <data name="poolPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 19</value>
@@ -1876,13 +2377,13 @@
     <value>Fill</value>
   </data>
   <data name="selfCheckButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 6</value>
+    <value>185, 6</value>
   </data>
   <data name="selfCheckButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="selfCheckButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 42</value>
+    <value>182, 42</value>
   </data>
   <data name="selfCheckButton.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1915,13 +2416,13 @@
     <value>NoControl</value>
   </data>
   <data name="setPasswordButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 168</value>
+    <value>375, 168</value>
   </data>
   <data name="setPasswordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="setPasswordButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 45</value>
+    <value>311, 44</value>
   </data>
   <data name="setPasswordButton.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1954,7 +2455,7 @@
     <value>NoControl</value>
   </data>
   <data name="minerPasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>485, 125</value>
+    <value>427, 125</value>
   </data>
   <data name="minerPasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 19</value>
@@ -1996,7 +2497,7 @@
     <value>4, 6, 4, 6</value>
   </data>
   <data name="openInBrowserButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 42</value>
+    <value>173, 42</value>
   </data>
   <data name="openInBrowserButton.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -2029,13 +2530,13 @@
     <value>NoControl</value>
   </data>
   <data name="setDynamicIPButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 60</value>
+    <value>185, 60</value>
   </data>
   <data name="setDynamicIPButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="setDynamicIPButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 42</value>
+    <value>182, 42</value>
   </data>
   <data name="setDynamicIPButton.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -2080,13 +2581,13 @@
     <value>Factory</value>
   </data>
   <data name="performanceDropdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 111</value>
+    <value>184, 111</value>
   </data>
   <data name="performanceDropdown.MaxDropDownItems" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="performanceDropdown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 49</value>
+    <value>184, 49</value>
   </data>
   <data name="performanceDropdown.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -2116,13 +2617,13 @@
     <value>NoControl</value>
   </data>
   <data name="setPoolButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1023, 114</value>
+    <value>910, 114</value>
   </data>
   <data name="setPoolButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="setPoolButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 42</value>
+    <value>162, 42</value>
   </data>
   <data name="setPoolButton.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -2149,13 +2650,13 @@
     <value>Fill</value>
   </data>
   <data name="updateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>779, 168</value>
+    <value>694, 168</value>
   </data>
   <data name="updateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="updateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 45</value>
+    <value>378, 44</value>
   </data>
   <data name="updateButton.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -2188,7 +2689,7 @@
     <value>NoControl</value>
   </data>
   <data name="poolAccountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>802, 71</value>
+    <value>708, 71</value>
   </data>
   <data name="poolAccountLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 19</value>
@@ -2218,7 +2719,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="poolUserTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>927, 57</value>
+    <value>825, 57</value>
   </data>
   <data name="poolUserTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -2227,7 +2728,7 @@
     <value>False</value>
   </data>
   <data name="poolUserTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 50</value>
+    <value>248, 50</value>
   </data>
   <data name="poolUserTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -2254,7 +2755,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="poolPasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>927, 111</value>
+    <value>825, 111</value>
   </data>
   <data name="poolPasswordTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -2263,7 +2764,7 @@
     <value>False</value>
   </data>
   <data name="poolPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 50</value>
+    <value>78, 50</value>
   </data>
   <data name="poolPasswordTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2290,7 +2791,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="poolUrlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>927, 3</value>
+    <value>825, 3</value>
   </data>
   <data name="poolUrlTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -2299,7 +2800,7 @@
     <value>False</value>
   </data>
   <data name="poolUrlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 50</value>
+    <value>248, 50</value>
   </data>
   <data name="poolUrlTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -2329,7 +2830,7 @@
     <value>Roboto, 14px</value>
   </data>
   <data name="poolURLLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>816, 17</value>
+    <value>723, 17</value>
   </data>
   <data name="poolURLLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 19</value>
@@ -2351,153 +2852,6 @@
   </data>
   <data name="&gt;&gt;poolURLLabel.ZOrder" xml:space="preserve">
     <value>21</value>
-  </data>
-  <data name="tableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1208, 219</value>
-  </data>
-  <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1214, 225</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Commands</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 77</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1222, 251</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTabControl, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="materialTabSelector1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 23</value>
-  </data>
-  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1216, 51</value>
-  </data>
-  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="materialTabSelector1.Text" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialTabSelector, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="minerFoundCountLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minerFoundCountLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 14px</value>
-  </data>
-  <data name="minerFoundCountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 328</value>
-  </data>
-  <data name="minerFoundCountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>5, 19</value>
-  </data>
-  <data name="minerFoundCountLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="minerFoundCountLabel.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="minerFoundCountLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Name" xml:space="preserve">
-    <value>minerFoundCountLabel</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;minerFoundCountLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="IPAddress.Text" xml:space="preserve">
     <value>IP Address</value>
@@ -2676,78 +3030,6 @@
   <data name="Hashboard3Temperature.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
-  <data name="minerListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="minerListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="minerListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 347</value>
-  </data>
-  <data name="minerListView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 0, 3, 80</value>
-  </data>
-  <data name="minerListView.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>10, 200</value>
-  </data>
-  <data name="minerListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1216, 515</value>
-  </data>
-  <data name="minerListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Name" xml:space="preserve">
-    <value>minerListView</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minerListView.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;minerListView.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 64</value>
-  </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tableLayoutPanel1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1, 1</value>
-  </data>
-  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 20, 30, 50</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1299, 592</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialTabSelector1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerFoundCountLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tabControl" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="minerListView" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,57,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="translate.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2758,13 +3040,13 @@
     <value>NoControl</value>
   </data>
   <data name="translate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 26</value>
+    <value>261, 25</value>
   </data>
   <data name="translate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
   <data name="translate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 36</value>
+    <value>146, 36</value>
   </data>
   <data name="translate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2782,7 +3064,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;translate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="ScanningIPLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Roboto, 14px</value>
@@ -2791,7 +3073,7 @@
     <value>NoControl</value>
   </data>
   <data name="ScanningIPLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 26</value>
+    <value>461, 25</value>
   </data>
   <data name="ScanningIPLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 36</value>
@@ -2812,7 +3094,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ScanningIPLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="loadIPRangesDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>179, 17</value>
@@ -2831,6 +3113,78 @@
   </data>
   <data name="saveIPRangesDialog.Title" xml:space="preserve">
     <value>Save IP Ranges</value>
+  </data>
+  <data name="ExportBtn.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ExportBtn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="ExportBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ExportBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>789, 25</value>
+  </data>
+  <data name="ExportBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="ExportBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 36</value>
+  </data>
+  <data name="ExportBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ExportBtn.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="&gt;&gt;ExportBtn.Name" xml:space="preserve">
+    <value>ExportBtn</value>
+  </data>
+  <data name="&gt;&gt;ExportBtn.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ExportBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ExportBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SettingsBtn.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="SettingsBtn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="SettingsBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SettingsBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>956, 25</value>
+  </data>
+  <data name="SettingsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 6, 4, 6</value>
+  </data>
+  <data name="SettingsBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 36</value>
+  </data>
+  <data name="SettingsBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="SettingsBtn.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;SettingsBtn.Name" xml:space="preserve">
+    <value>SettingsBtn</value>
+  </data>
+  <data name="&gt;&gt;SettingsBtn.Type" xml:space="preserve">
+    <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SettingsBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SettingsBtn.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2851,7 +3205,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1299, 656</value>
+    <value>1120, 680</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2886,13 +3240,13 @@
 </value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 300</value>
+    <value>1120, 520</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 64, 0, 0</value>
+    <value>5, 64, 5, 5</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Yami Scanner V1.1.3</value>
+    <value>ETC Tools</value>
   </data>
   <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
     <value>backgroundWorker1</value>
