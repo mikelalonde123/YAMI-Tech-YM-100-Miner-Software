@@ -96,7 +96,6 @@
             this.poolPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.poolUrlTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.poolURLLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.minerFoundCountLabel = new MaterialSkin.Controls.MaterialLabel();
             this.minerListView = new System.Windows.Forms.ListView();
             this.IPAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashrate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -123,12 +122,24 @@
             this.Hashboard3Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard3Hashrate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Hashboard3Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TotalLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.MaxLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.MinLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.AvgLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.SelectedLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SelectAllCheckBox = new System.Windows.Forms.CheckBox();
+            this.minerFoundCountLabel = new MaterialSkin.Controls.MaterialLabel();
             this.translate = new MaterialSkin.Controls.MaterialButton();
             this.ScanningIPLabel = new MaterialSkin.Controls.MaterialLabel();
             this.loadIPRangesDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveIPRangesDialog = new System.Windows.Forms.SaveFileDialog();
             this.ExportBtn = new MaterialSkin.Controls.MaterialButton();
             this.SettingsBtn = new MaterialSkin.Controls.MaterialButton();
+            this.StopAllBtn = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -137,6 +148,9 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // rebootButton
@@ -192,9 +206,9 @@
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.materialTabSelector1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.minerFoundCountLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tabControl, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.minerListView, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // materialTabSelector1
@@ -918,16 +932,8 @@
             this.poolURLLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.poolURLLabel.Name = "poolURLLabel";
             // 
-            // minerFoundCountLabel
-            // 
-            resources.ApplyResources(this.minerFoundCountLabel, "minerFoundCountLabel");
-            this.minerFoundCountLabel.Depth = 0;
-            this.minerFoundCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.minerFoundCountLabel.Name = "minerFoundCountLabel";
-            // 
             // minerListView
             // 
-            resources.ApplyResources(this.minerListView, "minerListView");
             this.minerListView.CheckBoxes = true;
             this.minerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IPAddress,
@@ -954,7 +960,9 @@
             this.Hashboard2Temperature,
             this.Hashboard3Status,
             this.Hashboard3Hashrate,
-            this.Hashboard3Temperature});
+            this.Hashboard3Temperature,
+            this.Status});
+            resources.ApplyResources(this.minerListView, "minerListView");
             this.minerListView.FullRowSelect = true;
             this.minerListView.HideSelection = false;
             this.minerListView.Name = "minerListView";
@@ -1063,6 +1071,83 @@
             // 
             resources.ApplyResources(this.Hashboard3Temperature, "Hashboard3Temperature");
             // 
+            // Status
+            // 
+            resources.ApplyResources(this.Status, "Status");
+            // 
+            // tableLayoutPanel5
+            // 
+            resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.TotalLabel);
+            this.flowLayoutPanel1.Controls.Add(this.MaxLabel);
+            this.flowLayoutPanel1.Controls.Add(this.MinLabel);
+            this.flowLayoutPanel1.Controls.Add(this.AvgLabel);
+            this.flowLayoutPanel1.Controls.Add(this.SelectedLabel);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // TotalLabel
+            // 
+            resources.ApplyResources(this.TotalLabel, "TotalLabel");
+            this.TotalLabel.Depth = 0;
+            this.TotalLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TotalLabel.Name = "TotalLabel";
+            // 
+            // MaxLabel
+            // 
+            resources.ApplyResources(this.MaxLabel, "MaxLabel");
+            this.MaxLabel.Depth = 0;
+            this.MaxLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.MaxLabel.Name = "MaxLabel";
+            // 
+            // MinLabel
+            // 
+            resources.ApplyResources(this.MinLabel, "MinLabel");
+            this.MinLabel.Depth = 0;
+            this.MinLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.MinLabel.Name = "MinLabel";
+            // 
+            // AvgLabel
+            // 
+            resources.ApplyResources(this.AvgLabel, "AvgLabel");
+            this.AvgLabel.Depth = 0;
+            this.AvgLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AvgLabel.Name = "AvgLabel";
+            // 
+            // SelectedLabel
+            // 
+            resources.ApplyResources(this.SelectedLabel, "SelectedLabel");
+            this.SelectedLabel.Depth = 0;
+            this.SelectedLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SelectedLabel.Name = "SelectedLabel";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.SelectAllCheckBox);
+            this.flowLayoutPanel2.Controls.Add(this.minerFoundCountLabel);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // SelectAllCheckBox
+            // 
+            resources.ApplyResources(this.SelectAllCheckBox, "SelectAllCheckBox");
+            this.SelectAllCheckBox.Name = "SelectAllCheckBox";
+            this.SelectAllCheckBox.UseVisualStyleBackColor = true;
+            this.SelectAllCheckBox.CheckedChanged += new System.EventHandler(this.SelectAllCheckBox_CheckedChanged);
+            // 
+            // minerFoundCountLabel
+            // 
+            resources.ApplyResources(this.minerFoundCountLabel, "minerFoundCountLabel");
+            this.minerFoundCountLabel.Depth = 0;
+            this.minerFoundCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.minerFoundCountLabel.Name = "minerFoundCountLabel";
+            // 
             // translate
             // 
             resources.ApplyResources(this.translate, "translate");
@@ -1129,11 +1214,27 @@
             this.SettingsBtn.UseVisualStyleBackColor = true;
             this.SettingsBtn.Click += new System.EventHandler(this.SettingsBtn_Click);
             // 
+            // StopAllBtn
+            // 
+            resources.ApplyResources(this.StopAllBtn, "StopAllBtn");
+            this.StopAllBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.StopAllBtn.Depth = 0;
+            this.StopAllBtn.HighEmphasis = true;
+            this.StopAllBtn.Icon = null;
+            this.StopAllBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.StopAllBtn.Name = "StopAllBtn";
+            this.StopAllBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.StopAllBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.StopAllBtn.UseAccentColor = false;
+            this.StopAllBtn.UseVisualStyleBackColor = true;
+            this.StopAllBtn.Click += new System.EventHandler(this.StopAllBtn_Click);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.StopAllBtn);
             this.Controls.Add(this.SettingsBtn);
             this.Controls.Add(this.ExportBtn);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1142,7 +1243,6 @@
             this.Name = "Main";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1155,7 +1255,13 @@
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1260,6 +1366,17 @@
         private MaterialSkin.Controls.MaterialLabel poolURLLabel;
         private MaterialSkin.Controls.MaterialButton ExportBtn;
         private MaterialSkin.Controls.MaterialButton SettingsBtn;
+        private System.Windows.Forms.ColumnHeader Status;
+        private MaterialSkin.Controls.MaterialButton StopAllBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private MaterialSkin.Controls.MaterialLabel TotalLabel;
+        private MaterialSkin.Controls.MaterialLabel MaxLabel;
+        private MaterialSkin.Controls.MaterialLabel MinLabel;
+        private MaterialSkin.Controls.MaterialLabel AvgLabel;
+        private MaterialSkin.Controls.MaterialLabel SelectedLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.CheckBox SelectAllCheckBox;
     }
 }
 
