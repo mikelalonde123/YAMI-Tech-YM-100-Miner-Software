@@ -32,6 +32,7 @@ namespace MinerInfoApp
         #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         #pragma warning disable IDE1006 // Naming Styles
         #pragma warning disable IDE0017 // Simplify object initialization
+        #pragma warning disable IDE0044 // Make Field Readonly
 
         // *** DECLARE GLOBAL VARIABLES ***
 
