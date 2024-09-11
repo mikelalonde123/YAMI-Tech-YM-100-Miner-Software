@@ -29,10 +29,10 @@ namespace MinerInfoApp
     public partial class Main : MaterialForm
     {
         // *** SUPRESS IDE WARNINGS/ERRORS
-        #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-        #pragma warning disable IDE1006 // Naming Styles
-        #pragma warning disable IDE0017 // Simplify object initialization
-        #pragma warning disable IDE0044 // Make Field Readonly
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+#pragma warning disable IDE1006 // Naming Styles
+#pragma warning disable IDE0017 // Simplify object initialization
+#pragma warning disable IDE0044 // Make Field Readonly
 
         // *** DECLARE GLOBAL VARIABLES ***
 
@@ -151,6 +151,9 @@ namespace MinerInfoApp
 
             // Trigger the sorting process manually
             minerListView_ColumnClick(minerListView, new ColumnClickEventArgs(lastColumnClicked));
+
+            //Allow the user to use the ip button of the miner
+            ReceiveDataAsync();
         }
 
         //Code to run when the form first loads
@@ -276,8 +279,7 @@ namespace MinerInfoApp
                 performanceDropdown.Items.Add("Factory");
                 performanceButton.Text = "Set Performance Mode";
                 openInBrowserButton.Text = "Open In Browser";
-                startListeningButton.Text = "Start Listening";
-                stopListeningButtons.Text = "Stop Listening";
+                clearListview.Text = "Clear Miner Data";
                 setDynamicIPButton.Text = "Set Dynamic IP";
                 setStaticIPButton.Text = "Set Static IP";
                 setPasswordButton.Text = "Set New Password";
@@ -346,8 +348,7 @@ namespace MinerInfoApp
                 performanceDropdown.Items.Add("厂家");
                 performanceButton.Text = "设置工作模式";
                 openInBrowserButton.Text = "打开浏览器";
-                startListeningButton.Text = "开始接收IP";
-                stopListeningButtons.Text = "停止接收IP";
+                clearListview.Text = "Clear Miner Data";
                 setDynamicIPButton.Text = "设置动态IP";
                 setStaticIPButton.Text = "设置静态IP";
                 setPasswordButton.Text = "设置新密码";
@@ -938,7 +939,16 @@ namespace MinerInfoApp
             }
         }
 
-        //********************************************************************************8
+        //********************************************************************************
+
+        //function to update the status column of a miner when needed
+        private void UpdateStatusColumn(ListViewItem item, string status)
+        {
+            minerListView.Invoke((Action)(() =>
+            {
+                item.SubItems[25].Text = status; // Update the "Status" column
+            }));
+        }
         //Async command function
         private async Task ExecuteMinerCommandAsync(string command, string statusMessage, CancellationToken cancellationToken)
         {
@@ -957,9 +967,9 @@ namespace MinerInfoApp
                         {
 
                         }
-                        else if (command == "setStatic")
+                        else if (command == "setStaticIP")
                         {
-
+                            tasks.Add(SetStaticIPAsync(item, cancellationToken));
                         }
                         else if (command == "")
                         {
@@ -1049,14 +1059,6 @@ namespace MinerInfoApp
             }
         }
 
-        private void UpdateStatusColumn(ListViewItem item, string status)
-        {
-            minerListView.Invoke((Action)(() =>
-            {
-                item.SubItems[25].Text = status; // Update the "Status" column
-            }));
-        }
-
         //Set Pool Async
         private async Task ConfigurePoolForMinerAsync(ListViewItem item, CancellationToken cancellationToken)
         {
@@ -1128,6 +1130,80 @@ namespace MinerInfoApp
                 semaphoreReboot.Release(); // Release the semaphore slot
             }
         }
+
+        //Set Pool Async
+        private async Task SetStaticIPAsync(ListViewItem item, CancellationToken cancellationToken)
+        {
+            await semaphoreReboot.WaitAsync(cancellationToken); // Wait to enter the semaphore
+
+            try
+            {
+                int maxRetries = maxRepeatScan;
+                bool success = false;
+                double currentTimeout = timeoutTime;
+                string poolIp = item.Text;
+
+                string poolUrl = WebUtility.UrlEncode(poolUrlTextBox.Text);
+                string poolUser = WebUtility.UrlEncode(poolUserTextBox.Text);
+                string poolPass = WebUtility.UrlEncode(poolPasswordTextBox.Text);
+                string poolIpSet = poolIp.Replace('.', 'x');
+
+                for (int attempt = 1; attempt <= maxRetries && !success; attempt++)
+                {
+                    try
+                    {
+                        // Update status to indicate the current attempt
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Setting Pools" : "配置矿池中")} (Attempt {attempt})");
+
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(currentTimeout);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+
+                            // Make the HTTP request to configure the pool
+                            var setPoolResponse = await setPool.GetStringAsync(
+                                $"http://{poolIp}/cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22{poolPass}%22,%22currency%22:%22ETC%22%7D");
+
+                            // If the request succeeds, mark as success and update status
+                            success = true;
+                            UpdateStatusColumn(item, $"{(isEnglish ? "Pool Set Successfully" : "矿池配置成功")}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed to set pool on {poolIp}: {ex.Message}");
+
+                        if (attempt < maxRetries)
+                        {
+                            currentTimeout += 0.25; // Increase timeout for the next attempt
+                            UpdateStatusColumn(item, $"{(isEnglish ? "Setting Pools" : "配置矿池中")} (Retry {attempt + 1})");
+                        }
+                        else
+                        {
+                            UpdateStatusColumn(item, $"{(isEnglish ? "Pool Set Failed" : "矿池配置失败")}");
+                        }
+                    }
+
+                    // Check if the operation was canceled
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        Console.WriteLine("Operation canceled.");
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Setting Pools" : "配置矿池中")} Canceled");
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ConfigurePoolForMinerAsync error: {ex.Message}");
+            }
+            finally
+            {
+                semaphoreReboot.Release(); // Release the semaphore slot
+            }
+        }
+
+
         //***************************************************************************
 
         //This reboots the miners if they are selected
@@ -1586,14 +1662,13 @@ namespace MinerInfoApp
         }
 
 
-
-
         private ChromeDriver getNewDriver()
         {
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
             chromeDriverService.HideCommandPromptWindow = true;
             return new ChromeDriver(chromeDriverService, new ChromeOptions());
         }
+
         bool initializeDriver = true;
         private void OpenInBrowser(string ipAddress)
         {
@@ -1910,11 +1985,10 @@ namespace MinerInfoApp
                     {
                         string minerIp = minerListView.Items[i].Text;
                         string[] ipParts = minerIp.Split('.');
-                        int newIPStart = 10;
                         int newIPTwo = int.Parse(ipParts[1]);
                         int newIPThree = int.Parse(ipParts[2]);
                         string newIPEnd = newIpTextBox.Text;
-                        string newIP = newIPStart.ToString() + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
+                        string newIP = "10" + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
                         if (isEnglish)
                         {
                             ScanningIPLabel.Text = minerIp + " Setting Static IP";
@@ -1929,17 +2003,6 @@ namespace MinerInfoApp
                             setStaticIP.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
                             var setPoolResponse = await setStaticIP.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
                             minerListView.Items[i].Text = newIP;
-                        }
-                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
-                        string poolUser = minerListView.Items[i].SubItems[4].Text;
-                        string poolIpSet = newIP.Replace('.', 'x');
-                        poolUrl = WebUtility.UrlEncode(poolUrl);
-                        poolUser = WebUtility.UrlEncode(poolUser);
-                        using (HttpClient setPool = new HttpClient())
-                        {
-                            setPool.Timeout = TimeSpan.FromSeconds(1);
-                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
                         }
                     }
                 }
@@ -1971,11 +2034,11 @@ namespace MinerInfoApp
 
             try
             {
-                await ExecuteMinerCommandAsync("send_reboot_miner=send_reboot_miner", "Reboot", cancellationTokenSourceReboot.Token);
+                await ExecuteMinerCommandAsync("setStaticIP", "Set Static IP", cancellationTokenSourceReboot.Token);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error during reboot: {ex.Message}");
+                Console.WriteLine($"Error while setting static ip: {ex.Message}");
             }
             finally
             {
@@ -2091,8 +2154,6 @@ namespace MinerInfoApp
                 ScanningIPLabel.Text = "设置密码完成";
             }
         }
-
-        bool shouldListen = true;
         bool UDPListenerAlive = false;
         // Define a method for receiving data asynchronously
         async Task ReceiveDataAsync()
@@ -2105,49 +2166,23 @@ namespace MinerInfoApp
                     udpListener = new UdpClient(6687);
                     UDPListenerAlive = true;
                 }
-                if (shouldListen)
+                UdpReceiveResult result = await udpListener.ReceiveAsync();
+                string receivedData = Encoding.ASCII.GetString(result.Buffer);
+
+                // Extract the IP address from the remote endpoint
+                IPAddress ip = result.RemoteEndPoint.Address;
+
+                //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
+                List<string> ipList = new List<string> { ip.ToString() };
+
+                try
                 {
-                    UdpReceiveResult result = await udpListener.ReceiveAsync();
-                    string receivedData = Encoding.ASCII.GetString(result.Buffer);
-
-                    // Extract the IP address from the remote endpoint
-                    IPAddress ip = result.RemoteEndPoint.Address;
-
-                    if (isScanning)
-                    {
-                        // Cancel the ongoing scan
-                        cancellationTokenSource.Cancel();
-
-                        while (isScanning)
-                        {
-                            await Task.Delay(100); // Check every 100ms if the scan has completed
-                        }
-                    }
-                    //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
-                    List<string> ipList = new List<string> { ip.ToString() };
-                    //Resets minerFound variable to 0
-                    // Reset the flag and cancellation token source
-                    isScanning = true;
-                    cancellationTokenSource = new CancellationTokenSource();
-
-                    //Initialize a semaphore with 30 parallel tasks
-                    semaphore = new SemaphoreSlim(1);
-
-                    try
-                    {
-                        // Run the scanning process with cancellation support
-                        await ScanIPsAsync(ipList, cancellationTokenSource.Token);
-                    }
-                    catch (OperationCanceledException)
-                    {
-                        print("Scanning was canceled.");
-                    }
-                    finally
-                    {
-                        // Release resources
-                        semaphore.Dispose();
-                        isScanning = false;
-                    }
+                    // Run the scanning process with cancellation support
+                    await ScanIPsAsync(ipList, cancellationTokenSource.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                    print("Scanning was canceled.");
                 }
             }
             catch (SocketException ex)
@@ -2157,25 +2192,6 @@ namespace MinerInfoApp
             }
         }
 
-        bool alreadyCalled = false;
-        private void startListeningButton_Click(object sender, EventArgs e)
-        {
-            minerListView.Items.Clear();
-            minersFoundCount = 0;
-            minersFoundCountUpdate();
-            shouldListen = true;
-            if (!alreadyCalled)
-            {
-                alreadyCalled = true;
-                ReceiveDataAsync();
-            }
-
-        }
-
-        private void stopListeningButtons_Click(object sender, EventArgs e)
-        {
-            shouldListen = false;
-        }
 
         private void SettingsBtn_Click(object sender, EventArgs e)
         {
@@ -2326,6 +2342,13 @@ namespace MinerInfoApp
                 ipItem.Selected = SelectAllCheckBox.Checked;
             }
             calculateListviewTotals();
+        }
+
+        private void clearListview_Click(object sender, EventArgs e)
+        {
+            minerListView.Items.Clear();
+            minersFoundCount = 0;
+            minersFoundCountUpdate();
         }
     }
 

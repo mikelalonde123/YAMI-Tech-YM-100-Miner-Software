@@ -75,8 +75,7 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.stopListeningButtons = new MaterialSkin.Controls.MaterialButton();
-            this.startListeningButton = new MaterialSkin.Controls.MaterialButton();
+            this.clearListview = new MaterialSkin.Controls.MaterialButton();
             this.newIpTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.performanceButton = new MaterialSkin.Controls.MaterialButton();
             this.setStaticIPButton = new MaterialSkin.Controls.MaterialButton();
@@ -140,6 +139,7 @@
             this.ExportBtn = new MaterialSkin.Controls.MaterialButton();
             this.SettingsBtn = new MaterialSkin.Controls.MaterialButton();
             this.StopAllBtn = new MaterialSkin.Controls.MaterialButton();
+            this.RefreshDataBtn = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -634,8 +634,8 @@
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.stopListeningButtons, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.startListeningButton, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.RefreshDataBtn, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.clearListview, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.newIpTextBox, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.performanceButton, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.setStaticIPButton, 2, 1);
@@ -658,37 +658,21 @@
             this.tableLayoutPanel4.Controls.Add(this.poolURLLabel, 4, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
-            // stopListeningButtons
+            // clearListview
             // 
-            resources.ApplyResources(this.stopListeningButtons, "stopListeningButtons");
-            this.stopListeningButtons.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stopListeningButtons.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.stopListeningButtons.Depth = 0;
-            this.stopListeningButtons.HighEmphasis = true;
-            this.stopListeningButtons.Icon = null;
-            this.stopListeningButtons.MouseState = MaterialSkin.MouseState.HOVER;
-            this.stopListeningButtons.Name = "stopListeningButtons";
-            this.stopListeningButtons.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.stopListeningButtons.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.stopListeningButtons.UseAccentColor = false;
-            this.stopListeningButtons.UseVisualStyleBackColor = true;
-            this.stopListeningButtons.Click += new System.EventHandler(this.stopListeningButtons_Click);
-            // 
-            // startListeningButton
-            // 
-            resources.ApplyResources(this.startListeningButton, "startListeningButton");
-            this.startListeningButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.startListeningButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.startListeningButton.Depth = 0;
-            this.startListeningButton.HighEmphasis = true;
-            this.startListeningButton.Icon = null;
-            this.startListeningButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.startListeningButton.Name = "startListeningButton";
-            this.startListeningButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.startListeningButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.startListeningButton.UseAccentColor = false;
-            this.startListeningButton.UseVisualStyleBackColor = true;
-            this.startListeningButton.Click += new System.EventHandler(this.startListeningButton_Click);
+            resources.ApplyResources(this.clearListview, "clearListview");
+            this.clearListview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearListview.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.clearListview.Depth = 0;
+            this.clearListview.HighEmphasis = true;
+            this.clearListview.Icon = null;
+            this.clearListview.MouseState = MaterialSkin.MouseState.HOVER;
+            this.clearListview.Name = "clearListview";
+            this.clearListview.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.clearListview.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.clearListview.UseAccentColor = false;
+            this.clearListview.UseVisualStyleBackColor = true;
+            this.clearListview.Click += new System.EventHandler(this.clearListview_Click);
             // 
             // newIpTextBox
             // 
@@ -1229,6 +1213,21 @@
             this.StopAllBtn.UseVisualStyleBackColor = true;
             this.StopAllBtn.Click += new System.EventHandler(this.StopAllBtn_Click);
             // 
+            // RefreshDataBtn
+            // 
+            resources.ApplyResources(this.RefreshDataBtn, "RefreshDataBtn");
+            this.RefreshDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDataBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.RefreshDataBtn.Depth = 0;
+            this.RefreshDataBtn.HighEmphasis = true;
+            this.RefreshDataBtn.Icon = null;
+            this.RefreshDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RefreshDataBtn.Name = "RefreshDataBtn";
+            this.RefreshDataBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.RefreshDataBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.RefreshDataBtn.UseAccentColor = false;
+            this.RefreshDataBtn.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -1360,8 +1359,7 @@
         private MaterialSkin.Controls.MaterialLabel newStaticLabel;
         private MaterialSkin.Controls.MaterialButton setDynamicIPButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private MaterialSkin.Controls.MaterialButton stopListeningButtons;
-        private MaterialSkin.Controls.MaterialButton startListeningButton;
+        private MaterialSkin.Controls.MaterialButton clearListview;
         private MaterialSkin.Controls.MaterialButton updateButton;
         private MaterialSkin.Controls.MaterialLabel poolURLLabel;
         private MaterialSkin.Controls.MaterialButton ExportBtn;
@@ -1377,6 +1375,7 @@
         private MaterialSkin.Controls.MaterialLabel SelectedLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.CheckBox SelectAllCheckBox;
+        private MaterialSkin.Controls.MaterialButton RefreshDataBtn;
     }
 }
 

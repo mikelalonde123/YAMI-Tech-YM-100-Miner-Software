@@ -1521,82 +1521,82 @@
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="stopListeningButtons.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RefreshDataBtn.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="stopListeningButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="RefreshDataBtn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="stopListeningButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="RefreshDataBtn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="stopListeningButtons.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="RefreshDataBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="stopListeningButtons.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RefreshDataBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 168</value>
   </data>
-  <data name="stopListeningButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="RefreshDataBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
-  <data name="stopListeningButtons.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RefreshDataBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 44</value>
   </data>
-  <data name="stopListeningButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+  <data name="RefreshDataBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="stopListeningButtons.Text" xml:space="preserve">
-    <value>Stop Listening</value>
+  <data name="RefreshDataBtn.Text" xml:space="preserve">
+    <value>Refresh Miner Data</value>
   </data>
-  <data name="&gt;&gt;stopListeningButtons.Name" xml:space="preserve">
-    <value>stopListeningButtons</value>
+  <data name="&gt;&gt;RefreshDataBtn.Name" xml:space="preserve">
+    <value>RefreshDataBtn</value>
   </data>
-  <data name="&gt;&gt;stopListeningButtons.Type" xml:space="preserve">
+  <data name="&gt;&gt;RefreshDataBtn.Type" xml:space="preserve">
     <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;stopListeningButtons.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RefreshDataBtn.Parent" xml:space="preserve">
     <value>tableLayoutPanel4</value>
   </data>
-  <data name="&gt;&gt;stopListeningButtons.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RefreshDataBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="startListeningButton.AutoSize" type="System.Boolean, mscorlib">
+  <data name="clearListview.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="startListeningButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="clearListview.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="startListeningButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="clearListview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="startListeningButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="clearListview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="startListeningButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="clearListview.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 168</value>
   </data>
-  <data name="startListeningButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="clearListview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
   </data>
-  <data name="startListeningButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="clearListview.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 44</value>
   </data>
-  <data name="startListeningButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="clearListview.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
-  <data name="startListeningButton.Text" xml:space="preserve">
-    <value>Start Listening</value>
+  <data name="clearListview.Text" xml:space="preserve">
+    <value>Clear Miner Data</value>
   </data>
-  <data name="&gt;&gt;startListeningButton.Name" xml:space="preserve">
-    <value>startListeningButton</value>
+  <data name="&gt;&gt;clearListview.Name" xml:space="preserve">
+    <value>clearListview</value>
   </data>
-  <data name="&gt;&gt;startListeningButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;clearListview.Type" xml:space="preserve">
     <value>MaterialSkin.Controls.MaterialButton, MaterialSkin, Version=2.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;startListeningButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;clearListview.Parent" xml:space="preserve">
     <value>tableLayoutPanel4</value>
   </data>
-  <data name="&gt;&gt;startListeningButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;clearListview.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="newIpTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2335,7 +2335,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="stopListeningButtons" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="startListeningButton" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RefreshDataBtn" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="clearListview" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="newIpTextBox" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="performanceButton" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setStaticIPButton" Row="1" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="newStaticLabel" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="newPasswordTextBox" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="rebootButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="poolPasswordLabel" Row="2" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="selfCheckButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPasswordButton" Row="3" RowSpan="1" Column="2" ColumnSpan="2" /&gt;&lt;Control Name="minerPasswordLabel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="openInBrowserButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="setDynamicIPButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="performanceDropdown" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="setPoolButton" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="updateButton" Row="3" RowSpan="1" Column="4" ColumnSpan="4" /&gt;&lt;Control Name="poolAccountLabel" Row="1" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;Control Name="poolUserTextBox" Row="1" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolPasswordTextBox" Row="2" RowSpan="1" Column="6" ColumnSpan="1" /&gt;&lt;Control Name="poolUrlTextBox" Row="0" RowSpan="1" Column="6" ColumnSpan="2" /&gt;&lt;Control Name="poolURLLabel" Row="0" RowSpan="1" Column="4" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,16.81862,Percent,17.68113,Percent,20.28146,Percent,9.437086,Percent,5.17675,Percent,7.231016,Percent,7.888381,Percent,15.44808" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2647,7 +2647,7 @@
     <value>Status</value>
   </data>
   <data name="Status.Width" type="System.Int32, mscorlib">
-    <value>135</value>
+    <value>167</value>
   </data>
   <data name="minerListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
