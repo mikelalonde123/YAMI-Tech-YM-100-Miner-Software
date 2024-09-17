@@ -343,7 +343,7 @@
     <value>15</value>
   </data>
   <data name="loadIPRangesButton.Text" xml:space="preserve">
-    <value>Load Ranges From File</value>
+    <value>Import Ranges</value>
   </data>
   <data name="&gt;&gt;loadIPRangesButton.Name" xml:space="preserve">
     <value>loadIPRangesButton</value>
@@ -409,7 +409,7 @@
     <value>14</value>
   </data>
   <data name="saveRangesButton.Text" xml:space="preserve">
-    <value>Save Selected Range(s) To File</value>
+    <value>Save Selected Range(s)</value>
   </data>
   <data name="&gt;&gt;saveRangesButton.Name" xml:space="preserve">
     <value>saveRangesButton</value>
@@ -1336,7 +1336,7 @@
     <value>7</value>
   </data>
   <data name="endIPTextBoxC.Text" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;endIPTextBoxC.Name" xml:space="preserve">
     <value>endIPTextBoxC</value>
