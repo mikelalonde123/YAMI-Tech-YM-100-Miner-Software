@@ -695,6 +695,12 @@ namespace MinerInfoApp
                             string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
                             string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
 
+                            string hash2 = minerInfo.data.minerinfo[1].hash_rate > 10 ? "O" : "X";
+                            string hash2a = minerInfo.data.minerinfo[1].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
+                            string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
+
                             //Determine Miner Status
                             string minerStatus = "";
                             if (minerInfo.data.uptime.dag.progress > 0 && minerInfo.data.uptime.dag.progress < 100)
