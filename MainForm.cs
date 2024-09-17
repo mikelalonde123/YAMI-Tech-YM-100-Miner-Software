@@ -695,6 +695,12 @@ namespace MinerInfoApp
                             string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
                             string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
 
+                            string hash2 = minerInfo.data.minerinfo[1].hash_rate > 10 ? "O" : "X";
+                            string hash2a = minerInfo.data.minerinfo[1].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
+                            string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
+
                             //Determine Miner Status
                             string minerStatus = "";
                             if (minerInfo.data.uptime.dag.progress > 0 && minerInfo.data.uptime.dag.progress < 100)
@@ -807,6 +813,7 @@ namespace MinerInfoApp
         }
 
 
+
         //This function takes the start and end ip and returns a list with all the IPs in the range
         private List<string> GetIPRange(string startIPString, string endIPString)
         {
@@ -890,6 +897,7 @@ namespace MinerInfoApp
 
 
         //***************************************************************************
+
 
 
         private void addIPButton_Click(object sender, EventArgs e)
@@ -1399,9 +1407,9 @@ namespace MinerInfoApp
         private async void setDynamicIPButton_Click(object sender, EventArgs e)
         {
             // Ensure cancellationTokenSource is initialized
-            if (cancellationTokenSourceReboot == null)
+            if (cancellationTokenSourceSelfCheck == null)
             {
-                cancellationTokenSourceReboot = new CancellationTokenSource();
+                cancellationTokenSourceSelfCheck = new CancellationTokenSource();
             }
 
             // Initialize or reinitialize semaphore
@@ -1542,7 +1550,7 @@ namespace MinerInfoApp
         //Change The Performance Mode Of Selected Miners
         private async void performanceButton_Click(object sender, EventArgs e)
         {
-            // /cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:4,%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D
+            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D
             for (int i = 0; i < minerListView.Items.Count; i++)
             {
 
@@ -1551,56 +1559,50 @@ namespace MinerInfoApp
                     if (minerListView.Items[i].Checked)
                     {
                         string minerIp = minerListView.Items[i].Text;
-                        string performanceSelect = performanceDropdown.SelectedItem.ToString();
-                        string performanceMode = "4";
-                        if (performanceSelect == "Efficiency" || performanceSelect == "效率")
-                        {
-                            performanceMode = "1";
-                        }
-                        else if (performanceSelect == "Balanced" || performanceSelect == "平衡")
-                        {
-                            performanceMode = "2";
-                        }
-                        else if (performanceSelect == "Factory" || performanceSelect == "厂家")
-                        {
-                            performanceMode = "3";
-                        }
-                        else
-                        {
-                            performanceMode = "4";
-                        }
+                        string newIp = newIpTextBox.Text;
                         if (isEnglish)
                         {
-                            ScanningIPLabel.Text = minerIp + " Setting Performance Mode";
+                            ScanningIPLabel.Text = minerIp + " Setting Dynamic IP";
                         }
                         else
                         {
-                            ScanningIPLabel.Text = minerIp + " 调整工作模式中";
+                            ScanningIPLabel.Text = minerIp + " 设置动态IP";
                         }
                         using (HttpClient setPool = new HttpClient())
                         {
                             setPool.Timeout = TimeSpan.FromSeconds(1);
                             setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:{performanceMode},%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%22{minerListView.Items[i].Text}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D");
+                        }
+                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
+                        string poolUser = minerListView.Items[i].SubItems[4].Text;
+                        string poolIpSet = newIp.Replace('.', 'x');
+                        poolUrl = WebUtility.UrlEncode(poolUrl);
+                        poolUser = WebUtility.UrlEncode(poolUser);
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.Write("set performance exception: " + ex);
+                    Console.Write("set dynamic exception: " + ex);
                 }
 
             }
             if (isEnglish)
             {
-                ScanningIPLabel.Text = "Done Setting Performance Mode";
+                ScanningIPLabel.Text = "Done Setting Dynamic";
             }
             else
             {
-                ScanningIPLabel.Text = "工作模式已调整";
+                ScanningIPLabel.Text = "动态IP设置完成";
             }
-
         }
+
 
 
         //Set New Pool(Account, Pool Address And Worker Name) For Selected Miners
