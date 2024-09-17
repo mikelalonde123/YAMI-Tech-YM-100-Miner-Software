@@ -75,6 +75,7 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.RefreshDataBtn = new MaterialSkin.Controls.MaterialButton();
             this.clearListview = new MaterialSkin.Controls.MaterialButton();
             this.newIpTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.performanceButton = new MaterialSkin.Controls.MaterialButton();
@@ -139,7 +140,6 @@
             this.ExportBtn = new MaterialSkin.Controls.MaterialButton();
             this.SettingsBtn = new MaterialSkin.Controls.MaterialButton();
             this.StopAllBtn = new MaterialSkin.Controls.MaterialButton();
-            this.RefreshDataBtn = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -658,6 +658,22 @@
             this.tableLayoutPanel4.Controls.Add(this.poolURLLabel, 4, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
+            // RefreshDataBtn
+            // 
+            resources.ApplyResources(this.RefreshDataBtn, "RefreshDataBtn");
+            this.RefreshDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDataBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.RefreshDataBtn.Depth = 0;
+            this.RefreshDataBtn.HighEmphasis = true;
+            this.RefreshDataBtn.Icon = null;
+            this.RefreshDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RefreshDataBtn.Name = "RefreshDataBtn";
+            this.RefreshDataBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.RefreshDataBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.RefreshDataBtn.UseAccentColor = false;
+            this.RefreshDataBtn.UseVisualStyleBackColor = true;
+            this.RefreshDataBtn.Click += new System.EventHandler(this.RefreshDataBtn_Click);
+            // 
             // clearListview
             // 
             resources.ApplyResources(this.clearListview, "clearListview");
@@ -918,6 +934,7 @@
             // 
             // minerListView
             // 
+            this.minerListView.AllowColumnReorder = true;
             this.minerListView.CheckBoxes = true;
             this.minerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IPAddress,
@@ -1122,6 +1139,7 @@
             // 
             resources.ApplyResources(this.SelectAllCheckBox, "SelectAllCheckBox");
             this.SelectAllCheckBox.Name = "SelectAllCheckBox";
+            this.SelectAllCheckBox.TabStop = false;
             this.SelectAllCheckBox.UseVisualStyleBackColor = true;
             this.SelectAllCheckBox.CheckedChanged += new System.EventHandler(this.SelectAllCheckBox_CheckedChanged);
             // 
@@ -1212,21 +1230,6 @@
             this.StopAllBtn.UseAccentColor = false;
             this.StopAllBtn.UseVisualStyleBackColor = true;
             this.StopAllBtn.Click += new System.EventHandler(this.StopAllBtn_Click);
-            // 
-            // RefreshDataBtn
-            // 
-            resources.ApplyResources(this.RefreshDataBtn, "RefreshDataBtn");
-            this.RefreshDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDataBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.RefreshDataBtn.Depth = 0;
-            this.RefreshDataBtn.HighEmphasis = true;
-            this.RefreshDataBtn.Icon = null;
-            this.RefreshDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.RefreshDataBtn.Name = "RefreshDataBtn";
-            this.RefreshDataBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.RefreshDataBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.RefreshDataBtn.UseAccentColor = false;
-            this.RefreshDataBtn.UseVisualStyleBackColor = true;
             // 
             // Main
             // 

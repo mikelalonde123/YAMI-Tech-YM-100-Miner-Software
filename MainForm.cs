@@ -20,7 +20,7 @@ using System.Text;
 using System.Linq;
 using YAMI_Scanner;
 using OfficeOpenXml;
-using MinerInfoApp.Properties;
+using Newtonsoft.Json;
 
 
 namespace MinerInfoApp
@@ -45,28 +45,11 @@ namespace MinerInfoApp
         private AppSettings appSettings;
 
         //CONCURRENT SCAN VARS
-        int ConcurrentSelfCheck = 50;
-        private SemaphoreSlim semaphoreSelfCheck;
         private CancellationTokenSource cancellationTokenSourceSelfCheck;
 
         int concurrentReboot = 50;
         private SemaphoreSlim semaphoreReboot;
         private CancellationTokenSource cancellationTokenSourceReboot;
-
-        int concurrentDynamic = 30;
-        private SemaphoreSlim semaphoreDynamic;
-        private CancellationTokenSource cancellationTokenSourceDynamic;
-
-        int concurrentPerformance = 50;
-        private SemaphoreSlim semaphorePerformance;
-        private CancellationTokenSource cancellationTokenSourcePerformance;
-
-        int concurrentPassword = 50;
-        private SemaphoreSlim semaphorePassword;
-        private CancellationTokenSource cancellationTokenSourcePassword;
-
-        private SemaphoreSlim semaphoreUpdate;
-        private CancellationTokenSource cancellationTokenSourceUpdate;
 
         //SETTINGS VARIABLES
         public int maxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans;
@@ -137,24 +120,22 @@ namespace MinerInfoApp
             //attaches event handler to minerListView columns
             minerListView.ColumnClick += minerListView_ColumnClick;
 
-            //Sets new color
-            ScanningIPLabel.BackColor = Color.FromArgb(27, 94, 32);
-
             //sets tab control size
             tabControl.ItemSize = new Size(100, 50);
 
             //Custom Code to handle what happens when an item is checked
             minerListView.ItemChecked += new ItemCheckedEventHandler(minerListView_ItemChecked);
 
-            //Calls the laodIPRanges function, as described below
+            //Adds the saved ip ranges to their listview
             LoadSavedIPRanges();
 
             // Trigger the sorting process manually
             minerListView_ColumnClick(minerListView, new ColumnClickEventArgs(lastColumnClicked));
 
-            //Allow the user to use the ip button of the miner
+            //Allow the user to use the ip report button of the miner
             ReceiveDataAsync();
         }
+
 
         //Code to run when the form first loads
         private void MainForm_Load(object sender, EventArgs e)
@@ -172,30 +153,13 @@ namespace MinerInfoApp
                 translateLanguage();
             }
 
-            //starts new instance of a timer, which tracks how often to run the updateListViewItems function
+            //starts new instance of a timer to perform certain functions at regular intervals (see timer_tick function)
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 250;
             timer.Tick += Timer_Tick;
             timer.Start();
         }
 
-        private void print(string text)
-        {
-            Console.WriteLine(text);
-        }
-
-
-        //Initializes settings vars
-        private void LoadSettings()
-        {
-            maxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans;
-            maxRepeatScan = Properties.Settings.Default.MaxRepeatScan;
-            timeoutTime = Properties.Settings.Default.TimeoutTime;
-            concurrentUpdate = Properties.Settings.Default.ConcurrentUpdate;
-            updateTimeout = Properties.Settings.Default.UpdateTimeout;
-    }
-
-        //LISTVIEW DISPLAY TWEAKS
 
         //Checks if an item is selected and sets checked to true if it is and false if not
         private void UpdateListViewItems()
@@ -217,15 +181,6 @@ namespace MinerInfoApp
                 // Update ListViewItem.Checked based on ListViewItem.Selected
                 ipItem.Checked = ipItem.Selected;
             }
-            calculateListviewTotals();
-        }
-
-        //Each time the timer ticks(every time the timer reaches timer.interval), runs the updateListViewItems
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            // Update UI based on selected items in minerListView
-            UpdateListViewItems();
-
         }
 
         private void minerListView_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -234,8 +189,48 @@ namespace MinerInfoApp
             {
                 e.Item.Selected = true;
             }
-            calculateListviewTotals();
+            else
+            {
+                //e.Item.Selected = false;
+            }
         }
+
+        bool isManualCheckChange = false;
+
+        private void minerListView_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // Only allow the checkbox state of the clicked item to change
+            if (!isManualCheckChange && minerListView.SelectedItems.Count > 1)
+            {
+                // Prevent multiple selection check changes by clearing the selection momentarily
+                isManualCheckChange = true;
+
+                // Uncheck only the item that was clicked
+                for (int i = 0; i < minerListView.SelectedItems.Count; i++)
+                {
+                    if (minerListView.SelectedItems[i] != minerListView.Items[e.Index])
+                    {
+                        minerListView.SelectedItems[i].Checked = minerListView.SelectedItems[i].Checked; // Keep their original state
+                    }
+                    else
+                    {
+                        minerListView.SelectedItems[i].Selected = !minerListView.SelectedItems[i].Selected;
+                    }
+                }
+
+                isManualCheckChange = false;
+            }
+        }
+
+        //Runs each time the timer "ticks"
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Update UI based on selected items in minerListView
+            UpdateListViewItems();
+            calculateListviewTotals();
+            this.BeginInvoke(new Action(UpdateSelectAllCheckBoxState));
+        }
+
 
         //Function to call when updating the count of the list view
         private void minersFoundCountUpdate()
@@ -249,6 +244,7 @@ namespace MinerInfoApp
                 minerFoundCountLabel.Text = ($"找到{minersFoundCount}台矿机");
             }
         }
+
 
         //TRANSLATION CODE AND LOGIC
         private void translateLanguage()
@@ -393,6 +389,8 @@ namespace MinerInfoApp
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-CN");
             }
         }
+
+
         //Logic for determining when to translate to what
         private void translate_Click(object sender, EventArgs e)
         {
@@ -405,31 +403,6 @@ namespace MinerInfoApp
             {
                 isEnglish = true;
                 translateLanguage();
-            }
-        }
-
-        //ENTER IP TEXTBOX AUTOMATIC FILL AND ADVANCE
-
-        //Add event handlers for each textbox
-        private void AttachNumericTextBoxEventHandlers()
-        {
-            startIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            startIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            startIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            startIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            endIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            endIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            endIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-            endIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
-        }
-
-
-        private void numericTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Allow only digits, backspace, and the delete key
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
             }
         }
 
@@ -495,7 +468,7 @@ namespace MinerInfoApp
             }
             catch (OperationCanceledException)
             {
-                print("Scanning was canceled.");
+                Console.WriteLine("Scanning was canceled.");
             }
             finally
             {
@@ -504,7 +477,8 @@ namespace MinerInfoApp
                 isScanning = false;
             }
         }
-//**************************************************************************************************************************
+
+
         //Similar to the SearchButton_Click function, Just using the ip range list view instead
         private async void scanSelectedButton_Click(object sender, EventArgs e)
         {
@@ -520,14 +494,6 @@ namespace MinerInfoApp
             }
             //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
             List<string> ipList = new List<string> { };
-            try
-            {
-                minerListView.Items.Clear(); // Clear existing items
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
 
             //Resets minerFound variable to 0
             // Reset the flag and cancellation token source
@@ -560,7 +526,7 @@ namespace MinerInfoApp
 
             }
 
-            //Initialize a semaphore with 30 parallel tasks
+            //Initialize a semaphore with the specified amount of concurrent operations (can be changed with the settings menu)
             semaphore = new SemaphoreSlim(maxConcurrentScans);
 
             try
@@ -570,7 +536,7 @@ namespace MinerInfoApp
             }
             catch (OperationCanceledException)
             {
-                print("Scanning was canceled.");
+                Console.WriteLine("Scanning was canceled.");
             }
             finally
             {
@@ -579,6 +545,8 @@ namespace MinerInfoApp
                 isScanning = false;
             }
         }
+
+
         private async Task ScanIPsAsync(List<string> ipList, CancellationToken cancellationToken)
         {
             List<Task> tasks = new List<Task>();
@@ -600,6 +568,7 @@ namespace MinerInfoApp
                 ScanningIPLabel.Text = "扫描完成";
             }
         }
+
 
         private async Task ScanAndPingIPAsync(string ip, CancellationToken cancellationToken)
         {
@@ -644,7 +613,7 @@ namespace MinerInfoApp
             }
         }
 
-        //**************************************************************************************************************************
+
         private async Task<bool> GetData(string minerIP, double currentTimeout, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -716,37 +685,14 @@ namespace MinerInfoApp
                         try
                         {
                             //Determine hashboard status
-                            string hash1, hash1a, hash2, hash2a, hash3, hash3a;
-                            if (minerInfo.data.minerinfo[0].hash_rate > 10)
-                            {
-                                hash1 = "O";
-                                hash1a = "Working";
-                            }
-                            else
-                            {
-                                hash1 = "X";
-                                hash1a = "Not Working";
-                            }
-                            if (minerInfo.data.minerinfo[1].hash_rate > 10)
-                            {
-                                hash2 = "O";
-                                hash2a = "Working";
-                            }
-                            else
-                            {
-                                hash2 = "X";
-                                hash2a = "Not Working";
-                            }
-                            if (minerInfo.data.minerinfo[2].hash_rate > 10)
-                            {
-                                hash3 = "O";
-                                hash3a = "Working";
-                            }
-                            else
-                            {
-                                hash3 = "X";
-                                hash3a = "Not Working";
-                            }
+                            string hash1 = minerInfo.data.minerinfo[0].hash_rate > 10 ? "O" : "X";
+                            string hash1a = minerInfo.data.minerinfo[0].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash2 = minerInfo.data.minerinfo[1].hash_rate > 10 ? "O" : "X";
+                            string hash2a = minerInfo.data.minerinfo[1].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
+                            string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
 
                             //Determine Miner Status
                             string minerStatus = "";
@@ -764,7 +710,7 @@ namespace MinerInfoApp
                             }
                             else
                             {
-                                minerStatus = " ";
+                                minerStatus = "Needs Self Check";
                             }
 
                             //Uses the parsed JSON to extract data and set it to the various attributes of the MinerInfo class
@@ -858,7 +804,7 @@ namespace MinerInfoApp
                 return false;
             }
         }
-        //**************************************************************************************************************************
+
 
         //This function takes the start and end ip and returns a list with all the IPs in the range
         private List<string> GetIPRange(string startIPString, string endIPString)
@@ -939,7 +885,6 @@ namespace MinerInfoApp
             }
         }
 
-        //********************************************************************************
 
         //function to update the status column of a miner when needed
         private void UpdateStatusColumn(ListViewItem item, string status)
@@ -949,6 +894,8 @@ namespace MinerInfoApp
                 item.SubItems[25].Text = status; // Update the "Status" column
             }));
         }
+
+
         //Async command function
         private async Task ExecuteMinerCommandAsync(string command, string statusMessage, CancellationToken cancellationToken)
         {
@@ -970,6 +917,10 @@ namespace MinerInfoApp
                         else if (command == "setStaticIP")
                         {
                             tasks.Add(SetStaticIPAsync(item, cancellationToken));
+                        }
+                        else if(command == "refresh")
+                        {
+                            tasks.Add(RefreshMinerInfoAsync(item, cancellationToken));
                         }
                         else if (command == "")
                         {
@@ -998,6 +949,7 @@ namespace MinerInfoApp
 
             ScanningIPLabel.Text = $"{statusMessage} Done";
         }
+
 
         //Send Generic command async
         private async Task SendCommandToMinerAsync(ListViewItem item, string command, string statusMessage, CancellationToken cancellationToken)
@@ -1051,13 +1003,14 @@ namespace MinerInfoApp
                 }
             }
             catch (Exception ex) {
-                print($"SentCommandToMiner function error: {ex.Message}");
+                Console.WriteLine($"SentCommandToMiner function error: {ex.Message}");
             }
             finally
             {
                 semaphoreReboot.Release(); // Release the semaphore slot
             }
         }
+
 
         //Set Pool Async
         private async Task ConfigurePoolForMinerAsync(ListViewItem item, CancellationToken cancellationToken)
@@ -1130,6 +1083,7 @@ namespace MinerInfoApp
                 semaphoreReboot.Release(); // Release the semaphore slot
             }
         }
+
 
         //Set Pool Async
         private async Task SetStaticIPAsync(ListViewItem item, CancellationToken cancellationToken)
@@ -1204,77 +1158,157 @@ namespace MinerInfoApp
         }
 
 
+        private async Task RefreshMinerInfoAsync(ListViewItem item, CancellationToken cancellationToken)
+        {
+
+            await semaphoreReboot.WaitAsync(cancellationToken);
+            try
+            {
+                string minerIP = item.Text;
+                int maxRetries = maxRepeatScan;
+                double currentTimeout = timeoutTime;
+                bool success = false;
+
+                for (int attempt = 1; attempt <= maxRetries && !success; attempt++)
+                {
+                    try
+                    {
+                        UpdateStatusColumn(item, $"{(isEnglish ? $"Refreshing" : $"刷新")} (Attempt {attempt})");
+
+                        cancellationToken.ThrowIfCancellationRequested();
+
+                        using (HttpClient client = new HttpClient())
+                        {
+                            client.Timeout = TimeSpan.FromSeconds(currentTimeout);
+                            client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+
+                            var response = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_uptime_pools_minerinfo");
+                            var minerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(response);
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            var selfResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_selfcheck_progress");
+                            var selfMinerInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(selfResponse);
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            var poolResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_pools");
+                            var poolInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(poolResponse);
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            var firmwareResponse = await client.GetStringAsync($"http://{minerIP}/cgi-bin/cgiNetService.cgi?request=request_overview");
+                            var firmwareInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(firmwareResponse);
+                            if (minerInfo?.data == null)
+                            {
+                                UpdateStatusColumn(item, "Invalid miner data");
+                                continue; // Skip to next attempt
+                            }
+
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            //Determine hashboard status
+                            string hash1 = minerInfo.data.minerinfo[0].hash_rate > 10 ? "O" : "X";
+                            string hash1a = minerInfo.data.minerinfo[0].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash2 = minerInfo.data.minerinfo[1].hash_rate > 10 ? "O" : "X";
+                            string hash2a = minerInfo.data.minerinfo[1].hash_rate > 10 ? "Working" : "Not Working";
+
+                            string hash3 = minerInfo.data.minerinfo[2].hash_rate > 10 ? "O" : "X";
+                            string hash3a = minerInfo.data.minerinfo[2].hash_rate > 10 ? "Working" : "Not Working";
+
+                            //Determine Miner Status
+                            string minerStatus = "";
+                            if (minerInfo.data.uptime.dag.progress > 0 && minerInfo.data.uptime.dag.progress < 100)
+                            {
+                                minerStatus = "Writing DAG";
+                            }
+                            else if (Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2) > 0 && Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2) < 100)
+                            {
+                                minerStatus = "Running Self Check";
+                            }
+                            else if (minerInfo.data.uptime.hash_rate > 1)
+                            {
+                                minerStatus = "Hashing";
+                            }
+                            else
+                            {
+                                minerStatus = "Needs Self Check";
+                            }
+
+                            minerListView.Invoke((Action)(() =>
+                            {
+                                if (!minerListView.IsHandleCreated) return;
+                                // Update columns with refreshed data (add more null-checks here as needed)
+
+                                item.SubItems[1].Text = minerInfo.data.uptime.hash_rate.ToString(); //Hashrate
+                                item.SubItems[2].Text = minerInfo.data.pooldata[0].pool.ToString(); // Pool
+                                item.SubItems[3].Text = poolInfo.data.username.ToString(); // Pool User
+                                item.SubItems[4].Text = minerInfo.data.pooldata[0].user.ToString(); // Account
+                                item.SubItems[5].Text = minerInfo.data.uptime.dag.progress.ToString(); // DAG Progress
+                                item.SubItems[6].Text = Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString(); // Self Check Progress
+
+                                // Update hashboard statuses
+                                item.SubItems[7].Text = ($"{hash1}, {hash2}, {hash3}");
+
+                                item.SubItems[8].Text = Math.Round((100 - (100 * Convert.ToDouble(minerInfo.data.uptime.reject_num) / Convert.ToDouble(minerInfo.data.uptime.accept_num))), 2).ToString(); // Accepted Rate
+                                item.SubItems[9].Text = minerInfo.data.uptime.accept_num.ToString(); // Accepted
+                                item.SubItems[10].Text = minerInfo.data.uptime.reject_num.ToString(); // Rejected
+                                item.SubItems[11].Text = firmwareInfo.data.form1.mac_address.ToString(); // MAC Address
+                                item.SubItems[12].Text = minerInfo.data.uptime.up_time.ToString(); // Uptime
+                                item.SubItems[13].Text = minerInfo.data.minerinfo[0].temperature.ToString(); // Temperature
+                                item.SubItems[14].Text = minerInfo.data.uptime.fan_speed.ToString(); // Fan Speed
+                                item.SubItems[15].Text = firmwareInfo.data.form1.platform_version.ToString(); // Firmware Version
+                                item.SubItems[16].Text = hash1a; //board 1 status 
+                                item.SubItems[17].Text = minerInfo.data.minerinfo[0].hash_rate; //board 1 hashrate
+                                item.SubItems[18].Text = minerInfo.data.minerinfo[0].temperature; //board 1 temp
+                                item.SubItems[19].Text = hash2a;
+                                item.SubItems[20].Text = minerInfo.data.minerinfo[1].hash_rate;
+                                item.SubItems[21].Text = minerInfo.data.minerinfo[1].temperature;
+                                item.SubItems[22].Text = hash3a;
+                                item.SubItems[23].Text = minerInfo.data.minerinfo[2].hash_rate;
+                                item.SubItems[24].Text = minerInfo.data.minerinfo[2].temperature;
+                                item.SubItems[25].Text = minerStatus;
+                            }));
+                            success = true;
+                        }
+                    }
+                    catch (JsonSerializationException jsonEx)
+                    {
+                        Console.WriteLine($"Deserialization error for {minerIP}: {jsonEx.Message}");
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Invalid Miner Data" : "无效的矿工数据")}");
+                    }
+                    catch (HttpRequestException httpEx)
+                    {
+                        Console.WriteLine($"HTTP request error for {minerIP}: {httpEx.Message}");
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Network Error" : "网络错误")}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed to refresh miner info for {minerIP}: {ex.Message}");
+
+                        if (attempt < maxRetries)
+                        {
+                            currentTimeout += 0.25;
+                            UpdateStatusColumn(item, $"{(isEnglish ? $"Retry {attempt + 1}" : $"重试 {attempt + 1}")}");
+                        }
+                        else
+                        {
+                            UpdateStatusColumn(item, $"{(isEnglish ? "Refresh Failed" : "刷新失败")}");
+                        }
+                    }
+
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Refresh Canceled" : "刷新取消")}");
+                        break;
+                    }
+                }
+            }
+            finally
+            {
+                semaphoreReboot.Release();
+            }
+        }
+
         //***************************************************************************
-
-        //This reboots the miners if they are selected
-        private async void rebootButton_Click(object sender, EventArgs e)
-        {
-            // Ensure cancellationTokenSource is initialized
-            if (cancellationTokenSourceReboot == null)
-            {
-                cancellationTokenSourceReboot = new CancellationTokenSource();
-            }
-
-            // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
-
-            try
-            {
-                await ExecuteMinerCommandAsync("send_reboot_miner=send_reboot_miner", "Reboot", cancellationTokenSourceReboot.Token);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error during reboot: {ex.Message}");
-            }
-            finally
-            {
-                semaphoreReboot.Dispose();
-                // Update status after completion
-                if (isEnglish)
-                {
-                    ScanningIPLabel.Text = "Reboot Done";
-                }
-                else
-                {
-                    ScanningIPLabel.Text = "重启完毕";
-                }
-            }
-        }
-
-
-        private async void selfCheckButton_Click(object sender, EventArgs e)
-        {
-            // Ensure cancellationTokenSource is initialized
-            if (cancellationTokenSourceSelfCheck == null)
-            {
-                cancellationTokenSourceSelfCheck = new CancellationTokenSource();
-            }
-
-            // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
-
-            try
-            {
-                await ExecuteMinerCommandAsync("send_selfcheck_instructions=send_selfcheck_instructions", "Self-Check", cancellationTokenSourceSelfCheck.Token);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error during reboot: {ex.Message}");
-            }
-            finally
-            {
-                semaphoreReboot.Dispose();
-                // Update status after completion
-                if (isEnglish)
-                {
-                    ScanningIPLabel.Text = "Done Starting Self Check";
-                }
-                else
-                {
-                    ScanningIPLabel.Text = "结束自检";
-                }
-            }
-        }
 
 
         private void addIPButton_Click(object sender, EventArgs e)
@@ -1367,7 +1401,6 @@ namespace MinerInfoApp
         }
 
 
-
         private void SaveCurrentIPRange()
         {
             try
@@ -1405,7 +1438,6 @@ namespace MinerInfoApp
         }
 
 
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Save the current IP range to app.config
@@ -1420,7 +1452,6 @@ namespace MinerInfoApp
             }
             SaveCurrentIPRange();
         }
-
 
 
         private void UpdateConfiguration()
@@ -1454,7 +1485,6 @@ namespace MinerInfoApp
         }
 
 
-
         private void deleteIPRanges_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem thisItem in ipRangeListView.Items)
@@ -1468,13 +1498,11 @@ namespace MinerInfoApp
         }
 
 
-
         private void stopScanButton_Click(object sender, EventArgs e)
         {
             cancellationTokenSource?.Cancel();
             ScanningIPLabel.Text = "Stopped Scan";
         }
-
 
 
         private void loadIPRangesButton_Click(object sender, EventArgs e)
@@ -1523,7 +1551,6 @@ namespace MinerInfoApp
                 }
             }
         }
-
 
 
         private void saveRangesButton_Click(object sender, EventArgs e)
@@ -1579,69 +1606,7 @@ namespace MinerInfoApp
         }
 
 
-        private async void updateButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
-                openFileDialog.Title = "Select The Update File";
-                openFileDialog.Filter = "Tar Gzip Files (*.tar.gz)|*.tar.gz|All Files (*.*)|*.*";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string fileToUpload = openFileDialog.FileName;
-
-                    List<string> ipAddressesToUpdate = new List<string>();
-
-                    // Iterate over the items in the minerListView
-                    foreach (ListViewItem item in minerListView.Items)
-                    {
-                        // Check if the item is checked
-                        if (item.Checked)
-                        {
-                            // Assuming the IP address is stored in the first subitem
-                            string ipAddress = item.Text;
-                            ipAddressesToUpdate.Add(ipAddress);
-                        }
-                    }
-
-                    List<Task<string>> uploadTasks = new List<Task<string>>();
-
-                    foreach (string ipAddr in ipAddressesToUpdate)
-                    {
-                        // Offload each upload operation to a background thread and store the task
-                        uploadTasks.Add(Task.Run(() => UploadFileAsync(fileToUpload, ipAddr)));
-                        ScanningIPLabel.Text = "Updating " + ipAddr;
-                    }
-
-                    // Wait for all tasks to complete
-                    string[] responses = await Task.WhenAll(uploadTasks);
-
-                    // Display responses for each server
-                    for (int i = 0; i < responses.Length; i++)
-                    {
-                        string numericResponse = new string(responses[i].Where(char.IsDigit).ToArray());
-                        if (numericResponse != "200") // Check if response code is not 200
-                        {
-                            MessageBox.Show($"Error updating {ipAddressesToUpdate[i]}:\n{responses[i]}");
-                        }
-                    }
-                    if (isEnglish)
-                    {
-                        MessageBox.Show("Finished uploading the update. Please wait 10 minutes for the miner(s) to finish updating");
-                    }
-                    else
-                    {
-                        MessageBox.Show("已完成固件上传，固件更新将在十分钟左右完成");
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
-
+        
         private async Task<string> UploadFileAsync(string fileToUpload, string server)
         {
             try
@@ -1662,171 +1627,400 @@ namespace MinerInfoApp
         }
 
 
-        private ChromeDriver getNewDriver()
+        //Open IP In browser and login
+        private async Task<ChromeDriver> GetNewDriverAsync()
         {
-            var chromeDriverService = ChromeDriverService.CreateDefaultService();
-            chromeDriverService.HideCommandPromptWindow = true;
-            return new ChromeDriver(chromeDriverService, new ChromeOptions());
+            return await Task.Run(() =>
+            {
+                var chromeDriverService = ChromeDriverService.CreateDefaultService();
+                chromeDriverService.HideCommandPromptWindow = true;
+                return new ChromeDriver(chromeDriverService, new ChromeOptions());
+            });
         }
 
-        bool initializeDriver = true;
-        private void OpenInBrowser(string ipAddress)
-        {
-            // Open the URL in the default web browser
-            //Process.Start(url);
-            string url = $"http://{ipAddress}";
-            string path = Environment.CurrentDirectory;
-            if (initializeDriver == true)
-            {
-                initializeDriver = false;
-                driver = getNewDriver();
 
-            }
-            else if (initializeDriver == false)
+        private async Task OpenInBrowserAsync(string ipAddress)
+        {
+            string url = $"http://{ipAddress}";
+            bool success = false;
+            int retryCount = 0;
+            int maxRetries = 2;
+
+            while (!success && retryCount < maxRetries)
             {
                 try
                 {
+                    // Ensure driver is initialized
+                    if (driver == null)
+                    {
+                        driver = await GetNewDriverAsync();
+                    }
+
+                    // Open a new tab or handle the existing driver window
                     string driverWindowHandle = driver.CurrentWindowHandle;
-                    if (driver != null)
-                    {
-                        driver.SwitchTo().NewWindow(WindowType.Tab);
-                    }
-                    else
-                    {
-                        driver = new ChromeDriver(path + @"\drivers\");
-                    }
+                    driver?.SwitchTo().NewWindow(WindowType.Tab);
+
+
+                    driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);  // Timeout for page load
+                    driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(10);  // Timeout for scripts
+                    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);  // Timeout for finding elements
+
+                    // Navigate to the URL and automatically log in
+                    driver.Navigate().GoToUrl(url);
+                    driver.Manage().Cookies.AddCookie(new OpenQA.Selenium.Cookie("Admin-Token", "admin-token"));
+                    driver.Navigate().Refresh();
+
+                    success = true; // Mark success if no exceptions occur
                 }
-                catch (OpenQA.Selenium.NoSuchWindowException)
+                catch (WebDriverTimeoutException)
+                {
+                    Console.WriteLine($"Timeout loading {url}. Retrying...");
+                    retryCount++;  // Increment retry count and retry the IP
+                }
+                catch (NoSuchWindowException)
                 {
                     driver?.Quit();
-                    driver = new ChromeDriver(path + @"\drivers\");
+                    driver = await GetNewDriverAsync();
+                    retryCount++;  // Increment retry count and retry the IP
                 }
-                catch (OpenQA.Selenium.WebDriverException)
+                catch (WebDriverException)
                 {
-                    driver = new ChromeDriver(path + @"\drivers\");
+                    driver?.Quit();
+                    driver = await GetNewDriverAsync();
+                    retryCount++;  // Increment retry count and retry the IP
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
-                    Console.WriteLine(e.ToString());
+                    Console.WriteLine(ex.ToString());
+                    retryCount++;  // Increment retry count for any other exception
                 }
             }
-            try
+
+            if (!success)
             {
-                driver.Navigate().GoToUrl(url);
-                driver.Manage().Cookies.AddCookie(new OpenQA.Selenium.Cookie("Admin-Token", "admin-token"));
-                driver.Navigate().Refresh();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine($"Failed to open {url} after {maxRetries} attempts.");
             }
         }
 
 
-        private void openInBrowserButton_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < minerListView.Items.Count; i++)
-            {
-                if (minerListView.Items[i].Checked)
-                {
-                    OpenInBrowser(minerListView.Items[i].Text);
-                }
-
-            }
-        }
+        //End of open In Browser
 
 
-        private void minerListView_DoubleClick(object sender, EventArgs e)
+        private async void minerListView_DoubleClick(object sender, EventArgs e)
         {
             if (minerListView.SelectedItems.Count > 0)
             {
                 string selectedIPAddress = minerListView.SelectedItems[0].Text;
 
-                // Open the selected IP address in a browser
-                OpenInBrowser(selectedIPAddress);
+                // Open the selected IP address in a browser asynchronously
+                await OpenInBrowserAsync(selectedIPAddress);
             }
+
             minerListView.SelectedItems[0].Checked = false;
         }
 
 
+        //* * * COMMANDS TAB * * * * * * * * * * * * * * * * * * COMMANDS TAB * * * * * * * * * * * * * * * * * * COMMANDS TAB * * * * * * * * * * * * * * * * *
 
-        private bool isUpdatingEndTextBox = false;
+        //********** Button Listener Functions **********
 
-        private void focusText(MaterialTextBox newBox)
+        //Reboot Selected Miners
+        private async void rebootButton_Click(object sender, EventArgs e)
         {
-            newBox.Focus();
-            newBox.SelectionStart = newBox.Text.Length;
-        }
-
-        private void startIPTextBoxA_TextChanged(object sender, EventArgs e)
-        {
-            if (startIPTextBoxA.Text.Length == 3 || startIPTextBoxA.Text == "10")
+            // Ensure cancellationTokenSource is initialized
+            if (cancellationTokenSourceReboot == null)
             {
-                focusText(startIPTextBoxB);
-                isUpdatingEndTextBox = true;
-                endIPTextBoxA.Text = startIPTextBoxA.Text;
-                isUpdatingEndTextBox = false;
+                cancellationTokenSourceReboot = new CancellationTokenSource();
+            }
+
+            // Initialize or reinitialize semaphore
+            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+
+            try
+            {
+                await ExecuteMinerCommandAsync("send_reboot_miner=send_reboot_miner", "Reboot", cancellationTokenSourceReboot.Token);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during reboot: {ex.Message}");
+            }
+            finally
+            {
+                semaphoreReboot.Dispose();
+                // Update status after completion
+                if (isEnglish)
+                {
+                    ScanningIPLabel.Text = "Reboot Done";
+                }
+                else
+                {
+                    ScanningIPLabel.Text = "重启完毕";
+                }
             }
         }
 
-        private void startIPTextBoxB_TextChanged(object sender, EventArgs e)
+
+        //Start A Self Check On Selected Miners
+        private async void selfCheckButton_Click(object sender, EventArgs e)
         {
-            if (startIPTextBoxB.Text.Length == 3)
+            // Ensure cancellationTokenSource is initialized
+            if (cancellationTokenSourceSelfCheck == null)
             {
-                focusText(startIPTextBoxC);
-                isUpdatingEndTextBox = true;
-                endIPTextBoxB.Text = startIPTextBoxB.Text;
-                isUpdatingEndTextBox = false;
+                cancellationTokenSourceSelfCheck = new CancellationTokenSource();
+            }
+
+            // Initialize or reinitialize semaphore
+            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+
+            try
+            {
+                await ExecuteMinerCommandAsync("send_selfcheck_instructions=send_selfcheck_instructions", "Self-Check", cancellationTokenSourceSelfCheck.Token);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during reboot: {ex.Message}");
+            }
+            finally
+            {
+                semaphoreReboot.Dispose();
+                // Update status after completion
+                if (isEnglish)
+                {
+                    ScanningIPLabel.Text = "Done Starting Self Check";
+                }
+                else
+                {
+                    ScanningIPLabel.Text = "结束自检";
+                }
             }
         }
 
-        private void startIPTextBoxC_TextChanged(object sender, EventArgs e)
+
+        //Open and Login Selected Miners In A Browser
+        private async void openInBrowserButton_Click(object sender, EventArgs e)
         {
-            if (startIPTextBoxC.Text.Length == 3)
+            List<Task> browserTasks = new List<Task>();
+
+            for (int i = 0; i < minerListView.Items.Count; i++)
             {
-                isUpdatingEndTextBox = true;
-                endIPTextBoxC.Text = startIPTextBoxC.Text;
-                isUpdatingEndTextBox = false;
+                if (minerListView.Items[i].Checked)
+                {
+                    string ipAddress = minerListView.Items[i].Text;
+                    browserTasks.Add(OpenInBrowserAsync(ipAddress));
+                }
+            }
+
+            // Await the completion of all browser opening tasks
+            await Task.WhenAll(browserTasks);
+        }
+
+
+        // Sets The Selected Miners To Use A Dynamic IP
+        private async void setDynamicIPButton_Click(object sender, EventArgs e)
+        {
+            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D
+            for (int i = 0; i < minerListView.Items.Count; i++)
+            {
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string newIp = newIpTextBox.Text;
+                        if (isEnglish)
+                        {
+                            ScanningIPLabel.Text = minerIp + " Setting Dynamic IP";
+                        }
+                        else
+                        {
+                            ScanningIPLabel.Text = minerIp + " 设置动态IP";
+                        }
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%22{minerListView.Items[i].Text}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D");
+                        }
+                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
+                        string poolUser = minerListView.Items[i].SubItems[4].Text;
+                        string poolIpSet = newIp.Replace('.', 'x');
+                        poolUrl = WebUtility.UrlEncode(poolUrl);
+                        poolUser = WebUtility.UrlEncode(poolUser);
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set dynamic exception: " + ex);
+                }
+
+            }
+            if (isEnglish)
+            {
+                ScanningIPLabel.Text = "Done Setting Dynamic";
+            }
+            else
+            {
+                ScanningIPLabel.Text = "动态IP设置完成";
             }
         }
 
-        private void startIPTextBoxD_TextChanged(object sender, EventArgs e)
+
+        // Sets A Static IP Of The Selected Miner (Implements check to prevent duplicate IPs)
+        private async void setStaticIPButton_Click(object sender, EventArgs e)
         {
-            if (startIPTextBoxD.Text.Length == 3 || startIPTextBoxD.Text == "0")
+            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%2210.100.5.32%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22%22%7D
+            for (int i = 0; i < minerListView.Items.Count; i++)
             {
-                focusText(endIPTextBoxA);
+
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string[] ipParts = minerIp.Split('.');
+                        int newIPTwo = int.Parse(ipParts[1]);
+                        int newIPThree = int.Parse(ipParts[2]);
+                        string newIPEnd = newIpTextBox.Text;
+                        string newIP = "10" + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
+                        if (isEnglish)
+                        {
+                            ScanningIPLabel.Text = minerIp + " Setting Static IP";
+                        }
+                        else
+                        {
+                            ScanningIPLabel.Text = minerIp + " 设置静态IP";
+                        }
+                        using (HttpClient setStaticIP = new HttpClient())
+                        {
+                            setStaticIP.Timeout = TimeSpan.FromSeconds(1);
+                            setStaticIP.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setStaticIP.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
+                            minerListView.Items[i].Text = newIP;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set static exception: " + ex);
+                }
+
+            }
+            /*
+            if (isEnglish)
+            {
+                ScanningIPLabel.Text = "Done Setting Static IP";
+            }
+            else
+            {
+                ScanningIPLabel.Text = "静态IP设置完成";
+            }
+            */
+            //***********************************************************************
+            // Ensure cancellationTokenSource is initialized
+            if (cancellationTokenSourceReboot == null)
+            {
+                cancellationTokenSourceReboot = new CancellationTokenSource();
+            }
+
+            // Initialize or reinitialize semaphore
+            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+
+            try
+            {
+                await ExecuteMinerCommandAsync("setStaticIP", "Set Static IP", cancellationTokenSourceReboot.Token);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while setting static ip: {ex.Message}");
+            }
+            finally
+            {
+                semaphoreReboot.Dispose();
+                // Update status after completion
+                if (isEnglish)
+                {
+                    ScanningIPLabel.Text = "Done Setting Static IP";
+                }
+                else
+                {
+                    ScanningIPLabel.Text = "静态IP设置完成";
+                }
             }
         }
 
-        private void endIPTextBoxA_TextChanged(object sender, EventArgs e)
+
+        //Change The Performance Mode Of Selected Miners
+        private async void performanceButton_Click(object sender, EventArgs e)
         {
-            if (!isUpdatingEndTextBox && (endIPTextBoxA.Text.Length == 3 || endIPTextBoxA.Text == "10"))
+            // /cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:4,%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D
+            for (int i = 0; i < minerListView.Items.Count; i++)
             {
-                focusText(endIPTextBoxB);
-            }
-        }
 
-        private void endIPTextBoxB_TextChanged(object sender, EventArgs e)
-        {
-            if (!isUpdatingEndTextBox && endIPTextBoxB.Text.Length == 3)
+                try
+                {
+                    if (minerListView.Items[i].Checked)
+                    {
+                        string minerIp = minerListView.Items[i].Text;
+                        string performanceSelect = performanceDropdown.SelectedItem.ToString();
+                        string performanceMode = "4";
+                        if (performanceSelect == "Efficiency" || performanceSelect == "效率")
+                        {
+                            performanceMode = "1";
+                        }
+                        else if (performanceSelect == "Balanced" || performanceSelect == "平衡")
+                        {
+                            performanceMode = "2";
+                        }
+                        else if (performanceSelect == "Factory" || performanceSelect == "厂家")
+                        {
+                            performanceMode = "3";
+                        }
+                        else
+                        {
+                            performanceMode = "4";
+                        }
+                        if (isEnglish)
+                        {
+                            ScanningIPLabel.Text = minerIp + " Setting Performance Mode";
+                        }
+                        else
+                        {
+                            ScanningIPLabel.Text = minerIp + " 调整工作模式中";
+                        }
+                        using (HttpClient setPool = new HttpClient())
+                        {
+                            setPool.Timeout = TimeSpan.FromSeconds(1);
+                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
+                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:{performanceMode},%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("set performance exception: " + ex);
+                }
+
+            }
+            if (isEnglish)
             {
-                focusText(endIPTextBoxC);
+                ScanningIPLabel.Text = "Done Setting Performance Mode";
             }
-        }
-
-        private void endIPTextBoxC_TextChanged(object sender, EventArgs e)
-        {
-            if (!isUpdatingEndTextBox && endIPTextBoxC.Text.Length == 3)
+            else
             {
-                focusText(endIPTextBoxD);
+                ScanningIPLabel.Text = "工作模式已调整";
             }
-        }
-
-        private void endIPTextBoxD_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
+
+        //Set New Pool(Account, Pool Address And Worker Name) For Selected Miners
         private async void setPoolButton_Click(object sender, EventArgs e)
         {
             // Ensure cancellationTokenSource is initialized
@@ -1911,205 +2105,32 @@ namespace MinerInfoApp
 
         }
 
-        private async void performanceButton_Click(object sender, EventArgs e)
+
+        //Clears The Listview Of All Miners
+        private void clearListview_Click(object sender, EventArgs e)
         {
-            // /cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:4,%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D
-            for (int i = 0; i < minerListView.Items.Count; i++)
-            {
-
-                try
-                {
-                    if (minerListView.Items[i].Checked)
-                    {
-                        string minerIp = minerListView.Items[i].Text;
-                        string performanceSelect = performanceDropdown.SelectedItem.ToString();
-                        string performanceMode = "4";
-                        if (performanceSelect == "Efficiency" || performanceSelect == "效率")
-                        {
-                            performanceMode = "1";
-                        }
-                        else if (performanceSelect == "Balanced" || performanceSelect == "平衡")
-                        {
-                            performanceMode = "2";
-                        }
-                        else if (performanceSelect == "Factory" || performanceSelect == "厂家")
-                        {
-                            performanceMode = "3";
-                        }
-                        else
-                        {
-                            performanceMode = "4";
-                        }
-                        if (isEnglish)
-                        {
-                            ScanningIPLabel.Text = minerIp + " Setting Performance Mode";
-                        }
-                        else
-                        {
-                            ScanningIPLabel.Text = minerIp + " 调整工作模式中";
-                        }
-                        using (HttpClient setPool = new HttpClient())
-                        {
-                            setPool.Timeout = TimeSpan.FromSeconds(1);
-                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_performance_params=%7B%22hiccupless%22:%22true%22,%22mode%22:{performanceMode},%22current_mode%22:%22Performance%22,%22tuning_status%22:%22Tuning%22%7D");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.Write("set performance exception: " + ex);
-                }
-
-            }
-            if (isEnglish)
-            {
-                ScanningIPLabel.Text = "Done Setting Performance Mode";
-            }
-            else
-            {
-                ScanningIPLabel.Text = "工作模式已调整";
-            }
-
+            minerListView.Items.Clear();
+            minersFoundCount = 0;
+            minersFoundCountUpdate();
         }
 
-        private async void setStaticIPButton_Click(object sender, EventArgs e)
+
+        //Refresh The Data Of Selected Miners
+        private async void RefreshDataBtn_Click(object sender, EventArgs e)
         {
-            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%2210.100.5.32%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22%22%7D
-            for (int i = 0; i < minerListView.Items.Count; i++)
-            {
-
-                try
-                {
-                    if (minerListView.Items[i].Checked)
-                    {
-                        string minerIp = minerListView.Items[i].Text;
-                        string[] ipParts = minerIp.Split('.');
-                        int newIPTwo = int.Parse(ipParts[1]);
-                        int newIPThree = int.Parse(ipParts[2]);
-                        string newIPEnd = newIpTextBox.Text;
-                        string newIP = "10" + "." + newIPTwo.ToString() + "." + newIPThree.ToString() + "." + newIPEnd.ToString();
-                        if (isEnglish)
-                        {
-                            ScanningIPLabel.Text = minerIp + " Setting Static IP";
-                        }
-                        else
-                        {
-                            ScanningIPLabel.Text = minerIp + " 设置静态IP";
-                        }
-                        using (HttpClient setStaticIP = new HttpClient())
-                        {
-                            setStaticIP.Timeout = TimeSpan.FromSeconds(1);
-                            setStaticIP.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setStaticIP.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22static%22,%22ip%22:%22{newIP}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.{newIPTwo}.{newIPThree}.254%22,%22dns1%22:%221.1.1.1%22,%22dns2%22:%22114.114.114.114%22%7D");
-                            minerListView.Items[i].Text = newIP;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.Write("set static exception: " + ex);
-                }
-
-            }
-            /*
-            if (isEnglish)
-            {
-                ScanningIPLabel.Text = "Done Setting Static IP";
-            }
-            else
-            {
-                ScanningIPLabel.Text = "静态IP设置完成";
-            }
-            */
-            //***********************************************************************
-            // Ensure cancellationTokenSource is initialized
-            if (cancellationTokenSourceReboot == null)
-            {
-                cancellationTokenSourceReboot = new CancellationTokenSource();
-            }
-
-            // Initialize or reinitialize semaphore
             semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            if (cancellationTokenSourceReboot != null && !cancellationTokenSourceReboot.IsCancellationRequested)
+            {
+                cancellationTokenSourceReboot.Cancel();
+                await Task.Delay(500); // Give some time to cancel the previous operation
+            }
 
-            try
-            {
-                await ExecuteMinerCommandAsync("setStaticIP", "Set Static IP", cancellationTokenSourceReboot.Token);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error while setting static ip: {ex.Message}");
-            }
-            finally
-            {
-                semaphoreReboot.Dispose();
-                // Update status after completion
-                if (isEnglish)
-                {
-                    ScanningIPLabel.Text = "Done Setting Static IP";
-                }
-                else
-                {
-                    ScanningIPLabel.Text = "静态IP设置完成";
-                }
-            }
+            cancellationTokenSourceReboot = new CancellationTokenSource();
+            await ExecuteMinerCommandAsync("refresh", "Refreshing miners", cancellationTokenSourceReboot.Token);
         }
 
-        private async void setDynamicIPButton_Click(object sender, EventArgs e)
-        {
-            // /cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%2210.100.5.36%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D
-            for (int i = 0; i < minerListView.Items.Count; i++)
-            {
 
-                try
-                {
-                    if (minerListView.Items[i].Checked)
-                    {
-                        string minerIp = minerListView.Items[i].Text;
-                        string newIp = newIpTextBox.Text;
-                        if (isEnglish)
-                        {
-                            ScanningIPLabel.Text = minerIp + " Setting Dynamic IP";
-                        }
-                        else
-                        {
-                            ScanningIPLabel.Text = minerIp + " 设置动态IP";
-                        }
-                        using (HttpClient setPool = new HttpClient())
-                        {
-                            setPool.Timeout = TimeSpan.FromSeconds(1);
-                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_network_params=%7B%22netmode%22:%22dhcp%22,%22ip%22:%22{minerListView.Items[i].Text}%22,%22netmask%22:%22255.255.255.0%22,%22gateway%22:%2210.100.5.254%22,%22dns1%22:%228.8.8.8%22,%22dns2%22:%22114.114.114.114%22%7D");
-                        }
-                        string poolUrl = minerListView.Items[i].SubItems[2].Text;
-                        string poolUser = minerListView.Items[i].SubItems[4].Text;
-                        string poolIpSet = newIp.Replace('.', 'x');
-                        poolUrl = WebUtility.UrlEncode(poolUrl);
-                        poolUser = WebUtility.UrlEncode(poolUser);
-                        using (HttpClient setPool = new HttpClient())
-                        {
-                            setPool.Timeout = TimeSpan.FromSeconds(1);
-                            setPool.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
-                            var setPoolResponse = await setPool.GetStringAsync($"http://{minerIp}//cgi-bin/cgiNetService.cgi?send_pools_params=%7B%22poolurl%22:%22{poolUrl}%22,%22username%22:%22{poolUser}.{poolIpSet}%22,%22password%22:%22X%22,%22currency%22:%22ETC%22%7D");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.Write("set dynamic exception: " + ex);
-                }
-
-            }
-            if (isEnglish)
-            {
-                ScanningIPLabel.Text = "Done Setting Dynamic";
-            }
-            else
-            {
-                ScanningIPLabel.Text = "动态IP设置完成";
-            }
-        }
-
+        //Set A New Password For Selected Miners
         private async void setPasswordButton_Click(object sender, EventArgs e)
         {
             // /cgi-bin/cgiNetService.cgi?send_change_password_param=%7B%22user%22:%22admin%22,%22current_admin_password%22:%22admin%22,%22new_password%22:%22admin%22,%22confirm_password%22:%22admin%22%7D
@@ -2154,35 +2175,207 @@ namespace MinerInfoApp
                 ScanningIPLabel.Text = "设置密码完成";
             }
         }
-        bool UDPListenerAlive = false;
-        // Define a method for receiving data asynchronously
+
+
+        //Update Selected Miners
+        private async void updateButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+                openFileDialog.Title = "Select The Update File";
+                openFileDialog.Filter = "Tar Gzip Files (*.tar.gz)|*.tar.gz|All Files (*.*)|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileToUpload = openFileDialog.FileName;
+
+                    List<string> ipAddressesToUpdate = new List<string>();
+
+                    // Iterate over the items in the minerListView
+                    foreach (ListViewItem item in minerListView.Items)
+                    {
+                        // Check if the item is checked
+                        if (item.Checked)
+                        {
+                            // Assuming the IP address is stored in the first subitem
+                            string ipAddress = item.Text;
+                            ipAddressesToUpdate.Add(ipAddress);
+                        }
+                    }
+
+                    List<Task<string>> uploadTasks = new List<Task<string>>();
+
+                    foreach (string ipAddr in ipAddressesToUpdate)
+                    {
+                        // Offload each upload operation to a background thread and store the task
+                        uploadTasks.Add(Task.Run(() => UploadFileAsync(fileToUpload, ipAddr)));
+                        ScanningIPLabel.Text = "Updating " + ipAddr;
+                    }
+
+                    // Wait for all tasks to complete
+                    string[] responses = await Task.WhenAll(uploadTasks);
+
+                    // Display responses for each server
+                    for (int i = 0; i < responses.Length; i++)
+                    {
+                        string numericResponse = new string(responses[i].Where(char.IsDigit).ToArray());
+                        if (numericResponse != "200") // Check if response code is not 200
+                        {
+                            MessageBox.Show($"Error updating {ipAddressesToUpdate[i]}:\n{responses[i]}");
+                        }
+                    }
+                    if (isEnglish)
+                    {
+                        MessageBox.Show("Finished uploading the update. Please wait 10 minutes for the miner(s) to finish updating");
+                    }
+                    else
+                    {
+                        MessageBox.Show("已完成固件上传，固件更新将在十分钟左右完成");
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+
+
+
+        //End *Button Listener Functions*
+
+
+        //End *COMMANDS TAB*
+
+        //* * * UPDATE IP TEXT BOXES * * * * * * * * * * * * * * * * * * UPDATE IP TEXT BOXES * * * * * * * * * * * * * * * * * * UPDATE IP TEXT BOXES * * * * * * * * * * * * * * * * *
+
+        private bool isUpdatingEndTextBox = false;
+        
+
+        private void focusText(MaterialTextBox newBox)
+        {
+            newBox.Focus();
+            newBox.SelectionStart = newBox.Text.Length;
+        }
+
+        //All Logic For Handling Automatic Updating/Advancing Of The IP Boxes
+        private void startIPTextBoxA_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxA.Text.Length == 3 || startIPTextBoxA.Text == "10")
+            {
+                focusText(startIPTextBoxB);
+                isUpdatingEndTextBox = true;
+                endIPTextBoxA.Text = startIPTextBoxA.Text;
+                isUpdatingEndTextBox = false;
+            }
+        }
+        private void startIPTextBoxB_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxB.Text.Length == 3)
+            {
+                focusText(startIPTextBoxC);
+                isUpdatingEndTextBox = true;
+                endIPTextBoxB.Text = startIPTextBoxB.Text;
+                isUpdatingEndTextBox = false;
+            }
+        }
+        private void startIPTextBoxC_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxC.Text.Length == 3)
+            {
+                isUpdatingEndTextBox = true;
+                endIPTextBoxC.Text = startIPTextBoxC.Text;
+                isUpdatingEndTextBox = false;
+            }
+        }
+        private void startIPTextBoxD_TextChanged(object sender, EventArgs e)
+        {
+            if (startIPTextBoxD.Text.Length == 3 || startIPTextBoxD.Text == "0")
+            {
+                focusText(endIPTextBoxA);
+            }
+        }
+        private void endIPTextBoxA_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && (endIPTextBoxA.Text.Length == 3 || endIPTextBoxA.Text == "10"))
+            {
+                focusText(endIPTextBoxB);
+            }
+        }
+        private void endIPTextBoxB_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && endIPTextBoxB.Text.Length == 3)
+            {
+                focusText(endIPTextBoxC);
+            }
+        }
+        private void endIPTextBoxC_TextChanged(object sender, EventArgs e)
+        {
+            if (!isUpdatingEndTextBox && endIPTextBoxC.Text.Length == 3)
+            {
+                focusText(endIPTextBoxD);
+            }
+        }
+        private void endIPTextBoxD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //Add event handlers for each textbox
+        private void AttachNumericTextBoxEventHandlers()
+        {
+            startIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            startIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxA.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxB.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxC.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+            endIPTextBoxD.KeyPress += new KeyPressEventHandler(numericTextBox_KeyPress);
+        }
+
+        // Allow only digits, backspace, and the delete key
+        private void numericTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //End *UPDATE IP TEXT BOXES*
+
+
+        // Listens for IP Report button from YAMI
         async Task ReceiveDataAsync()
         {
             
             try
             {
-                if (UDPListenerAlive == false)
+                while (true)
                 {
                     udpListener = new UdpClient(6687);
-                    UDPListenerAlive = true;
-                }
-                UdpReceiveResult result = await udpListener.ReceiveAsync();
-                string receivedData = Encoding.ASCII.GetString(result.Buffer);
 
-                // Extract the IP address from the remote endpoint
-                IPAddress ip = result.RemoteEndPoint.Address;
+                    UdpReceiveResult result = await udpListener.ReceiveAsync();
+                    string receivedData = Encoding.ASCII.GetString(result.Buffer);
 
-                //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
-                List<string> ipList = new List<string> { ip.ToString() };
+                    // Extract the IP address from the remote endpoint
+                    IPAddress ip = result.RemoteEndPoint.Address;
 
-                try
-                {
-                    // Run the scanning process with cancellation support
-                    await ScanIPsAsync(ipList, cancellationTokenSource.Token);
-                }
-                catch (OperationCanceledException)
-                {
-                    print("Scanning was canceled.");
+                    //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
+                    List<string> ipList = new List<string> { ip.ToString() };
+
+                    try
+                    {
+                        // Run the scanning process with cancellation support
+                        await ScanIPsAsync(ipList, cancellationTokenSource.Token);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        Console.WriteLine("Scanning was canceled.");
+                    }
                 }
             }
             catch (SocketException ex)
@@ -2210,6 +2403,7 @@ namespace MinerInfoApp
             }
         }
 
+
         private void SaveSettings()
         {
             // Example: Save appSettings to application settings
@@ -2220,6 +2414,18 @@ namespace MinerInfoApp
             Properties.Settings.Default.UpdateTimeout = appSettings.UpdateTimeout;
             Properties.Settings.Default.Save();
         }
+
+
+        //Initializes settings vars
+        private void LoadSettings()
+        {
+            maxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans;
+            maxRepeatScan = Properties.Settings.Default.MaxRepeatScan;
+            timeoutTime = Properties.Settings.Default.TimeoutTime;
+            concurrentUpdate = Properties.Settings.Default.ConcurrentUpdate;
+            updateTimeout = Properties.Settings.Default.UpdateTimeout;
+        }
+
 
         private void ExportBtn_Click(object sender, EventArgs e)
         {
@@ -2243,6 +2449,7 @@ namespace MinerInfoApp
                 MessageBox.Show("There was an error while attempting to export. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         //Function to write listview items to an xlsx
         public void ExportListViewToExcel(ListView listView, string filePath)
@@ -2276,17 +2483,16 @@ namespace MinerInfoApp
             }
         }
 
+
         private void StopAllBtn_Click(object sender, EventArgs e)
         {
             cancellationTokenSource?.Cancel();
             cancellationTokenSourceReboot?.Cancel();
             cancellationTokenSourceSelfCheck?.Cancel();
-            cancellationTokenSourceDynamic?.Cancel();
-            cancellationTokenSourceUpdate?.Cancel();
-            cancellationTokenSourcePassword?.Cancel();
-            cancellationTokenSourcePerformance?.Cancel();
             ScanningIPLabel.Text = "Stopped";
         }
+
+
         private void calculateListviewTotals()
         {
             int selected = 0;
@@ -2330,29 +2536,77 @@ namespace MinerInfoApp
             TotalLabel.Text = "Total: " + Math.Round(totalHash, 2).ToString();
         }
 
-        private void SelectAllCheckBox_CheckedChanged(object sender, EventArgs e)
+
+        private Task SelectAllCheckUpdate(ListViewItem item, bool isChecked)
         {
-            foreach (ListViewItem ipItem in minerListView.Items)
+            return Task.Run(() =>
             {
-                // Check if the form is disposed before accessing its controls
-                if (IsDisposed)
-                    return;
-
-                // Update ListViewItem.Checked based on ListViewItem.Selected
-                ipItem.Selected = SelectAllCheckBox.Checked;
-            }
-            calculateListviewTotals();
+                item.Selected = isChecked;
+                item.Checked = isChecked;
+            });
         }
 
-        private void clearListview_Click(object sender, EventArgs e)
+
+        bool isUserCheckChange = true;
+        private async void SelectAllCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            minerListView.Items.Clear();
-            minersFoundCount = 0;
-            minersFoundCountUpdate();
+            if (isUserCheckChange)
+            {
+                List<Task> tasks = new List<Task>();
+
+                minerListView.BeginUpdate();
+                bool isChecked = SelectAllCheckBox.CheckState == CheckState.Checked;
+
+                foreach (ListViewItem ipItem in minerListView.Items)
+                {
+                    // Update ListViewItem.Checked based on ListViewItem.Selected
+                    tasks.Add(SelectAllCheckUpdate(ipItem, isChecked));
+                }
+                try
+                {
+                    await Task.WhenAll(tasks);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    // Resume drawing after all updates
+                    minerListView.EndUpdate();
+
+                }
+
+                isUserCheckChange = true;
+            }
         }
+
+
+        private void UpdateSelectAllCheckBoxState()
+        {
+            int checkedCount = minerListView.SelectedItems.Count;
+
+            isUserCheckChange = false;
+            // Update the "Select All" checkbox state based on the checked items
+            if (checkedCount == 0)
+            {
+                SelectAllCheckBox.CheckState = CheckState.Unchecked;
+            }
+            else if (checkedCount == minerListView.Items.Count)
+            {
+                SelectAllCheckBox.CheckState = CheckState.Checked;
+            }
+            else
+            {
+                SelectAllCheckBox.CheckState = CheckState.Indeterminate;
+            }
+
+            isUserCheckChange = true;
+        }
+
+
+
     }
-
-
 
     static class Program
     {
@@ -2551,6 +2805,7 @@ public class MinerInfo
         MacAddress = macAddress;
     }
 }
+
 
 //Class to track all settings values
 public class AppSettings
