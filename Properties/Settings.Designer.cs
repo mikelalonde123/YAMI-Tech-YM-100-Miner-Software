@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MinerInfoApp.Properties {
+namespace YAMI_Scanner.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -80,6 +80,44 @@ namespace MinerInfoApp.Properties {
             }
             set {
                 this["ConcurrentUpdate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckForStaticIP {
+            get {
+                return ((bool)(this["CheckForStaticIP"]));
+            }
+            set {
+                this["CheckForStaticIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0,0,154;1,2,76;2,8,237;3,7,196;4,6,118;5,3,61;6,4,78;7,5,113;8,9,126;9,12,117;10," +
+            "13,122;11,11,138;12,14,97;13,15,93;14,16,92;15,10,250;16,17,106;17,18,116;18,19," +
+            "117;19,20,108;20,21,119;21,22,103;22,23,107;23,24,114;24,25,125;25,1,156")]
+        public string MinerListViewSettings {
+            get {
+                return ((string)(this["MinerListViewSettings"]));
+            }
+            set {
+                this["MinerListViewSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBoxValues {
+            get {
+                return ((string)(this["SavedTextBoxValues"]));
+            }
+            set {
+                this["SavedTextBoxValues"] = value;
             }
         }
     }

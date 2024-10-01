@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.rebootButton = new MaterialSkin.Controls.MaterialButton();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
@@ -140,6 +140,7 @@
             this.ExportBtn = new MaterialSkin.Controls.MaterialButton();
             this.SettingsBtn = new MaterialSkin.Controls.MaterialButton();
             this.StopAllBtn = new MaterialSkin.Controls.MaterialButton();
+            this.mainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -164,6 +165,7 @@
             this.rebootButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.rebootButton.Name = "rebootButton";
             this.rebootButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.rebootButton, resources.GetString("rebootButton.ToolTip"));
             this.rebootButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.rebootButton.UseAccentColor = false;
             this.rebootButton.UseVisualStyleBackColor = true;
@@ -219,6 +221,7 @@
             resources.ApplyResources(this.materialTabSelector1, "materialTabSelector1");
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
+            this.mainToolTip.SetToolTip(this.materialTabSelector1, resources.GetString("materialTabSelector1.ToolTip"));
             // 
             // tabControl
             // 
@@ -294,6 +297,7 @@
             this.scanSelectedButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.scanSelectedButton.Name = "scanSelectedButton";
             this.scanSelectedButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.scanSelectedButton, resources.GetString("scanSelectedButton.ToolTip"));
             this.scanSelectedButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.scanSelectedButton.UseAccentColor = false;
             this.scanSelectedButton.UseVisualStyleBackColor = true;
@@ -309,6 +313,7 @@
             this.loadIPRangesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loadIPRangesButton.Name = "loadIPRangesButton";
             this.loadIPRangesButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.loadIPRangesButton, resources.GetString("loadIPRangesButton.ToolTip"));
             this.loadIPRangesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.loadIPRangesButton.UseAccentColor = false;
             this.loadIPRangesButton.UseVisualStyleBackColor = true;
@@ -325,6 +330,7 @@
             this.deleteIPRanges.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteIPRanges.Name = "deleteIPRanges";
             this.deleteIPRanges.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.deleteIPRanges, resources.GetString("deleteIPRanges.ToolTip"));
             this.deleteIPRanges.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.deleteIPRanges.UseAccentColor = false;
             this.deleteIPRanges.UseVisualStyleBackColor = true;
@@ -340,6 +346,7 @@
             this.saveRangesButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveRangesButton.Name = "saveRangesButton";
             this.saveRangesButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.saveRangesButton, resources.GetString("saveRangesButton.ToolTip"));
             this.saveRangesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.saveRangesButton.UseAccentColor = false;
             this.saveRangesButton.UseVisualStyleBackColor = true;
@@ -441,6 +448,7 @@
             this.startIPTextBoxD.LeaveOnEnterKey = true;
             this.startIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxD.Name = "startIPTextBoxD";
+            this.mainToolTip.SetToolTip(this.startIPTextBoxD, resources.GetString("startIPTextBoxD.ToolTip"));
             this.startIPTextBoxD.TrailingIcon = null;
             this.startIPTextBoxD.TextChanged += new System.EventHandler(this.startIPTextBoxD_TextChanged);
             // 
@@ -454,6 +462,7 @@
             this.startIPTextBoxC.LeaveOnEnterKey = true;
             this.startIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxC.Name = "startIPTextBoxC";
+            this.mainToolTip.SetToolTip(this.startIPTextBoxC, resources.GetString("startIPTextBoxC.ToolTip"));
             this.startIPTextBoxC.TrailingIcon = null;
             this.startIPTextBoxC.TextChanged += new System.EventHandler(this.startIPTextBoxC_TextChanged);
             // 
@@ -467,6 +476,7 @@
             this.startIPTextBoxB.LeaveOnEnterKey = true;
             this.startIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxB.Name = "startIPTextBoxB";
+            this.mainToolTip.SetToolTip(this.startIPTextBoxB, resources.GetString("startIPTextBoxB.ToolTip"));
             this.startIPTextBoxB.TrailingIcon = null;
             this.startIPTextBoxB.TextChanged += new System.EventHandler(this.startIPTextBoxB_TextChanged);
             // 
@@ -480,6 +490,7 @@
             this.startIPTextBoxA.LeaveOnEnterKey = true;
             this.startIPTextBoxA.MouseState = MaterialSkin.MouseState.OUT;
             this.startIPTextBoxA.Name = "startIPTextBoxA";
+            this.mainToolTip.SetToolTip(this.startIPTextBoxA, resources.GetString("startIPTextBoxA.ToolTip"));
             this.startIPTextBoxA.TrailingIcon = null;
             this.startIPTextBoxA.TextChanged += new System.EventHandler(this.startIPTextBoxA_TextChanged);
             // 
@@ -502,6 +513,7 @@
             this.stopScanButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.stopScanButton.Name = "stopScanButton";
             this.stopScanButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.stopScanButton, resources.GetString("stopScanButton.ToolTip"));
             this.stopScanButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.stopScanButton.UseAccentColor = false;
             this.stopScanButton.UseVisualStyleBackColor = true;
@@ -525,6 +537,7 @@
             this.addIPButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addIPButton.Name = "addIPButton";
             this.addIPButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.addIPButton, resources.GetString("addIPButton.ToolTip"));
             this.addIPButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.addIPButton.UseAccentColor = false;
             this.addIPButton.UseVisualStyleBackColor = true;
@@ -541,6 +554,7 @@
             this.searchButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchButton.Name = "searchButton";
             this.searchButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.searchButton, resources.GetString("searchButton.ToolTip"));
             this.searchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.searchButton.UseAccentColor = false;
             this.searchButton.UseVisualStyleBackColor = true;
@@ -555,6 +569,7 @@
             this.nameTextBox.LeadingIcon = null;
             this.nameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.nameTextBox.Name = "nameTextBox";
+            this.mainToolTip.SetToolTip(this.nameTextBox, resources.GetString("nameTextBox.ToolTip"));
             this.nameTextBox.TrailingIcon = null;
             // 
             // endIPLabel
@@ -575,6 +590,7 @@
             this.endIPTextBoxA.LeaveOnEnterKey = true;
             this.endIPTextBoxA.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxA.Name = "endIPTextBoxA";
+            this.mainToolTip.SetToolTip(this.endIPTextBoxA, resources.GetString("endIPTextBoxA.ToolTip"));
             this.endIPTextBoxA.TrailingIcon = null;
             this.endIPTextBoxA.TextChanged += new System.EventHandler(this.endIPTextBoxA_TextChanged);
             // 
@@ -588,6 +604,7 @@
             this.endIPTextBoxB.LeaveOnEnterKey = true;
             this.endIPTextBoxB.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxB.Name = "endIPTextBoxB";
+            this.mainToolTip.SetToolTip(this.endIPTextBoxB, resources.GetString("endIPTextBoxB.ToolTip"));
             this.endIPTextBoxB.TrailingIcon = null;
             this.endIPTextBoxB.TextChanged += new System.EventHandler(this.endIPTextBoxB_TextChanged);
             // 
@@ -601,6 +618,7 @@
             this.endIPTextBoxC.LeaveOnEnterKey = true;
             this.endIPTextBoxC.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxC.Name = "endIPTextBoxC";
+            this.mainToolTip.SetToolTip(this.endIPTextBoxC, resources.GetString("endIPTextBoxC.ToolTip"));
             this.endIPTextBoxC.TrailingIcon = null;
             this.endIPTextBoxC.TextChanged += new System.EventHandler(this.endIPTextBoxC_TextChanged);
             // 
@@ -614,6 +632,7 @@
             this.endIPTextBoxD.LeaveOnEnterKey = true;
             this.endIPTextBoxD.MouseState = MaterialSkin.MouseState.OUT;
             this.endIPTextBoxD.Name = "endIPTextBoxD";
+            this.mainToolTip.SetToolTip(this.endIPTextBoxD, resources.GetString("endIPTextBoxD.ToolTip"));
             this.endIPTextBoxD.TrailingIcon = null;
             this.endIPTextBoxD.TextChanged += new System.EventHandler(this.endIPTextBoxD_TextChanged);
             // 
@@ -669,6 +688,7 @@
             this.RefreshDataBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.RefreshDataBtn.Name = "RefreshDataBtn";
             this.RefreshDataBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.RefreshDataBtn, resources.GetString("RefreshDataBtn.ToolTip"));
             this.RefreshDataBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.RefreshDataBtn.UseAccentColor = false;
             this.RefreshDataBtn.UseVisualStyleBackColor = true;
@@ -685,6 +705,7 @@
             this.clearListview.MouseState = MaterialSkin.MouseState.HOVER;
             this.clearListview.Name = "clearListview";
             this.clearListview.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.clearListview, resources.GetString("clearListview.ToolTip"));
             this.clearListview.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.clearListview.UseAccentColor = false;
             this.clearListview.UseVisualStyleBackColor = true;
@@ -699,6 +720,7 @@
             this.newIpTextBox.LeadingIcon = null;
             this.newIpTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.newIpTextBox.Name = "newIpTextBox";
+            this.mainToolTip.SetToolTip(this.newIpTextBox, resources.GetString("newIpTextBox.ToolTip"));
             this.newIpTextBox.TrailingIcon = null;
             // 
             // performanceButton
@@ -712,6 +734,7 @@
             this.performanceButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.performanceButton.Name = "performanceButton";
             this.performanceButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.performanceButton, resources.GetString("performanceButton.ToolTip"));
             this.performanceButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.performanceButton.UseAccentColor = false;
             this.performanceButton.UseVisualStyleBackColor = true;
@@ -728,6 +751,7 @@
             this.setStaticIPButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.setStaticIPButton.Name = "setStaticIPButton";
             this.setStaticIPButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.setStaticIPButton, resources.GetString("setStaticIPButton.ToolTip"));
             this.setStaticIPButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.setStaticIPButton.UseAccentColor = false;
             this.setStaticIPButton.UseVisualStyleBackColor = true;
@@ -749,6 +773,7 @@
             this.newPasswordTextBox.LeadingIcon = null;
             this.newPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.mainToolTip.SetToolTip(this.newPasswordTextBox, resources.GetString("newPasswordTextBox.ToolTip"));
             this.newPasswordTextBox.TrailingIcon = null;
             // 
             // poolPasswordLabel
@@ -770,6 +795,7 @@
             this.selfCheckButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.selfCheckButton.Name = "selfCheckButton";
             this.selfCheckButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.selfCheckButton, resources.GetString("selfCheckButton.ToolTip"));
             this.selfCheckButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.selfCheckButton.UseAccentColor = false;
             this.selfCheckButton.UseVisualStyleBackColor = true;
@@ -786,6 +812,7 @@
             this.setPasswordButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.setPasswordButton.Name = "setPasswordButton";
             this.setPasswordButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.setPasswordButton, resources.GetString("setPasswordButton.ToolTip"));
             this.setPasswordButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.setPasswordButton.UseAccentColor = false;
             this.setPasswordButton.UseVisualStyleBackColor = true;
@@ -809,6 +836,7 @@
             this.openInBrowserButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.openInBrowserButton.Name = "openInBrowserButton";
             this.openInBrowserButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.openInBrowserButton, resources.GetString("openInBrowserButton.ToolTip"));
             this.openInBrowserButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.openInBrowserButton.UseAccentColor = false;
             this.openInBrowserButton.UseVisualStyleBackColor = true;
@@ -824,6 +852,7 @@
             this.setDynamicIPButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.setDynamicIPButton.Name = "setDynamicIPButton";
             this.setDynamicIPButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.setDynamicIPButton, resources.GetString("setDynamicIPButton.ToolTip"));
             this.setDynamicIPButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.setDynamicIPButton.UseAccentColor = false;
             this.setDynamicIPButton.UseVisualStyleBackColor = true;
@@ -849,6 +878,7 @@
             this.performanceDropdown.MouseState = MaterialSkin.MouseState.OUT;
             this.performanceDropdown.Name = "performanceDropdown";
             this.performanceDropdown.StartIndex = 0;
+            this.mainToolTip.SetToolTip(this.performanceDropdown, resources.GetString("performanceDropdown.ToolTip"));
             // 
             // setPoolButton
             // 
@@ -860,6 +890,7 @@
             this.setPoolButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.setPoolButton.Name = "setPoolButton";
             this.setPoolButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.setPoolButton, resources.GetString("setPoolButton.ToolTip"));
             this.setPoolButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.setPoolButton.UseAccentColor = false;
             this.setPoolButton.UseVisualStyleBackColor = true;
@@ -876,6 +907,7 @@
             this.updateButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateButton.Name = "updateButton";
             this.updateButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.updateButton, resources.GetString("updateButton.ToolTip"));
             this.updateButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.updateButton.UseAccentColor = false;
             this.updateButton.UseVisualStyleBackColor = true;
@@ -899,6 +931,7 @@
             this.poolUserTextBox.LeadingIcon = null;
             this.poolUserTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.poolUserTextBox.Name = "poolUserTextBox";
+            this.mainToolTip.SetToolTip(this.poolUserTextBox, resources.GetString("poolUserTextBox.ToolTip"));
             this.poolUserTextBox.TrailingIcon = null;
             // 
             // poolPasswordTextBox
@@ -910,6 +943,7 @@
             this.poolPasswordTextBox.LeadingIcon = null;
             this.poolPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.poolPasswordTextBox.Name = "poolPasswordTextBox";
+            this.mainToolTip.SetToolTip(this.poolPasswordTextBox, resources.GetString("poolPasswordTextBox.ToolTip"));
             this.poolPasswordTextBox.TrailingIcon = null;
             // 
             // poolUrlTextBox
@@ -922,6 +956,7 @@
             this.poolUrlTextBox.LeadingIcon = null;
             this.poolUrlTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.poolUrlTextBox.Name = "poolUrlTextBox";
+            this.mainToolTip.SetToolTip(this.poolUrlTextBox, resources.GetString("poolUrlTextBox.ToolTip"));
             this.poolUrlTextBox.TrailingIcon = null;
             // 
             // poolURLLabel
@@ -968,9 +1003,14 @@
             this.minerListView.HideSelection = false;
             this.minerListView.Name = "minerListView";
             this.minerListView.TabStop = false;
+            this.mainToolTip.SetToolTip(this.minerListView, resources.GetString("minerListView.ToolTip"));
             this.minerListView.UseCompatibleStateImageBehavior = false;
             this.minerListView.View = System.Windows.Forms.View.Details;
+            this.minerListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.minerListView_ColumnClick);
+            this.minerListView.ColumnReordered += new System.Windows.Forms.ColumnReorderedEventHandler(this.minerListView_ColumnReordered);
+            this.minerListView.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.minerListView_ColumnWidthChanged);
             this.minerListView.DoubleClick += new System.EventHandler(this.minerListView_DoubleClick);
+            this.minerListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.minerListView_MouseDown);
             // 
             // IPAddress
             // 
@@ -1099,6 +1139,7 @@
             this.TotalLabel.Depth = 0;
             this.TotalLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.TotalLabel.Name = "TotalLabel";
+            this.mainToolTip.SetToolTip(this.TotalLabel, resources.GetString("TotalLabel.ToolTip"));
             // 
             // MaxLabel
             // 
@@ -1106,6 +1147,7 @@
             this.MaxLabel.Depth = 0;
             this.MaxLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.MaxLabel.Name = "MaxLabel";
+            this.mainToolTip.SetToolTip(this.MaxLabel, resources.GetString("MaxLabel.ToolTip"));
             // 
             // MinLabel
             // 
@@ -1113,6 +1155,7 @@
             this.MinLabel.Depth = 0;
             this.MinLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.MinLabel.Name = "MinLabel";
+            this.mainToolTip.SetToolTip(this.MinLabel, resources.GetString("MinLabel.ToolTip"));
             // 
             // AvgLabel
             // 
@@ -1120,6 +1163,7 @@
             this.AvgLabel.Depth = 0;
             this.AvgLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.AvgLabel.Name = "AvgLabel";
+            this.mainToolTip.SetToolTip(this.AvgLabel, resources.GetString("AvgLabel.ToolTip"));
             // 
             // SelectedLabel
             // 
@@ -1127,6 +1171,7 @@
             this.SelectedLabel.Depth = 0;
             this.SelectedLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.SelectedLabel.Name = "SelectedLabel";
+            this.mainToolTip.SetToolTip(this.SelectedLabel, resources.GetString("SelectedLabel.ToolTip"));
             // 
             // flowLayoutPanel2
             // 
@@ -1149,6 +1194,7 @@
             this.minerFoundCountLabel.Depth = 0;
             this.minerFoundCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.minerFoundCountLabel.Name = "minerFoundCountLabel";
+            this.mainToolTip.SetToolTip(this.minerFoundCountLabel, resources.GetString("minerFoundCountLabel.ToolTip"));
             // 
             // translate
             // 
@@ -1161,6 +1207,7 @@
             this.translate.MouseState = MaterialSkin.MouseState.HOVER;
             this.translate.Name = "translate";
             this.translate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.translate, resources.GetString("translate.ToolTip"));
             this.translate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.translate.UseAccentColor = false;
             this.translate.UseVisualStyleBackColor = true;
@@ -1173,10 +1220,11 @@
             resources.ApplyResources(this.ScanningIPLabel, "ScanningIPLabel");
             this.ScanningIPLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.ScanningIPLabel.Name = "ScanningIPLabel";
+            this.mainToolTip.SetToolTip(this.ScanningIPLabel, resources.GetString("ScanningIPLabel.ToolTip"));
             // 
             // loadIPRangesDialog
             // 
-            this.loadIPRangesDialog.FileName = "openFileDialog1";
+            this.loadIPRangesDialog.FileName = "Yami_IP_Ranges";
             resources.ApplyResources(this.loadIPRangesDialog, "loadIPRangesDialog");
             // 
             // saveIPRangesDialog
@@ -1195,6 +1243,7 @@
             this.ExportBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportBtn.Name = "ExportBtn";
             this.ExportBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.ExportBtn, resources.GetString("ExportBtn.ToolTip"));
             this.ExportBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ExportBtn.UseAccentColor = false;
             this.ExportBtn.UseVisualStyleBackColor = true;
@@ -1211,6 +1260,7 @@
             this.SettingsBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.SettingsBtn, resources.GetString("SettingsBtn.ToolTip"));
             this.SettingsBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.SettingsBtn.UseAccentColor = false;
             this.SettingsBtn.UseVisualStyleBackColor = true;
@@ -1226,10 +1276,17 @@
             this.StopAllBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.StopAllBtn.Name = "StopAllBtn";
             this.StopAllBtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.mainToolTip.SetToolTip(this.StopAllBtn, resources.GetString("StopAllBtn.ToolTip"));
             this.StopAllBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.StopAllBtn.UseAccentColor = false;
             this.StopAllBtn.UseVisualStyleBackColor = true;
             this.StopAllBtn.Click += new System.EventHandler(this.StopAllBtn_Click);
+            // 
+            // mainToolTip
+            // 
+            this.mainToolTip.AutoPopDelay = 5000;
+            this.mainToolTip.InitialDelay = 1500;
+            this.mainToolTip.ReshowDelay = 100;
             // 
             // Main
             // 
@@ -1243,6 +1300,7 @@
             this.Controls.Add(this.translate);
             this.Controls.Add(this.ScanningIPLabel);
             this.Name = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
@@ -1268,7 +1326,6 @@
         }
 
         #endregion
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private MaterialSkin.Controls.MaterialButton rebootButton;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
@@ -1379,6 +1436,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.CheckBox SelectAllCheckBox;
         private MaterialSkin.Controls.MaterialButton RefreshDataBtn;
+        private System.Windows.Forms.ToolTip mainToolTip;
     }
 }
 

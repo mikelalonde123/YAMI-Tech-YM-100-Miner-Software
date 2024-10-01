@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.SettingsOK = new System.Windows.Forms.Button();
             this.SettingsCancel = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.restoreDefaultBtn = new System.Windows.Forms.Button();
             this.maxConcurrentScanSetting = new System.Windows.Forms.NumericUpDown();
             this.maxRepeatScanSetting = new System.Windows.Forms.NumericUpDown();
             this.timeoutTimeSetting = new System.Windows.Forms.NumericUpDown();
@@ -49,6 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ConcurrentUpdateSetting = new System.Windows.Forms.NumericUpDown();
+            this.CheckStaticIP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.maxConcurrentScanSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxRepeatScanSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeoutTimeSetting)).BeginInit();
@@ -64,7 +65,7 @@
             this.SettingsOK.Size = new System.Drawing.Size(75, 23);
             this.SettingsOK.TabIndex = 0;
             this.SettingsOK.Text = "OK";
-            this.toolTip1.SetToolTip(this.SettingsOK, "Save the current values");
+            this.toolTip.SetToolTip(this.SettingsOK, "Save the current values");
             this.SettingsOK.UseVisualStyleBackColor = true;
             this.SettingsOK.Click += new System.EventHandler(this.SettingsOK_Click);
             // 
@@ -76,17 +77,20 @@
             this.SettingsCancel.Size = new System.Drawing.Size(75, 23);
             this.SettingsCancel.TabIndex = 1;
             this.SettingsCancel.Text = "Cancel";
-            this.toolTip2.SetToolTip(this.SettingsCancel, "Discard changes and keep previous settings values");
+            this.toolTip.SetToolTip(this.SettingsCancel, "Discard the current settings values");
             this.SettingsCancel.UseVisualStyleBackColor = true;
             this.SettingsCancel.Click += new System.EventHandler(this.SettingsCancel_Click);
             // 
-            // toolTip1
+            // restoreDefaultBtn
             // 
-            this.toolTip1.ToolTipTitle = "Save";
-            // 
-            // toolTip2
-            // 
-            this.toolTip2.ToolTipTitle = "Discard";
+            this.restoreDefaultBtn.Location = new System.Drawing.Point(16, 334);
+            this.restoreDefaultBtn.Name = "restoreDefaultBtn";
+            this.restoreDefaultBtn.Size = new System.Drawing.Size(94, 23);
+            this.restoreDefaultBtn.TabIndex = 17;
+            this.restoreDefaultBtn.Text = "Restore Defaults";
+            this.toolTip.SetToolTip(this.restoreDefaultBtn, "Restore the settings to their default values");
+            this.restoreDefaultBtn.UseVisualStyleBackColor = true;
+            this.restoreDefaultBtn.Click += new System.EventHandler(this.restoreDefaultBtn_Click);
             // 
             // maxConcurrentScanSetting
             // 
@@ -111,6 +115,11 @@
             // 
             // timeoutTimeSetting
             // 
+            this.timeoutTimeSetting.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.timeoutTimeSetting.Location = new System.Drawing.Point(173, 10);
             this.timeoutTimeSetting.Name = "timeoutTimeSetting";
             this.timeoutTimeSetting.Size = new System.Drawing.Size(53, 20);
@@ -228,12 +237,27 @@
             this.ConcurrentUpdateSetting.TabIndex = 14;
             this.ConcurrentUpdateSetting.ValueChanged += new System.EventHandler(this.ConcurrentUpdateSetting_ValueChanged);
             // 
+            // CheckStaticIP
+            // 
+            this.CheckStaticIP.AutoSize = true;
+            this.CheckStaticIP.Checked = true;
+            this.CheckStaticIP.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckStaticIP.Location = new System.Drawing.Point(16, 150);
+            this.CheckStaticIP.Name = "CheckStaticIP";
+            this.CheckStaticIP.Size = new System.Drawing.Size(231, 17);
+            this.CheckStaticIP.TabIndex = 19;
+            this.CheckStaticIP.Text = "Check If The Static IP Exists Before Setting";
+            this.CheckStaticIP.UseVisualStyleBackColor = true;
+            this.CheckStaticIP.CheckedChanged += new System.EventHandler(this.CheckStaticIP_CheckedChanged);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.SettingsCancel;
             this.ClientSize = new System.Drawing.Size(387, 369);
+            this.Controls.Add(this.CheckStaticIP);
+            this.Controls.Add(this.restoreDefaultBtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.ConcurrentUpdateSetting);
@@ -274,8 +298,7 @@
 
         private System.Windows.Forms.Button SettingsOK;
         private System.Windows.Forms.Button SettingsCancel;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.NumericUpDown maxConcurrentScanSetting;
         private System.Windows.Forms.NumericUpDown maxRepeatScanSetting;
         private System.Windows.Forms.NumericUpDown timeoutTimeSetting;
@@ -291,5 +314,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown ConcurrentUpdateSetting;
+        private System.Windows.Forms.Button restoreDefaultBtn;
+        private System.Windows.Forms.CheckBox CheckStaticIP;
     }
 }

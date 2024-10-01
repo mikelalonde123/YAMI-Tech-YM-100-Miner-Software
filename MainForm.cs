@@ -41,6 +41,8 @@ namespace MinerInfoApp
 
         private CancellationTokenSource cancellationTokenSource;
 
+        private CancellationTokenSource udpCancellationToken;
+
         private bool isScanning = false;
 
         private AppSettings appSettings;
@@ -48,16 +50,17 @@ namespace MinerInfoApp
         //CONCURRENT SCAN VARS
         private CancellationTokenSource cancellationTokenSourceSelfCheck;
 
-        int concurrentReboot = 50;
+        //SETTINGS VARIABLES
+        public int maxConcurrentScans = YAMI_Scanner.Properties.Settings.Default.MaxConcurrentScans;
+        public int maxRepeatScan = YAMI_Scanner.Properties.Settings.Default.MaxRepeatScan;
+        public double timeoutTime = YAMI_Scanner.Properties.Settings.Default.TimeoutTime;
+        public int concurrentUpdate = YAMI_Scanner.Properties.Settings.Default.ConcurrentUpdate;
+        public int updateTimeout = YAMI_Scanner.Properties.Settings.Default.UpdateTimeout;
+        public bool checkForStaticIP = YAMI_Scanner.Properties.Settings.Default.CheckForStaticIP;
+
+        int concurrentReboot = YAMI_Scanner.Properties.Settings.Default.MaxConcurrentScans;
         private SemaphoreSlim semaphoreReboot;
         private CancellationTokenSource cancellationTokenSourceReboot;
-
-        //SETTINGS VARIABLES
-        public int maxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans;
-        public int maxRepeatScan = Properties.Settings.Default.MaxRepeatScan;
-        public double timeoutTime = Properties.Settings.Default.TimeoutTime;
-        public int concurrentUpdate = Properties.Settings.Default.ConcurrentUpdate;
-        public int updateTimeout = Properties.Settings.Default.UpdateTimeout;
 
         //Tracks the current language
         private bool isEnglish = true;
@@ -79,7 +82,7 @@ namespace MinerInfoApp
         IWebDriver driver;
 
         //UdpClient for listening for YAMI IP Report
-        UdpClient udpListener;
+        UdpClient udpListener = new UdpClient(6687);
 
 
         //Timer
@@ -97,38 +100,37 @@ namespace MinerInfoApp
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green900, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            //attaches form closing event to the materialskinForm
-            this.FormClosing += MainForm_FormClosing;
-
             //Initialize settings menu
             appSettings = new AppSettings
             {
-                MaxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans,
-                MaxRepeatScan = Properties.Settings.Default.MaxRepeatScan,
-                TimeoutTime = Properties.Settings.Default.TimeoutTime,
-                ConcurrentUpdate = Properties.Settings.Default.ConcurrentUpdate,
-                UpdateTimeout = Properties.Settings.Default.UpdateTimeout,
+                MaxConcurrentScans = YAMI_Scanner.Properties.Settings.Default.MaxConcurrentScans,
+                MaxRepeatScan = YAMI_Scanner.Properties.Settings.Default.MaxRepeatScan,
+                TimeoutTime = YAMI_Scanner.Properties.Settings.Default.TimeoutTime,
+                ConcurrentUpdate = YAMI_Scanner.Properties.Settings.Default.ConcurrentUpdate,
+                UpdateTimeout = YAMI_Scanner.Properties.Settings.Default.UpdateTimeout,
+                CheckForStaticIP = YAMI_Scanner.Properties.Settings.Default.CheckForStaticIP
             };
 
-            //Prevent flickering when scrolling
+            //Makes the controls smoother when updating/scrolling
             minerListView.DoubleBuffered(true);
 
             ipRangeListView.DoubleBuffered(true);
 
+            flowLayoutPanel1.DoubleBuffered(true);
+
+            this.DoubleBuffered(true);
+
             //calls this function, described below
             AttachNumericTextBoxEventHandlers();
-
-            //attaches event handler to minerListView columns
-            minerListView.ColumnClick += minerListView_ColumnClick;
-
-            //sets tab control size
-            tabControl.ItemSize = new Size(100, 50);
 
             //Custom Code to handle what happens when an item is checked
             minerListView.ItemChecked += new ItemCheckedEventHandler(minerListView_ItemChecked);
 
             //Adds the saved ip ranges to their listview
             LoadSavedIPRanges();
+
+            //Loads the saved values of all textboxes for multi session continuity
+            loadTextBoxData();
 
             // Trigger the sorting process manually
             minerListView_ColumnClick(minerListView, new ColumnClickEventArgs(lastColumnClicked));
@@ -146,7 +148,7 @@ namespace MinerInfoApp
 
             string language = currentCulture.TwoLetterISOLanguageName;
 
-            //If the language is Chinese (2 character code is "zh"), sets the language to chinese and translates
+            //If the language is Chinese (2 character code is "zh"), sets the language flag to chinese and translates
             if (language == "zh")
             {
                 Console.WriteLine("Chinese detected");
@@ -159,6 +161,9 @@ namespace MinerInfoApp
             timer.Interval = 250;
             timer.Tick += Timer_Tick;
             timer.Start();
+
+            //Loads and changes the minerListview control with the previously saved listview column settings (width, order)
+            LoadListViewSettings();
         }
 
 
@@ -229,7 +234,7 @@ namespace MinerInfoApp
             // Update UI based on selected items in minerListView
             UpdateListViewItems();
             calculateListviewTotals();
-            this.BeginInvoke(new Action(UpdateSelectAllCheckBoxState));
+            UpdateSelectAllCheckBoxState();
         }
 
 
@@ -723,13 +728,13 @@ namespace MinerInfoApp
                                 HashboardStatus = ($"{hash1} , {hash2} , {hash3}"),
                                 FanSpeed = minerInfo.data.uptime.fan_speed.ToString(),
                                 Temperature = ((minerInfo.data.minerinfo[0].temperature) + (minerInfo.data.minerinfo[1].temperature) + (minerInfo.data.minerinfo[2].temperature)) / 3.ToString(),
-                                DagProgress = minerInfo.data.uptime.dag.progress.ToString(),
+                                DagProgress = (Math.Round(Convert.ToDouble(minerInfo.data.uptime.dag.progress), 2).ToString()) + " %",
                                 Accepted = minerInfo.data.uptime.accept_num.ToString(),
                                 Rejected = minerInfo.data.uptime.reject_num.ToString(),
                                 AcceptedRate = Math.Round((100 - (100 * Convert.ToDouble(minerInfo.data.uptime.reject_num) / Convert.ToDouble(minerInfo.data.uptime.accept_num))), 2).ToString(),
                                 Pool = minerInfo.data.pooldata[0].pool.ToString(),
                                 PoolUser = poolInfo.data.username,
-                                SelfCheckProgress = Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString(),
+                                SelfCheckProgress = (Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString()) + " %",
                                 Hashboard1Status = hash1a,
                                 Hashboard1HashRate = minerInfo.data.minerinfo[0].hash_rate,
                                 Hashboard1Temperature = minerInfo.data.minerinfo[0].temperature,
@@ -1021,22 +1026,6 @@ namespace MinerInfoApp
         }
 
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Save the current IP range to app.config
-            Console.WriteLine("Exiting program");
-            try
-            {
-                driver?.Quit();
-            }
-            catch (Exception)
-            {
-
-            }
-            SaveCurrentIPRange();
-        }
-
-
         private void UpdateConfiguration()
         {
             // Clear existing saved IP ranges from the configuration
@@ -1301,6 +1290,48 @@ namespace MinerInfoApp
             minerListView.SelectedItems[0].Checked = false;
         }
 
+        private void SaveListViewSettings()
+        {
+            List<string> columnSettings = new List<string>();
+            foreach (ColumnHeader column in minerListView.Columns)
+            {
+                columnSettings.Add($"{column.Index},{column.DisplayIndex},{column.Width}");
+            }
+            YAMI_Scanner.Properties.Settings.Default.MinerListViewSettings = string.Join(";", columnSettings);
+
+            Console.WriteLine(columnSettings);
+            Console.WriteLine(YAMI_Scanner.Properties.Settings.Default.MinerListViewSettings);
+            YAMI_Scanner.Properties.Settings.Default.Save();
+        }
+
+
+        private void LoadListViewSettings()
+        {
+            string savedSettings = YAMI_Scanner.Properties.Settings.Default.MinerListViewSettings;
+            if (!string.IsNullOrEmpty(savedSettings))
+            {
+                string[] columns = savedSettings.Split(';');
+                foreach (string column in columns)
+                {
+                    string[] details = column.Split(',');
+                    int index = int.Parse(details[0]);
+                    int displayIndex = int.Parse(details[1]);
+                    int width = int.Parse(details[2]);
+
+                    minerListView.Columns[index].DisplayIndex = displayIndex;
+                    minerListView.Columns[index].Width = width;
+                }
+            }
+        }
+
+        private void minerListView_ColumnReordered(object sender, ColumnReorderedEventArgs e)
+        {
+            SaveListViewSettings();
+        }
+
+        private void minerListView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+        }
 
         //* * * COMMANDS TAB * * * * * * * * * * * * * * * * * * COMMANDS TAB * * * * * * * * * * * * * * * * * * COMMANDS TAB * * * * * * * * * * * * * * * * *
 
@@ -1316,7 +1347,7 @@ namespace MinerInfoApp
             }
 
             // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
 
             try
             {
@@ -1352,7 +1383,7 @@ namespace MinerInfoApp
             }
 
             // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
 
             try
             {
@@ -1407,7 +1438,7 @@ namespace MinerInfoApp
             }
 
             // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
 
             try
             {
@@ -1506,7 +1537,7 @@ namespace MinerInfoApp
                 }
 
                 // Initialize or reinitialize semaphore
-                semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+                semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
 
                 try
                 {
@@ -1598,7 +1629,6 @@ namespace MinerInfoApp
         }
 
 
-
         //Set New Pool(Account, Pool Address And Worker Name) For Selected Miners
         private async void setPoolButton_Click(object sender, EventArgs e)
         {
@@ -1609,7 +1639,7 @@ namespace MinerInfoApp
             }
 
             // Initialize or reinitialize semaphore
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
 
             try
             {
@@ -1648,7 +1678,7 @@ namespace MinerInfoApp
         //Refresh The Data Of Selected Miners
         private async void RefreshDataBtn_Click(object sender, EventArgs e)
         {
-            semaphoreReboot = new SemaphoreSlim(concurrentReboot);
+            semaphoreReboot = new SemaphoreSlim(maxConcurrentScans);
             if (cancellationTokenSourceReboot != null && !cancellationTokenSourceReboot.IsCancellationRequested)
             {
                 cancellationTokenSourceReboot.Cancel();
@@ -1786,7 +1816,6 @@ namespace MinerInfoApp
             }));
         }
 
-
         //Handles the creation of tasks for each desired function
         private async Task ExecuteMinerCommandAsync(string command, string statusMessage, CancellationToken cancellationToken)
         {
@@ -1837,7 +1866,6 @@ namespace MinerInfoApp
 
             ScanningIPLabel.Text = $"{statusMessage} Done";
         }
-
 
         //Send Generic command Function For When the only info needed is the command itself(EX. rebooting or self check)
         private async Task SendCommandToMinerAsync(ListViewItem item, string command, string statusMessage, CancellationToken cancellationToken)
@@ -1899,7 +1927,6 @@ namespace MinerInfoApp
                 semaphoreReboot.Release(); // Release the semaphore slot
             }
         }
-
 
         //Set Pool
         private async Task ConfigurePoolForMinerAsync(ListViewItem item, CancellationToken cancellationToken)
@@ -1973,7 +2000,6 @@ namespace MinerInfoApp
             }
         }
 
-
         //Set Static IP
         private async Task SetStaticIPAsync(ListViewItem item, CancellationToken cancellationToken)
         {
@@ -1994,15 +2020,18 @@ namespace MinerInfoApp
             {
                 ScanningIPLabel.Text = minerIp + " 设置静态IP";
             }
-            if (pingIp(newIP))
+            if (YAMI_Scanner.Properties.Settings.Default.CheckForStaticIP)
             {
-                var dialogResult = MessageBox.Show($"The IP Address {newIP} is already in use. Do you want to continue anyway?", "IP Address In Use", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
-                if (dialogResult == DialogResult.Cancel)
+                if (pingIp(newIP))
                 {
-                    UpdateStatusColumn(item, $"{(isEnglish ? "Setting Static IP" : "设置静态IP")} Canceled");
-                    semaphoreReboot.Release();
-                    return; // Exit the method if the user cancels
+                    var dialogResult = MessageBox.Show($"The IP Address {newIP} is already in use. Do you want to continue anyway?", "IP Address In Use", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    if (dialogResult == DialogResult.Cancel)
+                    {
+                        UpdateStatusColumn(item, $"{(isEnglish ? "Setting Static IP" : "设置静态IP")} Canceled");
+                        semaphoreReboot.Release();
+                        return; // Exit the method if the user cancels
+                    }
                 }
             }
             try
@@ -2209,8 +2238,8 @@ namespace MinerInfoApp
                                     item.SubItems[2].Text = minerInfo.data.pooldata[0].pool.ToString(); // Pool
                                     item.SubItems[3].Text = poolInfo.data.username.ToString(); // Pool User
                                     item.SubItems[4].Text = minerInfo.data.pooldata[0].user.ToString(); // Account
-                                    item.SubItems[5].Text = minerInfo.data.uptime.dag.progress.ToString(); // DAG Progress
-                                    item.SubItems[6].Text = Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString(); // Self Check Progress
+                                    item.SubItems[5].Text = Math.Round(Convert.ToDouble(minerInfo.data.uptime.dag.progress), 2).ToString() + " %"; // DAG Progress
+                                    item.SubItems[6].Text = Math.Round(Convert.ToDouble(selfMinerInfo.data.progress), 2).ToString() + " %"; // Self Check Progress
 
                                     // Update hashboard statuses
                                     item.SubItems[7].Text = ($"{hash1}, {hash2}, {hash3}");
@@ -2388,34 +2417,39 @@ namespace MinerInfoApp
             
             try
             {
+                udpCancellationToken = new CancellationTokenSource();
                 while (true)
                 {
-                    udpListener = new UdpClient(6687);
-
                     UdpReceiveResult result = await udpListener.ReceiveAsync();
+
                     string receivedData = Encoding.ASCII.GetString(result.Buffer);
 
                     // Extract the IP address from the remote endpoint
                     IPAddress ip = result.RemoteEndPoint.Address;
-
-                    //Calls the GetIPRange function with the start and end IP variables and stores the returned list as 'ipList'
-                    List<string> ipList = new List<string> { ip.ToString() };
-
+                    string udpIp = ip.ToString();
+                    //MessageBox.Show(udpIp);
                     try
                     {
                         // Run the scanning process with cancellation support
-                        await ScanIPsAsync(ipList, cancellationTokenSource.Token);
+                        GetData(udpIp, 10.0, udpCancellationToken.Token);
                     }
                     catch (OperationCanceledException)
                     {
-                        Console.WriteLine("Scanning was canceled.");
+                        MessageBox.Show("An Unexpected error occured. Please restart the program to continue using the \"ip Report\" Button", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show("Error: " + ex.Message + ". Please restart the program to continue using the \"ip Report\" Button", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (SocketException ex)
             {
                 // Handle socket exceptions
-                Console.WriteLine("SocketException: " + ex.Message);
+                MessageBox.Show("SocketException: " + ex.Message + ". Please restart the program to continue using the \"ip Report\" Button", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message + ". Please restart the program to continue using the \"ip Report\" Button", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -2441,23 +2475,25 @@ namespace MinerInfoApp
         private void SaveSettings()
         {
             // Example: Save appSettings to application settings
-            Properties.Settings.Default.MaxConcurrentScans = appSettings.MaxConcurrentScans;
-            Properties.Settings.Default.MaxRepeatScan = appSettings.MaxRepeatScan;
-            Properties.Settings.Default.TimeoutTime = appSettings.TimeoutTime;
-            Properties.Settings.Default.ConcurrentUpdate = appSettings.ConcurrentUpdate;
-            Properties.Settings.Default.UpdateTimeout = appSettings.UpdateTimeout;
-            Properties.Settings.Default.Save();
+            YAMI_Scanner.Properties.Settings.Default.MaxConcurrentScans = appSettings.MaxConcurrentScans;
+            YAMI_Scanner.Properties.Settings.Default.MaxRepeatScan = appSettings.MaxRepeatScan;
+            YAMI_Scanner.Properties.Settings.Default.TimeoutTime = appSettings.TimeoutTime;
+            YAMI_Scanner.Properties.Settings.Default.ConcurrentUpdate = appSettings.ConcurrentUpdate;
+            YAMI_Scanner.Properties.Settings.Default.UpdateTimeout = appSettings.UpdateTimeout;
+            YAMI_Scanner.Properties.Settings.Default.CheckForStaticIP = appSettings.CheckForStaticIP;
+            YAMI_Scanner.Properties.Settings.Default.Save();
         }
 
 
         //Initializes settings vars
         private void LoadSettings()
         {
-            maxConcurrentScans = Properties.Settings.Default.MaxConcurrentScans;
-            maxRepeatScan = Properties.Settings.Default.MaxRepeatScan;
-            timeoutTime = Properties.Settings.Default.TimeoutTime;
-            concurrentUpdate = Properties.Settings.Default.ConcurrentUpdate;
-            updateTimeout = Properties.Settings.Default.UpdateTimeout;
+            maxConcurrentScans = YAMI_Scanner.Properties.Settings.Default.MaxConcurrentScans;
+            maxRepeatScan = YAMI_Scanner.Properties.Settings.Default.MaxRepeatScan;
+            timeoutTime = YAMI_Scanner.Properties.Settings.Default.TimeoutTime;
+            concurrentUpdate = YAMI_Scanner.Properties.Settings.Default.ConcurrentUpdate;
+            updateTimeout = YAMI_Scanner.Properties.Settings.Default.UpdateTimeout;
+            checkForStaticIP = YAMI_Scanner.Properties.Settings.Default.CheckForStaticIP;
         }
 
 
@@ -2638,7 +2674,103 @@ namespace MinerInfoApp
             isUserCheckChange = true;
         }
 
+        private void minerListView_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                minerListView.Tag = null;
+                var hitTestInfo = minerListView.HitTest(e.Location);
+                var clickedItem = hitTestInfo.Item;
 
+                if (clickedItem != null)
+                {
+                    minerListView.Tag = clickedItem;  // Set the clicked item into Tag property
+                    poolUrlTextBox.Text = clickedItem.SubItems[2].Text;
+                    poolUserTextBox.Text = clickedItem.SubItems[4].Text;
+                    poolPasswordTextBox.Text = "X";
+                }
+            }
+        }
+
+        private void saveTextBoxData()
+        {
+            List<string> TextBoxValues = new List<string>{ };
+            List<MaterialTextBox> textBoxesToSave = new List<MaterialTextBox>
+            {
+                startIPTextBoxA,
+                startIPTextBoxB,
+                startIPTextBoxC,
+                startIPTextBoxD,
+                endIPTextBoxA,
+                endIPTextBoxB,
+                endIPTextBoxC,
+                endIPTextBoxD,
+                nameTextBox,
+                newIpTextBox,
+                newPasswordTextBox,
+                poolUrlTextBox,
+                poolUserTextBox,
+                poolPasswordTextBox
+            };
+            foreach (MaterialTextBox textBox in textBoxesToSave)
+            {
+                TextBoxValues.Add(textBox.Text);
+            }
+            YAMI_Scanner.Properties.Settings.Default.SavedTextBoxValues = string.Join("|", TextBoxValues);
+            YAMI_Scanner.Properties.Settings.Default.Save();
+        }
+
+        private void loadTextBoxData()
+        {
+            string savedValues = YAMI_Scanner.Properties.Settings.Default.SavedTextBoxValues;
+            if (!string.IsNullOrEmpty(savedValues))
+            {
+                string[] TextBoxValues = savedValues.Split('|');
+
+                List<MaterialTextBox> textBoxesToLoad = new List<MaterialTextBox>
+                {
+                    startIPTextBoxA,
+                    startIPTextBoxB,
+                    startIPTextBoxC,
+                    startIPTextBoxD,
+                    endIPTextBoxA,
+                    endIPTextBoxB,
+                    endIPTextBoxC,
+                    endIPTextBoxD,
+                    nameTextBox,
+                    newIpTextBox,
+                    newPasswordTextBox,
+                    poolUrlTextBox,
+                    poolUserTextBox,
+                    poolPasswordTextBox
+                };
+
+                for (int i = 0; i < TextBoxValues.Length && i < textBoxesToLoad.Count; i++)
+                {
+                    textBoxesToLoad[i].Text = TextBoxValues[i];
+                }
+            }
+        }
+
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Save the current IP range to app.config
+            Console.WriteLine("Exiting program");
+            try
+            {
+                
+                driver?.Quit();
+            }
+            catch (Exception)
+            {
+
+            }
+            SaveCurrentIPRange();
+            SaveListViewSettings();
+            saveTextBoxData();
+            YAMI_Scanner.Properties.Settings.Default.Save();
+        }
 
     }
 
@@ -2849,4 +2981,5 @@ public class AppSettings
     public double TimeoutTime { get; set; }
     public int ConcurrentUpdate { get; set; }
     public int UpdateTimeout { get; set; }
+    public bool CheckForStaticIP { get; set; }
 }
